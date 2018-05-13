@@ -1,0 +1,2 @@
+# IBM xSeries 345 Type 8670
+These are the various manual that IBM offers for this unit.  Copyright IBM, etc.  I'm only hosting them here for archival purposes (in case IBM or Lenovo takes the originals down) and convenience.
