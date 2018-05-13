@@ -1,0 +1,3 @@
+Bus 001 Device 003: ID 08ec:204a M-Systems Flash Disk Pioneers 
+Bus 001 Device 002: ID 1267:0103  
+Bus 001 Device 001: ID 0000:0000  

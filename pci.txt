@@ -1,0 +1,61 @@
+PCI devices found:
+  Bus  0, device   0, function  0:
+    Host bridge: ServerWorks CMIC-LE (rev 19).
+  Bus  0, device   0, function  1:
+    Host bridge: ServerWorks CMIC-LE (#2) (rev 0).
+  Bus  0, device   0, function  2:
+    Host bridge: PCI device 1166:0000 (ServerWorks) (rev 0).
+  Bus  0, device   6, function  0:
+    VGA compatible controller: ATI Technologies Inc Rage XL (rev 39).
+      IRQ 26.
+      Master Capable.  No bursts.  Min Gnt=8.
+      Non-prefetchable 32 bit memory at 0xfd000000 [0xfdffffff].
+      I/O at 0x2200 [0x22ff].
+      Non-prefetchable 32 bit memory at 0xfebff000 [0xfebfffff].
+  Bus  0, device  15, function  0:
+    Host bridge: ServerWorks CSB5 South Bridge (rev 147).
+  Bus  0, device  15, function  1:
+    IDE interface: ServerWorks CSB5 IDE Controller (rev 147).
+      Master Capable.  Latency=64.  
+      I/O at 0x700 [0x70f].
+  Bus  0, device  15, function  2:
+    USB Controller: ServerWorks OSB4/CSB5 OHCI USB Controller (rev 5).
+      IRQ 3.
+      Master Capable.  Latency=64.  Max Lat=80.
+      Non-prefetchable 32 bit memory at 0xfebfe000 [0xfebfefff].
+  Bus  0, device  15, function  3:
+    ISA bridge: ServerWorks CSB5 LPC bridge (rev 0).
+  Bus  0, device  16, function  0:
+    Host bridge: ServerWorks CIOB-X2 (rev 3).
+  Bus  0, device  16, function  2:
+    Host bridge: ServerWorks CIOB-X2 (#2) (rev 3).
+  Bus  0, device  17, function  0:
+    Host bridge: ServerWorks CIOB-X2 (#3) (rev 3).
+  Bus  0, device  17, function  2:
+    Host bridge: ServerWorks CIOB-X2 (#4) (rev 3).
+  Bus  6, device   8, function  0:
+    Ethernet controller: Intel Corp. 82546EB Gigabit Ethernet Controller (Copper) (rev 1).
+      IRQ 29.
+      Master Capable.  Latency=64.  Min Gnt=255.
+      Non-prefetchable 64 bit memory at 0xfbfe0000 [0xfbffffff].
+      I/O at 0x2300 [0x233f].
+  Bus  6, device   8, function  1:
+    Ethernet controller: Intel Corp. 82546EB Gigabit Ethernet Controller (Copper) (#2) (rev 1).
+      IRQ 30.
+      Master Capable.  Latency=64.  Min Gnt=255.
+      Non-prefetchable 64 bit memory at 0xfbfc0000 [0xfbfdffff].
+      I/O at 0x2340 [0x237f].
+  Bus  8, device   7, function  0:
+    SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 7).
+      IRQ 27.
+      Master Capable.  Latency=72.  Min Gnt=17.Max Lat=18.
+      I/O at 0x2400 [0x24ff].
+      Non-prefetchable 64 bit memory at 0xf9ff0000 [0xf9ffffff].
+      Non-prefetchable 64 bit memory at 0xf9fe0000 [0xf9feffff].
+  Bus  8, device   7, function  1:
+    SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (#2) (rev 7).
+      IRQ 28.
+      Master Capable.  Latency=72.  Min Gnt=17.Max Lat=18.
+      I/O at 0x2500 [0x25ff].
+      Non-prefetchable 64 bit memory at 0xf9fd0000 [0xf9fdffff].
+      Non-prefetchable 64 bit memory at 0xf9fc0000 [0xf9fcffff].

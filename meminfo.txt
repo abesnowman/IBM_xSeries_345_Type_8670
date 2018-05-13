@@ -1,0 +1,25 @@
+MemTotal:      2597320 kB
+MemFree:       2337800 kB
+Buffers:          8408 kB
+Cached:         155224 kB
+SwapCached:          0 kB
+Active:         106084 kB
+Inactive:       108680 kB
+HighTotal:     1703848 kB
+HighFree:      1494592 kB
+LowTotal:       893472 kB
+LowFree:        843208 kB
+SwapTotal:           0 kB
+SwapFree:            0 kB
+Dirty:              20 kB
+Writeback:           0 kB
+Mapped:          72144 kB
+Slab:            31596 kB
+Committed_AS:   106576 kB
+PageTables:        800 kB
+VmallocTotal:   114680 kB
+VmallocUsed:      6200 kB
+VmallocChunk:   107248 kB
+HugePages_Total:     0
+HugePages_Free:      0
+Hugepagesize:     4096 kB

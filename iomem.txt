@@ -1,0 +1,25 @@
+00000000-0009dfff : System RAM
+0009e000-0009ffff : reserved
+000a0000-000bffff : Video RAM area
+000c0000-000c7fff : Video ROM
+000c8000-000c87ff : Adapter ROM
+000f0000-000fffff : System ROM
+00100000-9ffeac3f : System RAM
+  00100000-002aec85 : Kernel code
+  002aec86-00398e7f : Kernel data
+9ffeac40-9ffeffff : ACPI Tables
+9fff0000-9fffffff : reserved
+f9fc0000-f9fcffff : 0000:08:07.1
+f9fd0000-f9fdffff : 0000:08:07.1
+f9fe0000-f9feffff : 0000:08:07.0
+f9ff0000-f9ffffff : 0000:08:07.0
+fbfc0000-fbfdffff : 0000:06:08.1
+  fbfc0000-fbfdffff : e1000
+fbfe0000-fbffffff : 0000:06:08.0
+  fbfe0000-fbffffff : e1000
+fd000000-fdffffff : 0000:00:06.0
+  fd000000-fd2fffff : vesafb
+febfe000-febfefff : 0000:00:0f.2
+  febfe000-febfefff : ohci_hcd
+febff000-febfffff : 0000:00:06.0
+fec00000-ffffffff : reserved

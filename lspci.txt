@@ -1,0 +1,16 @@
+0000:00:00.0 Host bridge: ServerWorks CMIC-LE (rev 13)
+0000:00:00.1 Host bridge: ServerWorks CMIC-LE
+0000:00:00.2 Host bridge: ServerWorks: Unknown device 0000
+0000:00:06.0 VGA compatible controller: ATI Technologies Inc Rage XL (rev 27)
+0000:00:0f.0 Host bridge: ServerWorks CSB5 South Bridge (rev 93)
+0000:00:0f.1 IDE interface: ServerWorks CSB5 IDE Controller (rev 93)
+0000:00:0f.2 USB Controller: ServerWorks OSB4/CSB5 OHCI USB Controller (rev 05)
+0000:00:0f.3 ISA bridge: ServerWorks CSB5 LPC bridge
+0000:00:10.0 Host bridge: ServerWorks CIOB-X2 (rev 03)
+0000:00:10.2 Host bridge: ServerWorks CIOB-X2 (rev 03)
+0000:00:11.0 Host bridge: ServerWorks CIOB-X2 (rev 03)
+0000:00:11.2 Host bridge: ServerWorks CIOB-X2 (rev 03)
+0000:06:08.0 Ethernet controller: Intel Corp. 82546EB Gigabit Ethernet Controller (Copper) (rev 01)
+0000:06:08.1 Ethernet controller: Intel Corp. 82546EB Gigabit Ethernet Controller (Copper) (rev 01)
+0000:08:07.0 SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 07)
+0000:08:07.1 SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 07)

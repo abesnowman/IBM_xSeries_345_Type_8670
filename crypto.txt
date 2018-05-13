@@ -1,0 +1,6 @@
+name         : md5
+module       : md5
+type         : digest
+blocksize    : 64
+digestsize   : 16
+

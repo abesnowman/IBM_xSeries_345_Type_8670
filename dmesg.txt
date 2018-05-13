@@ -1,0 +1,362 @@
+IRQs *10)
+ACPI: PCI Interrupt Link [LP0D] (IRQs *4)
+ACPI: PCI Interrupt Link [LP0E] (IRQs *5)
+ACPI: PCI Interrupt Link [LP0F] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP10] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP11] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP12] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP13] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP14] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP15] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP16] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP17] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP18] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP19] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP1A] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP1B] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP1C] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP1D] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP1E] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LP1F] (IRQs) *0, disabled.
+ACPI: PCI Interrupt Link [LPUS] (IRQs *3)
+Linux Plug and Play Support v0.97 (c) Adam Belay
+PnPBIOS: Scanning system for PnP BIOS support...
+PnPBIOS: Found PnP BIOS installation structure at 0xc00fdf90
+PnPBIOS: PnP BIOS version 1.0, entry 0xf0000:0x52ed, dseg 0xf0000
+PnPBIOS: 16 nodes reported by PnP BIOS; 16 recorded by driver
+SCSI subsystem initialized
+00:00:05[A] -> 13-8 -> IRQ 24 level low
+00:00:05[B] -> 13-9 -> IRQ 25 level low
+00:00:06[A] -> 13-10 -> IRQ 26 level low
+ACPI: PCI Interrupt Link [LPUS] enabled at IRQ 3
+00:00:0f[A] -> 14-3 -> IRQ 3 level low
+00:02:03[A] -> 13-4 -> IRQ 20 level low
+00:02:03[B] -> 13-5 -> IRQ 21 level low
+00:04:04[A] -> 13-6 -> IRQ 22 level low
+00:04:04[B] -> 13-7 -> IRQ 23 level low
+00:06:01[A] -> 13-0 -> IRQ 16 level low
+00:06:01[B] -> 13-1 -> IRQ 17 level low
+00:06:08[A] -> 13-13 -> IRQ 29 level low
+00:06:08[B] -> 13-14 -> IRQ 30 level low
+00:08:02[A] -> 13-2 -> IRQ 18 level low
+00:08:02[B] -> 13-3 -> IRQ 19 level low
+00:08:02[C] -> 12-0 -> IRQ 32 level low
+00:08:02[D] -> 12-1 -> IRQ 33 level low
+00:08:07[A] -> 13-11 -> IRQ 27 level low
+00:08:07[B] -> 13-12 -> IRQ 28 level low
+number of MP IRQ sources: 15.
+number of IO-APIC #14 registers: 16.
+number of IO-APIC #13 registers: 16.
+number of IO-APIC #12 registers: 16.
+testing the IO APIC.......................
+IO APIC #14......
+.... register #00: 0E000000
+.......    : physical APIC id: 0E
+.......    : Delivery Type: 0
+.......    : LTS          : 0
+.... register #01: 000F0011
+.......     : max redirection entries: 000F
+.......     : PRQ implemented: 0
+.......     : IO APIC version: 0011
+.... register #02: 0E000000
+.......     : arbitration: 0E
+.... IRQ redirection table:
+ NR Log Phy Mask Trig IRR Pol Stat Dest Deli Vect:   
+ 00 000 00  1    0    0   0   0    0    0    00
+ 01 001 01  0    0    0   0   0    1    1    39
+ 02 001 01  0    0    0   0   0    1    1    31
+ 03 001 01  1    1    0   1   0    1    1    41
+ 04 001 01  0    0    0   0   0    1    1    49
+ 05 001 01  0    0    0   0   0    1    1    51
+ 06 001 01  0    0    0   0   0    1    1    59
+ 07 001 01  0    1    0   1   0    1    1    61
+ 08 001 01  0    0    0   0   0    1    1    69
+ 09 001 01  0    0    0   0   0    1    1    71
+ 0a 001 01  0    0    0   0   0    1    1    79
+ 0b 001 01  0    0    0   0   0    1    1    81
+ 0c 001 01  0    0    0   0   0    1    1    89
+ 0d 001 01  0    0    0   0   0    1    1    91
+ 0e 001 01  0    0    0   0   0    1    1    99
+ 0f 001 01  0    0    0   0   0    1    1    A1
+IO APIC #13......
+.... register #00: 0D000000
+.......    : physical APIC id: 0D
+.......    : Delivery Type: 0
+.......    : LTS          : 0
+.... register #01: 000F0011
+.......     : max redirection entries: 000F
+.......     : PRQ implemented: 0
+.......     : IO APIC version: 0011
+.... register #02: 0D000000
+.......     : arbitration: 0D
+.... IRQ redirection table:
+ NR Log Phy Mask Trig IRR Pol Stat Dest Deli Vect:   
+ 00 001 01  1    1    0   1   0    1    1    E1
+ 01 001 01  1    1    0   1   0    1    1    E9
+ 02 001 01  1    1    0   1   0    1    1    42
+ 03 001 01  1    1    0   1   0    1    1    4A
+ 04 001 01  1    1    0   1   0    1    1    C1
+ 05 001 01  1    1    0   1   0    1    1    C9
+ 06 001 01  1    1    0   1   0    1    1    D1
+ 07 001 01  1    1    0   1   0    1    1    D9
+ 08 001 01  1    1    0   1   0    1    1    A9
+ 09 001 01  1    1    0   1   0    1    1    B1
+ 0a 001 01  1    1    0   1   0    1    1    B9
+ 0b 001 01  1    1    0   1   0    1    1    62
+ 0c 001 01  1    1    0   1   0    1    1    6A
+ 0d 001 01  1    1    0   1   0    1    1    32
+ 0e 001 01  1    1    0   1   0    1    1    3A
+ 0f 000 00  1    0    0   0   0    0    0    00
+IO APIC #12......
+.... register #00: 0C000000
+.......    : physical APIC id: 0C
+.......    : Delivery Type: 0
+.......    : LTS          : 0
+.... register #01: 000F0011
+.......     : max redirection entries: 000F
+.......     : PRQ implemented: 0
+.......     : IO APIC version: 0011
+.... register #02: 0C000000
+.......     : arbitration: 0C
+.... IRQ redirection table:
+ NR Log Phy Mask Trig IRR Pol Stat Dest Deli Vect:   
+ 00 001 01  1    1    0   1   0    1    1    52
+ 01 001 01  1    1    0   1   0    1    1    5A
+ 02 000 00  1    0    0   0   0    0    0    00
+ 03 000 00  1    0    0   0   0    0    0    00
+ 04 000 00  1    0    0   0   0    0    0    00
+ 05 041 01  1    0    0   0   0    0    2    12
+ 06 010 00  1    0    0   0   0    0    2    00
+ 07 000 00  1    0    0   0   0    0    0    00
+ 08 000 00  1    0    0   0   0    0    0    00
+ 09 000 00  1    0    0   0   0    0    0    00
+ 0a 000 00  1    0    0   0   0    0    0    00
+ 0b 000 00  1    0    0   0   0    0    0    00
+ 0c 000 00  1    0    0   0   0    0    0    00
+ 0d 000 00  1    0    0   0   0    0    0    00
+ 0e 000 00  1    0    0   0   0    0    0    00
+ 0f 000 00  1    0    0   0   0    0    0    00
+IRQ to pin mappings:
+IRQ0 -> 0:2
+IRQ1 -> 0:1
+IRQ3 -> 0:3
+IRQ4 -> 0:4
+IRQ5 -> 0:5
+IRQ6 -> 0:6
+IRQ7 -> 0:7
+IRQ8 -> 0:8
+IRQ9 -> 0:9
+IRQ10 -> 0:10
+IRQ11 -> 0:11
+IRQ12 -> 0:12
+IRQ13 -> 0:13
+IRQ14 -> 0:14
+IRQ15 -> 0:15
+IRQ16 -> 1:0
+IRQ17 -> 1:1
+IRQ18 -> 1:2
+IRQ19 -> 1:3
+IRQ20 -> 1:4
+IRQ21 -> 1:5
+IRQ22 -> 1:6
+IRQ23 -> 1:7
+IRQ24 -> 1:8
+IRQ25 -> 1:9
+IRQ26 -> 1:10
+IRQ27 -> 1:11
+IRQ28 -> 1:12
+IRQ29 -> 1:13
+IRQ30 -> 1:14
+IRQ32 -> 2:0
+IRQ33 -> 2:1
+.................................... done.
+PCI: Using ACPI for IRQ routing
+vesafb: framebuffer at 0xfd000000, mapped to 0xf8809000, size 3072k
+vesafb: mode is 1024x768x16, linelength=2048, pages=4
+vesafb: protected mode interface info at c000:4a64
+vesafb: scrolling: redraw
+vesafb: directcolor: size=0:5:6:5, shift=0:11:5:0
+fb0: VESA VGA frame buffer device
+gx-suspmod: error: no MediaGX/Geode processor found!
+audit: initializing netlink socket (disabled)
+audit(1526217782.4294965942:0): initialized
+highmem bounce pool size: 64 pages
+Total HugeTLB memory allocated, 0
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+isapnp: Scanning for PnP cards...
+isapnp: No Plug & Play device found
+bootsplash 3.1.4-2004/02/19-spock-0.1: looking for picture... no good signature found.
+Console: switching to colour frame buffer device 128x48
+Using anticipatory io scheduler
+Floppy drive(s): fd0 is 1.44M
+FDC 0 is a National Semiconductor PC87306
+RAMDISK driver initialized: 16 RAM disks of 100000K size 1024 blocksize
+loop: loaded (max 8 devices)
+Uniform Multi-Platform E-IDE driver Revision: 7.00alpha2
+ide: Assuming 33MHz system bus speed for PIO modes; override with idebus=xx
+SvrWks CSB5: IDE controller at PCI slot 0000:00:0f.1
+SvrWks CSB5: chipset revision 147
+SvrWks CSB5: not 100% native mode: will probe irqs later
+SvrWks CSB5: simplex device: DMA forced
+    ide0: BM-DMA at 0x0700-0x0707, BIOS settings: hda:DMA, hdb:DMA
+SvrWks CSB5: simplex device: DMA forced
+    ide1: BM-DMA at 0x0708-0x070f, BIOS settings: hdc:DMA, hdd:DMA
+hda: LG CD-ROM CRN-8245B, ATAPI CD/DVD-ROM drive
+ide0 at 0x1f0-0x1f7,0x3f6 on irq 14
+mice: PS/2 mouse device common for all mice
+serio: i8042 AUX port at 0x60,0x64 irq 12
+serio: i8042 KBD port at 0x60,0x64 irq 1
+input: AT Translated Set 2 keyboard on isa0060/serio0
+NET: Registered protocol family 2
+IP: routing cache hash table of 32768 buckets, 256Kbytes
+TCP: Hash tables configured (established 524288 bind 65536)
+NET: Registered protocol family 1
+NET: Registered protocol family 15
+PM: Reading pmdisk image.
+PM: Resume from disk failed.
+ACPI: (supports S0 S4 S5)
+RAMDISK: Compressed image found at block 0
+EXT2-fs warning: checktime reached, running e2fsck is recommended
+VFS: Mounted root (ext2 filesystem).
+bootsplash 3.1.4-2004/02/19-spock-0.1: looking for picture.... silentjpeg size 18900 bytes, found (1024x768, 4965 bytes, v3).
+bootsplash: status on console 0 changed to on
+hda: ATAPI 24X CD-ROM drive, 128kB Cache, UDMA(33)
+Uniform CD-ROM driver Revision: 3.20
+NCR53c406a: no available ports found
+scsi: <fdomain> Detection failed (no card)
+GDT-HA: Storage RAID Controller Driver. Version: 3.04 
+GDT-HA: Found 0 PCI Storage RAID Controllers
+qlogicfas: Unknown symbol qlogicfas408_info
+qlogicfas: Unknown symbol qlogicfas408_biosparam
+qlogicfas: Unknown symbol qlogicfas408_setup
+qlogicfas: Unknown symbol qlogicfas408_host_reset
+qlogicfas: Unknown symbol qlogicfas408_detect
+qlogicfas: Unknown symbol qlogicfas408_ihandl
+qlogicfas: Unknown symbol qlogicfas408_bus_reset
+qlogicfas: Unknown symbol qlogicfas408_disable_ints
+qlogicfas: Unknown symbol qlogicfas408_get_chip_type
+qlogicfas: Unknown symbol qlogicfas408_device_reset
+qlogicfas: Unknown symbol qlogicfas408_abort
+qlogicfas: Unknown symbol qlogicfas408_queuecommand
+DC390: 0 adapters found
+Failed initialization of WD-7000 SCSI card!
+3ware Storage Controller device driver for Linux v1.26.00.039.
+3w-xxxx: No cards found.
+ISO 9660 Extensions: Microsoft Joliet Level 3
+ISO 9660 Extensions: RRIP_1991A
+cloop: Initializing cloop v2.01
+cloop: loaded (max 64 devices)
+cloop: losetup_file: 2299 blocks, 65536 bytes/block, largest block is 65562 bytes.
+ISO 9660 Extensions: RRIP_1991A
+Freeing unused kernel memory: 160k freed
+Real Time Clock Driver v1.12
+ACPI: Power Button (FF) [PWRF]
+ACPI: Processor [CPU3] (supports C1)
+usbcore: registered new driver usbfs
+usbcore: registered new driver hub
+USB Universal Host Controller Interface driver v2.2
+ohci_hcd: 2004 Feb 02 USB 1.1 'Open' Host Controller (OHCI) Driver (PCI)
+ohci_hcd: block sizes: ed 64 td 64
+ohci_hcd 0000:00:0f.2: ServerWorks OSB4/CSB5 OHCI USB Controller
+PCI: Setting latency timer of device 0000:00:0f.2 to 64
+ohci_hcd 0000:00:0f.2: irq 3, pci mem f8b9e000
+ohci_hcd 0000:00:0f.2: new USB bus registered, assigned bus number 1
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 4 ports detected
+usb 1-2: new low speed USB device using address 2
+ieee1394: Initialized config rom entry `ip1394'
+usbcore: registered new driver hiddev
+input: USB HID v1.10 Keyboard [1267:0103] on usb-0000:00:0f.2-2
+input: USB HID v1.10 Device [1267:0103] on usb-0000:00:0f.2-2
+usbcore: registered new driver usbhid
+drivers/usb/input/hid-core.c: v2.0:USB HID core driver
+Serial: 8250/16550 driver $Revision: 1.90 $ 8 ports, IRQ sharing disabled
+e1000: Ignoring new-style parameters in presence of obsolete ones
+Intel(R) PRO/1000 Network Driver - version 5.2.52-k4
+Copyright (c) 1999-2004 Intel Corporation.
+PCI: Setting latency timer of device 0000:06:08.0 to 64
+e1000: eth0: e1000_probe: Intel(R) PRO/1000 Network Connection
+PCI: Setting latency timer of device 0000:06:08.1 to 64
+e1000: eth1: e1000_probe: Intel(R) PRO/1000 Network Connection
+Fusion MPT base driver 3.01.06
+Copyright (c) 1999-2004 LSI Logic Corporation
+mptbase: Initiating ioc0 bringup
+ioc0: 53C1030: Capabilities={Initiator}
+mptbase: Initiating ioc1 bringup
+ioc1: 53C1030: Capabilities={Initiator}
+Fusion MPT SCSI Host driver 3.01.06
+scsi2 : ioc0: LSI53C1030, FwRev=01000e00h, Ports=1, MaxQ=222, IRQ=27
+  Vendor: IBM       Model: 32P0032a S320  1  Rev: 1   
+  Type:   Processor                          ANSI SCSI revision: 02
+scsi3 : ioc1: LSI53C1030, FwRev=01000e00h, Ports=1, MaxQ=222, IRQ=28
+Initializing USB Mass Storage driver...
+usbcore: registered new driver usb-storage
+USB Mass Storage support registered.
+cloop: losetup_file: 20422 blocks, 65536 bytes/block, largest block is 65562 bytes.
+ISO 9660 Extensions: RRIP_1991A
+mini_fo: module license 'LGPL' taints kernel.
+Registering mini_fo version $Id: main.c,v 1.1.1.1 2004/08/18 08:32:05 evaleto Exp $
+Using base directory: /mnt/main_ro
+Using storage directory: /home/overlay/root
+mini_fo: setting debug level to 1
+Using base directory: /MorphixCD/lib/modules
+Using storage directory: /home/overlay/modules
+mini_fo: setting debug level to 1
+Linux Kernel Card Services
+  options:  [pci] [cardbus] [pm]
+PNPBIOS fault.. attempting recovery.
+PnPBIOS: Warning! Your PnP BIOS caused a fatal error. Attempting to continue
+PnPBIOS: You may need to reboot with the "nobiospnp" option to operate stably
+PnPBIOS: Check with your vendor for an updated BIOS
+PnPBIOS: set_dev_node: unexpected status 0x28
+pnp: Failed to activate device 00:02.
+serial: probe of 00:02 failed with error -5
+input: PC Speaker
+Linux agpgart interface v0.100 (c) Dave Jones
+agpgart: Unsupported Serverworks chipset (device id: 0012)
+agpgart: Unsupported Serverworks chipset (device id: 0012)
+agpgart: Unsupported Serverworks chipset (device id: 0000)
+agpgart: Unsupported Serverworks chipset (device id: 0201)
+agpgart: Unsupported Serverworks chipset (device id: 0101)
+agpgart: Unsupported Serverworks chipset (device id: 0101)
+agpgart: Unsupported Serverworks chipset (device id: 0101)
+agpgart: Unsupported Serverworks chipset (device id: 0101)
+NET: Registered protocol family 17
+lp: driver loaded but no devices found
+mini_fo: error in build_sto_structure: failed to create storage dir [1].
+mini_fo: create: build_sto_structure failed [1].
+apm: BIOS not found.
+mtrr: 0xfd000000,0x800000 overlaps existing 0xfd000000,0x200000
+mtrr: 0xfd000000,0x800000 overlaps existing 0xfd000000,0x200000
+drivers/usb/input/hid-input.c: event field not found
+drivers/usb/input/hid-input.c: event field not found
+NET: Registered protocol family 10
+Disabled Privacy Extensions on device c0356920(lo)
+IPv6 over IPv4 tunneling driver
+eth1: no IPv6 routers present
+eth0: no IPv6 routers present
+mini_fo_setattr: ERROR, on unmodified file [2]
+usb 1-3: new full speed USB device using address 3
+scsi4 : SCSI emulation for USB Mass Storage devices
+  Vendor: Kingston  Model: DataTraveler U3   Rev: 6.50
+  Type:   Direct-Access                      ANSI SCSI revision: 02
+SCSI device sda: 1961695 512-byte hdwr sectors (1004 MB)
+sda: assuming Write Enabled
+sda: assuming drive cache: write through
+ sda: sda1 sda2
+Attached scsi removable disk sda at scsi4, channel 0, id 0, lun 0
+  Vendor: Kingston  Model: DataTraveler U3   Rev: 6.50
+  Type:   CD-ROM                             ANSI SCSI revision: 02
+sr0: scsi3-mmc drive: 8x/40x writer xa/form2 cdda tray
+Attached scsi CD-ROM sr0 at scsi4, channel 0, id 0, lun 1
+USB Mass Storage device found at 3
+SCSI device sda: 1961695 512-byte hdwr sectors (1004 MB)
+sda: assuming Write Enabled
+sda: assuming drive cache: write through
+ sda: sda1
+SCSI device sda: 1961695 512-byte hdwr sectors (1004 MB)
+sda: assuming Write Enabled
+sda: assuming drive cache: write through
+ sda: sda1

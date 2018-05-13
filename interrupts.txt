@@ -1,0 +1,15 @@
+           CPU0       
+  0:     699965    IO-APIC-edge  timer
+  1:         10    IO-APIC-edge  i8042
+  3:       2315   IO-APIC-level  ohci_hcd
+  7:          0   IO-APIC-level  acpi
+  8:          1    IO-APIC-edge  rtc
+ 14:       2095    IO-APIC-edge  ide0
+ 27:         51   IO-APIC-level  ioc0
+ 28:         46   IO-APIC-level  ioc1
+ 29:        316   IO-APIC-level  eth0
+ 30:        316   IO-APIC-level  eth1
+NMI:          0 
+LOC:     699767 
+ERR:          0
+MIS:          0
