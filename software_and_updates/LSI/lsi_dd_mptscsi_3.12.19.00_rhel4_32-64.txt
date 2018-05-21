@@ -1,0 +1,507 @@
+LSI 1030 SCSI Controller Driver for Red Hat Enterprise Linux 4 (RHEL 4)
+
+NOTE TO SERVICE - Reference RETAIN N/A
+
+(C) Copyright International Business Machines Corporation 1999, 2007. All rights reserved.
+US Government Users Restricted Rights - Use, duplication, or disclosure restricted by GSA 
+ADP Schedule Contract with IBM Corp.
+
+Note: Before using this information and the product it supports, read the general information 
+in "Notices and trademarks" in this document.
+
+
+CONTENTS
+________
+
+1.0  Overview
+2.0  Fix ID Package Information
+	2.1 Introduction
+	2.2 Requirements
+	2.3 Inside the FixID
+	2.4 How it all works
+	2.5 Naming conventions
+	2.6 Typical usage
+		2.6.1 Installation
+		2.6.2 Upgrading / downgrading
+		2.6.3 Uninstallation
+		2.6.4 Targeting other kernels
+	2.7 IBM driver tool manpage
+3.0  Web information and support phone Number
+4.0  Notices and trademarks
+
+
+1.0  Overview
+_____________
+
+        1.1     This update includes a new device driver for the LSI 1030 SCSI 
+                controller supporting RHEL 4.  
+        
+        1.2     Limitations
+                - None
+
+        1.3     Problems fixed:
+                - See change history for more details.
+
+        1.4.    Level of Recommendations and Prerequisites for the update:
+                - None
+
+        1.5     Dependencies
+                - None
+	
+	1.6	Update Contents
+                - The following files are associated with this update:
+
+                o  ibm_dd_mptscsi_3.12.19.00_rhel4_32-64.tgz
+                   - Driver update package for an existing RHEL 4 installation
+				o  ibm_dd_mptscsi_3.12.19.00_rhel4_32-64.chg
+                   - Change history
+
+     		     
+2.0  Fix ID Package Information
+_______________________________
+     
+
+2.1 Introduction
+
+On a Linux system, loadable device drivers, or kernel modules, are highly dependent on the 
+version of kernel that they support.  Generally, when a new kernel is made available by a Linux 
+distribution, new kernel modules are provided at the same time to match this new kernel version.   
+In some cases, there may be a need to use a device driver not provided by the distribution, 
+either the hardware is not yet officially supported, or a specific version is needed.  In such 
+cases, it is often the case that one needs to build new device drivers from source or be 
+provided kernel modules that match one's kernel.  
+
+This README is part of a tarball, also referred to as a FixID, which contains a set of device 
+drivers (packaged as RPMs), along with some scripts and tools used to help install these RPM 
+packaged device drivers.    
+
+
+2.2 Requirements
+
+You need to have Perl, rpm-build, and rpm-lib installed to use the installation script and its 
+helper 'driver tool'. These are likely already installed, but if not, they can be found on the 
+installation media for your Linux distribution.
+
+
+2.3 Inside the FixID
+
+At the top level of the FixID is an install.sh script. By default, running this script will 
+install the latest version of ibm-driver-tools. It will then run the driver tool and determine 
+whether or not to install the binary RPM included in the FixID into the currently running 
+kernel.
+
+The flavor of the kernel distinguishes a kernel by certain capabilities. For example, you can 
+find uniprocessor, multiprocessor, and extended memory kernel flavors.  A kernel module must be 
+built or provided for each flavor of kernel one wishes to run. 
+
+If the driver tool determines that there is no driver already supplied by the OS vendor and that 
+a version of the driver that is compatible with the current kernel version and flavor is present 
+in the fixid, it will install the device driver.  By default, the driver tool will not install a 
+new driver over a driver already provided by the OS vendor. However, one can override this 
+behavior by manually passing options to the script. Additionally, there are options for 
+targeting a kernel version or flavor besides the currently running one.
+
+Also included in the FixID are source RPMs for building device driver RPMs. Building binary 
+RPMs will target the currently running kernel version and flavor for 2.6 based OSs (i.e., RHEL4, 
+SLES9 and SLES10). Inside the source RPM's .spec file are comments on how to target additional 
+kernels.  2.4 based OSs require additional setup before binary RPMs can be built (documentation 
+is included with the FixID).
+
+
+2.4 How it all works
+
+The Linux kernel exports an interface (kernel application binary interface, or kABI) for device 
+drivers to use to communicate with the kernel.  If the interface changes, a newly recompiled 
+version of the device driver will be necessary.  In a typical security update (and sometimes 
+in a non-security update), these interfaces do not change. The ibm-driver-tool scripts analyze 
+whether a change has occurred.  If no change has occurred, itwill generate a new RPM (using the 
+old binary device drivers) specifically for the newer kernel, and install it. The resulting 
+binary can be found in the filesystem wherever the specific OS vendor's RPM directories exist 
+(Red Hat uses /usr/src/redhat/RPMS and SuSE uses /usr/src/packages).
+
+The binary RPMs install their files into the '/updates' directory under the appropriate kernel 
+module directory (i.e., /lib/modules/2.6.12-21.ELsmp/updates).
+
+If the RPM is for a storage device driver, then the RPM will generate a new initrd (initial 
+ramdisk) containing the new device driver, and will add a new entry into the GRUB boot menu 
+which uses the new initrd. Uninstalling the RPM undoes these actions.
+
+
+2.5 Naming conventions
+
+The name of the binary RPMs contain the following fields:
+
+<device manufacturer>-<device driver name>-<kernel flavor supported>-<device driver version>_
+<kernel version compiled against>-<rpm release>.<architecture>.rpm
+
+An example RPM for RHEL4 might be named 
+'ibm-genericnetworkdriver-smp-1.0_2.6.12_31.EL-0.x86_64.rpm'.
+
+This RPM name indicates that the RPM contains the 1.0 version of the device driver 
+'genericnetworkdriver' compiled against the smp flavor of the 2.6.12-31.EL kernel for the x86_64 
+architecture.
+
+
+In the case where the kernel installed is different than that listed in the <kernel version 
+compiled against> field, the resulting RPM will have the following naming format:
+
+<device manufacturer>-<device driver name>_for_<kernel version installed to>-<kernel flavor 
+supported>-<device driver version>_<kernel version compiled against>-<rpm 
+release>.<architecture>.rpm
+
+For example, the RPM name 'ibm-genericnetworkdriver_for_2.6.12_55.EL-smp-
+1.0_2.6.12_31.EL-0.x86_64.rpm', reveals that the RPM contains the 1.0 version of the device 
+driver for genericnetworkdriver compiled against the smp flavor of the 2.6.12-31.EL kernel (but 
+installing for 2.6.12-55.EL) for the x86_64 architecture.
+
+
+2.6 Typical usage
+
+
+2.6.1 Installation
+
+To use IBM's driver tools, you should unpackage the FixID into it's own directory and run
+'./install.sh --update'.
+
+This invokes the default behavior which installs the device driver if a compatible version (for 
+the currently running kernel version and flavor) is included in the FixID and the OS vendor does 
+not already provide a version of the driver.
+
+If a compatible version is found in the fixid but the OS vendor already includes a version of 
+the driver, the script will not install the device driver.  The OS version can be overridden 
+by running './install.sh --update --override'.
+
+
+2.6.2 Upgrading / downgrading
+
+If you already have a device driver from another FixID installed, the scripts will perform 
+version checking and stop if they detect that the currently installed version of the device 
+driver is newer than what is in the FixID (i.e., you are trying to install an old FixID). This 
+can be overridden by running './install.sh --update --force'.
+
+Another way to accomplish the same result is to use the '--force-if-overridden' argument.  This 
+will allow you to upgrade (or downgrade) only if the script detects that you've previously 
+installed the driver from a FixID using the '--override' argument. Using '--force-if-overriden' 
+preserves the default behavior of not overriding the device driver if it's included with the OS, 
+but if the OS driver has already been overridden, then it will go ahead and install the device 
+driver included in the FixID (assuming a kernel ABI compatible version of the device driver is 
+included in the FixID).
+
+In order to use upgraded device driver, reboot the server. 
+
+
+2.6.3 Uninstalling
+
+After successfully installing a device driver using IBM's driver tools, there will be a 
+corresponding entry in the RPM database.
+
+To querying the RPM database for 'genericnetworkdriver', run 
+
+	'rpm -qa | grep genericnetworkdriver'
+
+This should output something similar to
+
+	'ibm-genericnetworkdriver_for_2.6.12_55.EL-smp-1.0_2.6.12_31.EL'
+
+To remove the device driver, run
+
+	'rpm -e ibm-genericnetworkdriver_for_2.6.12_55.EL-smp-1.0_2.6.12_31.EL'
+
+
+6.4 Targeting other kernels
+
+To target a kernel version or flavor besides the currently running one, run
+
+	'./install.sh --update --kernel 2.6.12-21.EL --flavor hugemem'
+
+Where --kernel is supplied in the format returned by running 'uname -r' on the OS in question 
+minus the flavor information returned. In the case where a kernel flavor is empty (ie. 
+2.6.12-21.EL as opposed to 2.6.12-21.ELsmp) 'default' is the flavor name to use.
+
+
+2.7 IBM driver tool manpage
+
+install.sh
+
+NAME
+	install.sh -- installs drivers contained in IBM's fixids
+
+SYNOPSIS
+	install.sh    --update [--force | --override | --force-if-overridden ] 
+			[--kernel kernelversion] [--flavor kernelflavor] 
+	install.sh    --query [ --kernel kernelversion ] 
+					[ --flavor kernelflavor ]
+	install.sh    --requires
+	install.sh    --help
+	install.sh    --help-help
+
+DESCRIPTION
+
+	install.sh --update mode determines the correct RPM provided 
+	in the fixid and installs it if the RPM is built for the targeted 
+	kernel.  If a RPM is unavailable for the targeted kernel than it 
+	generates a RPM using the RPM built for the least previous kernel and 
+	installs it. Note the new RPM is generated and installed only
+	if the Application Binary Interface (ABI) used by the driver is 
+	compatible with that provided
+	by the target kernel.  The behavior of the tool also depends 
+	on the availability of distribution supplied drivers in the kernel 
+	and on the use of some of the command line options.  
+
+	
+	The following options can be used to tailor the behavior.
+
+		  By default the driver in the RPM is installed 
+                  if the distro driver, if present (by a previous
+		  installation), is already
+                  overridden and any installed non-distro driver
+                  is older than this driver.  This ensures that
+                  either the distro driver is used or the most
+                  recent non-distro driver is used.
+
+        --override  override the distro driver and installs this
+                    driver if any installed non-distro driver is older
+                    than this driver. This option ensures that the most
+                    recent non-distro-driver is used.
+
+        --force     installs the RPM containing the driver 
+                    unconditionally.
+                    This option ensures that the non-distro driver is used.
+
+        --force-if-overridden
+                    force-install the driver in the RPM only if the
+                    distro driver is already overridden. This
+                    option ensures that either the distro driver 
+                    is used or this driver is used.
+
+	--kernel    Use this flag to specify a kernel other than the
+		    currently running one.  This should be in the 
+		    format of a 'uname -r'.
+
+	--flavor    Use this flag to specify a kernel flavor other than
+		    the currently running one.  For uniprocessor kernels
+		    the flavor is 'default' instead of ''.  For all other
+		    flavors, there is no translation necessary.
+
+	--query	    returns the version of the driver
+		    already installed by the driver and the version of the driver that 
+		    will be installed. Also it prints a message informing 
+		    whether the driver is already installed by the distro,
+		    and if it is a newer or a older version of the driver compared
+		    to the one that will be installed.
+
+	--update    The IBM driver tools will not perform any driver 
+		    installs unless '--update' is passed as an
+		    argument.
+
+	--help	    describes all the modes and options.
+
+	--help-help describes all of the modes and options, and reports 
+		    all non-documented and non-supported options that 
+		    should not be relied upon.
+
+	--requires  returns the all the components that
+		    the RPM depends on.
+
+	NOTE: if no mode is specified the update mode is assumed.
+
+	By default the current running kernel and flavor is the target.
+	However --kernel option can be used to target a different kernel
+	version and --flavor option can be used to target a different
+	flavor.
+		     
+	NOTE: The RPMs supplied in the fixid have the following behavior. A new
+	IBM specific kernel initial ramdisk is created and an entry for the current 
+	kernel and the new initial ramdisk is placed in the GRUB boot menu (and set as 
+	the default entry for subsequent boots).  The name of the new GRUB boot
+	menu entry should be the same as the existing menu entry for the 
+	kernel with the addition of '.update' appended.  The name of the 
+	new ramdisk should be the same as the kernel's initial ramdisk with a 
+	'.update' appended.  Multiple runs of the script will keep overwriting 
+	the '.update' initial ramdisk and GRUB entry. 
+
+Examples:
+
+	The following will install for the specified kernel and 
+	flavor (assuming a newer version of the driver is not 
+	already installed for the target kernel/flavor combination):
+
+		install.sh --kernel 2.6.9-35 --flavor hugemem
+
+	To install for the specified kernel on the currently running 
+	flavor (assuming a newer version of the driver is not already 
+	installed for the target kernel/flavor combination):
+
+		install.sh --kernel 2.6.9-35
+
+	To install for the currently running kernel for the specified 
+	flavor (assuming a newer version of the driver is not already 
+	installed for the target kernel/flavor combination):
+
+		install.sh --flavor largesmp
+
+	To install for the current kernel and flavor regardless of the 
+	version currently installed if the kABI is compatible:
+
+		install.sh --force
+
+RETURN CODES
+	install.sh exits with 0 on success or non-zero if failure 
+	in regular operation (ie. not using the --query option).
+
+	install.sh with the --query option returns 0 if the version 
+	presently installed and the version in the fixid are the same, 
+	1 if the version in the fixid is newer or there is no currently 
+	installed version of the driver, 2 if the version in the fixid 
+	is older than the currently installed driver.
+
+	4 : ABI FAILURE
+	5 : if the rpm for the corresponding kernel is not packaged and the userhas indicated not to generate a new rpm.
+	6 : RPM IS CORRUPT
+	8 : generation of the new rpm failed (mostly because of unavailability of rpmbuild command)
+	9 : UNSUPPORTED DISTRO
+	10: UNDEFINED ARCHITECTURE
+	11: NO USABLE RPM EXISTS
+	12: RPM  has been generated incorrectly.
+                    
+
+3.0  Web information and support phone number
+_____________________________________________
+
+3.1     IBM Support Web Site:
+        http://www.ibm.com/support/.
+       		
+	You can receive hardware service through IBM Services or through your IBM
+	reseller, if your reseller is authorized by IBM to provide warranty service. See
+   	http://www.ibm.com/planetwide/ for support telephone numbers, or in the U.S.
+       	and Canada, call 1-800-IBM-SERV (1-800-426-7378).
+
+       	In the U.S. and Canada, hardware service and support is available 24 hours a day,
+       	7 days a week. In the U.K., these services are available Monday through Friday,
+       	from 9 a.m. to 6 p.m.
+
+3.2     IBM eserver xSeries Web Site:
+	http://www.ibm.com/eserver/xseries
+
+3.3     If you have any questions about this update, or problems applying the update, 
+	go to the following Help Center World Telephone Numbers and URL:
+	http://www.pc.ibm.com/qtechinfo/YAST-3P2QYL.html.
+
+
+4.0  Notices and trademarks 
+___________________________
+
+This information was developed for products and services offered in the U.S.A. 
+
+IBM may not offer the products, services, or features discussed in this document in other 
+countries. Consult your local IBM representative for information on the products and services 
+currently available in your area. Any reference to an IBM product, program, or service is not 
+intended to state or imply that only that IBM product, program, or service may be used. Any 
+functionally equivalent product, program, or service that does not infringe any IBM intellectual 
+property right may be used instead. However, it is the user's responsibility to evaluate and 
+verify the operation of any non-IBM product, program, or service. 
+
+IBM may have patents or pending patent applications covering subject matter described in this 
+document. The furnishing of this document does not grant you any license to these patents. You 
+can send license inquiries, in writing, to:
+
+IBM Director of Licensing 
+IBM Corporation 
+North Castle Drive 
+Armonk, NY 10504-1785 
+U.S.A.
+
+For license inquiries regarding double-byte (DBCS) information, contact the IBM Intellectual 
+Property Department in your country or send inquiries, in writing, to:
+
+IBM World Trade Asia Corporation
+Licensing 
+2-31 Roppongi 3-chome, Minato-ku 
+Tokyo 106-0032, Japan
+
+The following paragraph does not apply to the United Kingdom or any other country where such 
+provisions are inconsistent with local law: 
+
+INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION "AS IS" WITHOUT WARRANTY 
+OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. 
+
+Some states do not allow disclaimer of express or implied warranties in certain transactions, 
+therefore, this preceeding statement may not apply to you. 
+
+This information could include technical inaccuracies or typographical errors. Changes are 
+periodically made to the information herein; these changes will be incorporated in new editions 
+of the publication. IBM may make improvements and/or changes in the product(s) and/or the 
+program(s) described in this publication at any time without notice. 
+
+Any references in this information to non-IBM Web sites are provided for convenience only and 
+do not in any manner serve as an endorsement of those Web sites. The materials at those Web 
+sites are not part of the materials for this IBM product and use of those Web sites is at your 
+own risk. 
+
+IBM may use or distribute any of the information you supply in any way it believes appropriate 
+without incurring any obligation to you.
+
+of enabling: (i) the exchange of information between independently created programs and other 
+programs (including this one) and (ii) the mutual use of the information which has been 
+exchanged, should contact:
+
+IBM Corporation 
+Software Interoperability Coordinator, Department 49XA 
+3605 Highway 52 N 
+Rochester, MN 55901 
+U.S.A.
+
+Such information may be available, subject to appropriate terms and conditions, including in 
+some cases, payment of a fee. 
+
+The licensed program described in this information and all licensed material available for it 
+are provided by IBM under terms of the IBM Customer Agreement, IBM International Program 
+License Agreement, or any equivalent agreement between us. 
+
+Any performance data contained herein was determined in a controlled environment. Therefore, 
+the results obtained in other operating environments may vary significantly. Some measurements 
+may have been made on development-level systems and there is no guarantee that these 
+measurements will be the same on generally available systems. Furthermore, some 
+measurements may have been estimated through extrapolation. Actual results may vary. Users of 
+this document should verify the applicable data for their specific environment.
+
+Information concerning non-IBM products was obtained from the suppliers of those products, their 
+published announcements or other publicly available sources. IBM has not tested those products 
+and cannot confirm the accuracy of performance, compatibility or any other claims related to 
+non-IBM products. Questions on the capabilities of non-IBM products should be addressed to the 
+suppliers of those products. 
+
+This information is for planning purposes only. The information herein is subject to change 
+before the products described become available. 
+
+This information contains examples of data and reports used in daily business operations. To 
+illustrate them as completely as possible, the examples include the names of individuals, 
+companies, brands, and products. All of these names are fictitious and any similarity to the 
+names and addresses used by an actual business enterprise is entirely coincidental. 
+
+COPYRIGHT LICENSE: 
+
+This information contains sample application programs in source language, which illustrate 
+programming techniques on various operating platforms. You may copy, modify, and distribute 
+these sample programs in any form without payment to IBM, for the purposes of developing, 
+using, marketing or distributing application programs conforming to the application programming 
+interface for the operating platform for which the sample programs are written. These examples 
+have not been thoroughly tested under all conditions. IBM, therefore, cannot guarantee or imply 
+reliability, serviceability, or function of these programs. 
+
+Each copy or any portion of these sample programs or any derivative work, must include a 
+copyright notice as follows:
+
+© (your company name) (year). Portions of this code are derived from IBM Corp. Sample 
+Programs. © Copyright IBM Corp. _enter the year or years_. All rights reserved. 
+
+If you are viewing this information softcopy, the photographs and color illustrations may not 
+appear.
+
+IBM, eServer, System x, e-business logo and IntelliStation are trademarks of the International 
+Business Machines Corporation in the United States, other countries, or both.
+
+Linux is a trademark of Linus Torvalds in the United States, other countries, or both.
+
+Other company, product, and service names may be trademarks or service marks of others. 

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ibmupdate.xsl"?>
+<!DOCTYPE CIM SYSTEM "cimv20.dtd">
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+   <MESSAGE ID="1" PROTOCOLVERSION="1.0">
+      <SIMPLEREQ>
+         <IMETHODCALL NAME="CreateInstance">
+            <LOCALNAMESPACEPATH>
+               <NAMESPACE NAME="root"/>
+               <NAMESPACE NAME="cimv2"/>
+            </LOCALNAMESPACEPATH>
+            <IPARAMVALUE NAME="NewInstance">
+               <INSTANCE CLASSNAME="IBMPSG_SystemUpdateElement">
+                  <PROPERTY NAME="Name" TYPE="string">
+                     <VALUE>Lenovo Advanced Settings Utility (ASU)</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementID" TYPE="string">
+                     <VALUE>asut</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementState" TYPE="uint16">
+                     <VALUE>1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="TargetOperatingSystem" TYPE="uint16">
+                     <VALUE>36</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="Version" TYPE="string">
+                     <VALUE>Version 10.4 -[asut94m-10.4]-</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableMachineTypes" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>BladeCenter HS23E-[8038]-</VALUE>
+                        <VALUE>BladeCenter HS23E-[8039]-</VALUE>
+                        <VALUE>Flex System x220 Compute Node-[2585]-</VALUE>
+                        <VALUE>Flex System x220 Compute Node-[7906]-</VALUE>
+                        <VALUE>Flex System x222 Compute Node-[7916]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[7863]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[8737]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[8738]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[8956]-</VALUE>
+                        <VALUE>Flex System x440 Compute Node-[7917]-</VALUE>
+                        <VALUE>IBM BladeCenter HS23-[1929]-</VALUE>
+                        <VALUE>IBM BladeCenter HS23-[7875]-</VALUE>
+                        <VALUE>IBM Flex System x880 X6-[4259]-</VALUE>
+                        <VALUE>IBM Flex System x880 X6-[7903]-</VALUE>
+                        <VALUE>IBM NeXtScale nx360 M4-[5455]-</VALUE>
+                        <VALUE>IBM System x iDataPlex Direct Water Cooled dx360 M4 server-[7918]-</VALUE>
+                        <VALUE>IBM System x iDataPlex Direct Water Cooled dx360 M4 server-[7919]-</VALUE>
+                        <VALUE>System X iDataPlex dx360 M4-[7912]-</VALUE>
+                        <VALUE>System X iDataPlex dx360 M4-[7913]-</VALUE>
+                        <VALUE>System x3100 M4-[2582]-</VALUE>
+                        <VALUE>System x3250 M4-[2583]-</VALUE>
+                        <VALUE>System x3300 M4-[7382]-</VALUE>
+                        <VALUE>System x3500 M4-[7383]-</VALUE>
+                        <VALUE>System x3530 M4-[7160]-</VALUE>
+                        <VALUE>System x3550 M4-[7914]-</VALUE>
+                        <VALUE>System x3630 M4-[7158]-</VALUE>
+                        <VALUE>System x3650 M4 BD-[5466]-</VALUE>
+                        <VALUE>System x3650 M4 HD-[5460]-</VALUE>
+                        <VALUE>System x3650 M4-[7915]-</VALUE>
+                        <VALUE>System x3750 M4-[8718]-</VALUE>
+                        <VALUE>System x3750 M4-[8722]-</VALUE>
+                        <VALUE>System x3750 M4-[8733]-</VALUE>
+                        <VALUE>System x3750 M4-[8752]-</VALUE>
+                        <VALUE>System x3850 X6 / x3950 X6-[3837]-</VALUE>
+                        <VALUE>System x3850 X6 / x3950 X6-[3839]-</VALUE>
+                        <VALUE>x3100 M5-[5457]-</VALUE>
+                        <VALUE>x3250 M5-[5458]-</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="applicableOperatingSystems" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>Linux</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="buildNumber" TYPE="string">
+                     <VALUE>asut94m</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="description" TYPE="string">
+                     <VALUE>Lenovo Advanced Settings Utility (ASU)</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="ibmSchemaVersion" TYPE="string">
+                     <VALUE>3.1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="identificationCode" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_linux_x86-64</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installCommandLine" TYPE="string">
+                     <VALUE>tar zxf lnvgy_utl_asu_asut94m-10.4_linux_x86-64.tgz</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installDirectory" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installationNotes" TYPE="string">
+                     <VALUE>The procedure to install the Advanced Settings Utility forx86_64 Linux is as follows:1  Copy the .tgz to a directory on the hard drive.2  Run &quot;tar zxf &lt;ASU distribution&gt;.tgz&quot; where   &lt;ASU distribution&gt;.tgz is the downloaded .tgz.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installLog" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="languageEdition" TYPE="string">
+                     <VALUE>All</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="manufacturer" TYPE="string">
+                     <VALUE>Lenovo</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="rebootRequired" TYPE="uint8">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="regions" TYPE="string">
+                     <VALUE>Worldwide</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="releaseDate" TYPE="datetime">
+                     <VALUE>20170517000000.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistory" TYPE="string">
+                     <VALUE>see change file</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="severity" TYPE="uint8">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedInstallCommandLine" TYPE="string">
+                     <VALUE>tar zxf lnvgy_utl_asu_asut94m-10.4_linux_x86-64.tgz</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedUninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="uninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="type" TYPE="uint16">
+                     <VALUE>12</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="category" TYPE="string">
+                     <VALUE>Utility</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crc" TYPE="string">
+                     <VALUE>cd288bd7</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="size" TYPE="uint32">
+                     <VALUE>8884</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="readme" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_linux_x86-64.txt</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="xmlFilename" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_linux_x86-64.xml</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unpack" TYPE="uint16">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="orderedMachineTypeList" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>5466</VALUE>
+                        <VALUE>7903</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>7903</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>5466</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>5466</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>5466</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>5466</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>7916</VALUE>
+                        <VALUE>8718</VALUE>
+                        <VALUE>7916</VALUE>
+                        <VALUE>8718</VALUE>
+                        <VALUE>7916</VALUE>
+                        <VALUE>8718</VALUE>
+                        <VALUE>7916</VALUE>
+                        <VALUE>5455</VALUE>
+                        <VALUE>8718</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>5455</VALUE>
+                        <VALUE>5455</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>7863</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>7863</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>5455</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>5455</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>7863</VALUE>
+                        <VALUE>7863</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>7917</VALUE>
+                        <VALUE>7917</VALUE>
+                        <VALUE>7917</VALUE>
+                        <VALUE>7917</VALUE>
+                        <VALUE>2585</VALUE>
+                        <VALUE>2585</VALUE>
+                        <VALUE>2585</VALUE>
+                        <VALUE>2585</VALUE>
+                        <VALUE>5460</VALUE>
+                        <VALUE>5460</VALUE>
+                        <VALUE>5460</VALUE>
+                        <VALUE>5460</VALUE>
+                        <VALUE>7918</VALUE>
+                        <VALUE>3837</VALUE>
+                        <VALUE>7906</VALUE>
+                        <VALUE>3837</VALUE>
+                        <VALUE>7918</VALUE>
+                        <VALUE>3837</VALUE>
+                        <VALUE>7918</VALUE>
+                        <VALUE>7906</VALUE>
+                        <VALUE>3837</VALUE>
+                        <VALUE>7918</VALUE>
+                        <VALUE>7906</VALUE>
+                        <VALUE>5457</VALUE>
+                        <VALUE>7906</VALUE>
+                        <VALUE>4259</VALUE>
+                        <VALUE>5457</VALUE>
+                        <VALUE>4259</VALUE>
+                        <VALUE>7158</VALUE>
+                        <VALUE>4259</VALUE>
+                        <VALUE>4259</VALUE>
+                        <VALUE>5457</VALUE>
+                        <VALUE>7158</VALUE>
+                        <VALUE>8752</VALUE>
+                        <VALUE>7158</VALUE>
+                        <VALUE>8752</VALUE>
+                        <VALUE>7158</VALUE>
+                        <VALUE>8752</VALUE>
+                        <VALUE>7158</VALUE>
+                        <VALUE>8752</VALUE>
+                        <VALUE>7919</VALUE>
+                        <VALUE>7919</VALUE>
+                        <VALUE>7919</VALUE>
+                        <VALUE>7919</VALUE>
+                        <VALUE>5458</VALUE>
+                        <VALUE>8737</VALUE>
+                        <VALUE>8737</VALUE>
+                        <VALUE>5458</VALUE>
+                        <VALUE>8737</VALUE>
+                        <VALUE>5458</VALUE>
+                        <VALUE>8737</VALUE>
+                        <VALUE>5458</VALUE>
+                        <VALUE>5458</VALUE>
+                        <VALUE>3839</VALUE>
+                        <VALUE>3839</VALUE>
+                        <VALUE>3839</VALUE>
+                        <VALUE>3839</VALUE>
+                        <VALUE>8738</VALUE>
+                        <VALUE>8738</VALUE>
+                        <VALUE>7912</VALUE>
+                        <VALUE>7912</VALUE>
+                        <VALUE>8956</VALUE>
+                        <VALUE>8738</VALUE>
+                        <VALUE>7912</VALUE>
+                        <VALUE>8956</VALUE>
+                        <VALUE>8738</VALUE>
+                        <VALUE>7912</VALUE>
+                        <VALUE>8956</VALUE>
+                        <VALUE>8956</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7913</VALUE>
+                        <VALUE>7913</VALUE>
+                        <VALUE>7913</VALUE>
+                        <VALUE>7913</VALUE>
+                        <VALUE>7383</VALUE>
+                        <VALUE>7383</VALUE>
+                        <VALUE>7383</VALUE>
+                        <VALUE>7383</VALUE>
+                        <VALUE>7383</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>7903</VALUE>
+                        <VALUE>7903</VALUE>
+                        <VALUE>7915</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>203</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>210</VALUE>
+                        <VALUE>203</VALUE>
+                        <VALUE>206</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>207</VALUE>
+                        <VALUE>208</VALUE>
+                        <VALUE>209</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSArchitectureList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="payload" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_linux_x86-64.tgz</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crcType" TYPE="uint32">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="timestamp" TYPE="datetime">
+                     <VALUE>20170517045715.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistoryFile" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_anyos_i386.chg</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="updateSelection" TYPE="string">
+                     <VALUE>auto</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableDeviceId" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>PCI\VEN_9005&amp;DEV_0285&amp;SUBSYS_02f21014</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+               </INSTANCE>
+            </IPARAMVALUE>
+         </IMETHODCALL>
+      </SIMPLEREQ>
+   </MESSAGE>
+</CIM>

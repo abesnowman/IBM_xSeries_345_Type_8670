@@ -1,0 +1,493 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>README: ServerGuide Scripting Toolkit, Windows Edition</title>
+<style type="text/css">
+h4 { color: #00AAFF; }
+</style>
+<style>
+</style>
+</head>
+<body bgcolor="#FFFFFF" link=blue vlink=blue class="Normal" lang=EN-US>
+<div class=Section1>
+  <h1>ServerGuide Scripting Toolkit, Windows Edition Version 2.40 Readme</h1>
+  <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0>
+    <tr>
+      <td>
+        <pre class="courier">                                                              </pre>
+        <pre class="courier">  IBM(R) ServerGuide(TM) Scripting Toolkit, Windows Edition Version 2.40      </pre>
+        <pre class="courier">                                                              </pre>
+        <pre class="courier">  (C) Copyright International Business Machines Corporation 2010.    </pre>
+        <pre class="courier">      All rights reserved.                           </pre>
+        <pre class="courier">                                                              </pre>
+        <pre class="courier">  US Government Users Restricted Rights  Use, duplication       </pre>
+        <pre class="courier">  or disclosure restricted by GSA ADP Schedule Contract with   </pre>
+        <pre class="courier">  IBM Corp.                                                     </pre>
+        <pre class="courier">                                                              </pre>
+        <pre class="courier">  Notes:                                                        </pre>
+        <pre class="courier">  o  Before using this information and the product it supports,    </pre>
+        <pre class="courier">     read the general information under <a href="#_Notices_And_Trademarks">Notices and trademarks</a></pre>
+        <pre class="courier">     for more information.                                          </pre>
+        <pre class="courier">                                                              </pre>
+        <pre class="courier">  o  Check the ServerGuide Scripting Toolkit Web site for the      </pre>
+        <pre class="courier">     latest version of this readme. See <a href="#_Support_Web_Sites">Support Web sites</a> for </pre>
+        <pre class="courier">     more information.                                          </pre>
+        <pre class="courier">                                                             </pre>
+        <pre class="courier">  Updated August 19, 2010                                       </pre>
+        <pre class="courier">                                                             </pre>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class=Section1>
+  <h1><a name="_Table_of_Contents"></a>Table of contents</h1>
+  <ul type=disc>
+    <li><a href="#_Overview">Overview</a></li>
+    <li><a href="#_SEPs">System Enablement Pack Support</a></li>
+    <li><a href="#_New">What's new in 2.40</a></li>
+    <li><a href="#_Installation">Installation</a></li>
+    <li><a href="#_Supported_Deployment_Scenarios">Supported deployment scenarios </a></li>
+    <li><a href="#_Solving_ServerGuide_Scripting">Solving ServerGuide Scripting Toolkit problems</a>
+        <ul>
+            <li><a href="#final_reboot">Reboot may be required to finish device installation and/or to remove yellow exclamation mark(s) in the Device Manager</a></li>
+            <li><a href="#combOS_fail">Combined OS installation fails on System x3800 with ServeRAID-8i, 8s</a></li>
+            <li><a href="#ls21_driver">BladeCenter LS21/LS41 fails to connect to network after Windows Server 2003 installation</a></li>
+            <li><a href="#praid11_ibmsas">PRAID fails with return code 11 when configuring an IBM SAS HBA controller</a></li>
+            <li><a href="#praid711_lsisas">PRAID fails with return code 7 or 11 when configuring LSI SAS controllers</a></li>
+            <li><a href="#7977_hba">Error 0x0000007B for Windows 2003 Server deployment with QLE2462 Fibre HBA on System x3500 type 7977</a></li>
+            <li><a href="#bladecenter1056">Deployments fail on BladeCenter LS21 and LS41 with BIOS 1.05 and 1.06</a></li>
+            <li><a href="#w2k3_no_os">"No operating system found" during Windows 2003 installation</a></li>
+            <li><a href="#w2k8_setup_no_continue">"Setup cannot continue" during Windows 2008 installation</a></li>
+            <li><a href="#w2k3pw3610">Administrator password required for Windows 2003 installation on System x3610</a></li>
+            <li><a href="#3100nowol">System x3100 does not power on remotely with Altiris</a></li>
+            <li><a href="#3610no39y6066">System x3610: Network adapter 39Y6066 not supported with Windows Server 2003</a></li>
+            <li><a href="#uxspierror_nohw">UXSPInstaller returns errors when supported hardware is not installed</a></li>
+            <li><a href="#03withfibre_fail">Installing Windows Server 2003 to a system with a fibre adapter installed fails</a></li>
+            <li><a href="#x226x206m_UXSP">xSeries 206m/xSeries  226: Latest UXSP Updates should not be run on these systems</a></li>
+            <li><a href="#locate_disk">"Windows cannot locate the disk and partition specified in the unattend answer file's &lt;ImageInstall&gt; setting" message during Windows Server 2008 installation</a></li>
+            <li><a href="#locate_disk2">Windows Server 2008 Install with multiple RAID controllers: "Windows cannot locate the disk and partition specified in the unattend answer file's &lt;ImageInstall&gt; setting"</a></li>
+            <li><a href="#dism_path">DISM fails with return code 126 when running SGTKWinPE.cmd</a></li>
+            <li><a href="#compname">"Windows could not parse or process the unattended answer file" message during Windows installation</a></li>            
+            <li><a href="#tkconfig">Clicking the browse button in Scripting Toolkit Configuration Utility (TKConfig) gives a blank window without a folder browser</a></li>
+            <li><a href="#remote_hang">Deployment via IMM/AMM/RSA-II may hang if it remains idle at a prompt for an extended period of time</a></li>
+            <li><a href="#intelpackage">Running a UXSP containing Intel package(s) with TK_UXSP_ApplyLatest=Yes or --latest flag may result in UXSPI failure</a></li>
+            <li><a href="#gpt_partition">Installation of Windows 2003 or Windows 2008 fails to a drive formerly partitioned using GPT partitioning</a></li>
+            <li><a href="#win2008_languages">Installation of a non-English version of Windows 2008 or Windows 2008 R2 prompts the user for which language and keyboard to install</a></li>
+            <li><a href="#iscsi_hotfix">Windows 2003 install unsuccessful or yellow exclamation marks present in Device Manager with 49Y4220 or 42C1780 iSCSI option</a></li>
+            <li><a href="#raid_uneven">Certain RAID levels may fail if not using the correct number of drives</a></li>
+            <li><a href="#ServeRAID5015">Windows 2008 installation may fail if using SeverRAID M5015</a></li>
+            <li><a href="#x3655_SATA">Windows 2003 x64 SP2 installation hangs at 34/33 minutes remaining</a></li>
+            <li><a href="#Everyone_Group">The Everyone group doesn't have the default permissions after installing Windows 2003</a></li>
+            <li><a href="#WinPEDriverPopup">Popup displayed while running a Toolkit scenario stating "You must restart your computer"</a></li>
+	        <li><a href="#DirectorMSI">Installing an Agent for Director version 6 or higher may fail without Windows Installer 4.5</a></li>
+	        <li><a href="#HS22X5USB">BladeCenter HX5 may fail to boot a Windows PE USB Key in Legacy mode when plugged into the local media tray</a></li>
+        </ul>
+    </li>
+    <li><a href="#_Additional_Files_Utilities">Additional files, utilities, and information</a>
+      <ul>
+        <li>Electronic Service Agent</li>
+        <!-- <li>Limitations </li> -->
+      </ul>
+    </li>
+    <li><a href="#_Support_Web_Sites">Support Web sites</a> </li>
+    <li><a href="#_Notices_And_Trademarks">Notices and trademarks</a> </li>
+  </ul>
+
+<h1><a name="_SEPs"></a>System Enablement Pack Support</h1>
+<p>System Enablement Packs add additional support to the ServerGuide Scripting Toolkit, Windows Edition.
+    When a new System Enablement Pack is available for download consult the ServerGuide Scripting Toolkit, Windows
+    Edition User Guide for information on how to download and install the System Enablement Pack into the ServerGuide
+    Scripting Toolkit, Windows Edition.
+</p>
+<p><a href="#_Table_of_Contents">Back to TOC</a></p>
+
+<h1><a name="_New"></a>What's new in 2.40</h1>
+<p>ServerGuide Scripting Toolkit, Windows Edition 2.40 offers the following changes to edition 2.30:
+<ul>
+  <li>Support for additional hardware:
+    <ul>
+      <li>System x3630 M3 (7377)</li>
+      <li>System x3755 M3 (7164)</li>
+    </ul>
+  </li>
+  <li>Support for the additional adapters:
+    <ul>
+      <li>Brocade 2-port 10Gb Converged Network Adapter for IBM BladeCenter (81Y1650)</li>
+    </ul>
+  </li>
+  <li>Updated third-party utilities:
+    <ul>
+      <li>UpdateXpress System Pack Installer v4.20 (uxspi420.exe)</li>
+      <li>Advanced Settings Utility 3.61</li>
+      <li>SEP Tool 2.10</li>
+      <li>CfgGen 1.12.00.02</li>
+    </ul>
+  </li>
+  <li>Additional support:
+    <ul>
+      <li>Added support for IPv6</li>
+    </ul>
+  </li>
+  <li>Removed support for the following adapters:
+    <ul>
+      <li>2Gb QLogic fibre adapters; the included QLogic driver no longer supports 2Gb adapters</li>
+    </ul>
+  </li>
+</ul>
+<p><a href="#_Table_of_Contents">Back to TOC</a></p>
+
+<h1><a name="_Supported_Deployment_Scenarios">Supported Deployment Scenarios</a></h1>
+<p><a href="#_Table_of_Contents">Back to TOC</a></p>
+<p>The ServerGuide Scripting Toolkit, Windows Edition supports the following deployment scenarios:</p>
+<ul>
+    <li>Bootable media</li>
+    <li>Bootable media and network share</li>
+    <li>Remote deployment via Remote Supervisor Adapter II, BladeCenter Management Module, or
+    BladeCenter Advanced Management Module</li>
+    <li>Remote deployment using the Integrated Management Module</li>
+    <li>Altiris Deployment Solution Version </li>
+    <li>Hewlett-Packard Rapid Deployment Pack </li>
+</ul>
+ <h1><a name="_Solving_ServerGuide_Scripting">Solving ServerGuide Scripting Toolkit Problems</a></h1>
+ <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+ <p>This section contains updates to information on solving ServerGuide Scripting Toolkit Problems developed since the 
+ publication of the <i>IBM ServerGuide Scripting Toolkit Users Guide</i>. Please consult the Users Guide for a full
+ list of known solutions to ServerGuide Scripting Toolkit problems.</p>
+
+<h2><a name="final_reboot">Reboot may be required to finish device installation and/or to remove yellow exclamation mark(s) in the Device Manager</a></h2>
+<p>One final reboot is recommended after the Windows installation completes to finish the hardware installation.
+For instance, yellow exclamation marks may be present on the Intel(R) Ethernet Mezzanine Adapter due to the device driver being unable to start. This issue is resolved by a reboot.</p>
+
+
+<h2><a name="imagex_fail">The Toolkit will not work on a network share drive or any drive that is not formatted using NTFS</a></h2>
+<p>The Toolkit uses the Microsoft Windows Imagex.exe utility during the generation of the Windows PE ISO. The Imagex.exe
+utility will fail during the creation of the deployment scenario if the Toolkit is installed to a mapped network drive or a USB device if it is formatted with anything other than the NTFS file system.</p>
+<h2><a name="combOS_fail">Combined OS installation fails on System x3800 with ServeRAID-8i, 8s</a></h2>
+<p>In order to install to a ServeRAID-8i or 8s adapter on a System x3800, you must perform the 
+following steps:
+<ol>
+<li>Update the CPLD on the adapter to version 1.12 or higher.</li>
+<li>Update the firmware on the adapter to version 5.2.0.15411.</li>
+<li>To perform this installation you must be using a Device Driver Library from ServerGuide version 7.4.15 or 7.4.16.
+   Perform the following steps to ensure the correct drive will be installed in the deployed operating system:
+           <ol>
+           <li type=a>Open the Device Driver Library for the operating system you are installing
+              (for example, \sgshare\sgdeploy\drv\w23_drv).</li>
+           <li type=a>In the srsas directory edit DrvInfo.ini to add 8865 and 8866 to the list of systems
+              in the "Supported Systems" item.</li>
+           <li type=a>Repeat steps a and b for the Deployment Driver Libraries for each operating system you are installing
+              (for example, Windows 2003 x86 and Windows 2003 x64).</li>
+           </ol></li></ol></p>
+<h2><a name="ls21_driver">BladeCenter LS21/LS41 fails to connect to network after Windows Server 2003 installation</a></h2>
+<p>After deploying Windows Server 2003 to an IBM BladeCenter LS21 or LS41, the system may be unable to
+connect to the network. This error can be caused by attempting to use a network device driver 
+version prior to 3.7.19.0.</p>
+<p>To avoid this problem, create your deployment image using ServerGuide 7.4.17 or higher. See "Adding
+Windows device drivers" in the Users Guide for information on adding device drivers to the source tree.</p>
+<p>To correct the problem after deployment, you can update the device driver manually to 3.7.19.0 or higher.</p>
+<h2><a name="praid11_ibmsas">PRAID fails with return code 11 when configuring an IBM SAS HBA controller</a></h2>
+<p>PRAID is only supported for the IBM SAS HBA when it is connected to internal drives. This error is caused 
+when the cfggen utility is unable to create a configuration.</p>
+<p>To avoid this problem, update the firmware on the IBM SAS HBA controller to 
+1.25.10.07 or higher.</p>
+<p>If the problem persists remove any logical volumes including
+RAID arrays on the adapters using the Ctrl+C menu on system POST before using ServerGuide Scripting Toolkit.</p>
+
+<h2><a name="praid711_lsisas">PRAID fails with return code 7 or 11 when configuring LSI SAS controllers</a></h2>
+<p>When using PRAID.exe to reset or configure a LSI 1064/1064e/1078 SAS controller or an 
+IBM SAS HBA controller, you might receive error code 7 or 11. This error is caused when the cfggen
+utility is unable to remove or create a configuration.</p>
+<p>To avoid this problem, remove any logical volumes including RAID arrays on the adapters using the 
+Ctrl+C menu on system POST prior to using ServerGuide Scripting Toolkit.</p>
+
+<h2><a name="7977_hba">Error 0x0000007B for Windows 2003 Server deployment with QLE2462 Fibre HBA on System x3500 type 7977</a></h2>
+<p>When using a QLE2462 Fibre HBA on a System x3500, type 7977 and using ServerGuide to install the needed drivers for 32 and 64-bit Windows 2003
+deployments, you must first add the type 7977 to the supported systems list included in the ServerGuide DrvInfo.ini file.</p>
+<p>To modify this file, follow these steps:
+<ol>
+<li>Open the file DrvInfo.ini. <ul style="compact">
+<li>The 32-bit file is located in sgdeploy/drvs/w23_drv/ql23</li>
+<li>The 64-bit version is located in sgdeploy/drvs/w23_x64_drv/ql23</li>
+</ul></li>
+<li>Edit the file by adding machine type 7977 to the end of the list in the "Supported Systems" variable.</li>
+<li>Save the file and retry the deployment.</li>                          
+</ol></p>
+<h2><a name="bladecenter1056"></a>Deployments fail on BladeCenter LS21 and LS41 with BIOS 1.05 and 1.06</h2>
+<p>On BladeCenter systems LS21 type 7971 and LS41 type 7972 with BIOS levels 1.05 and 1.06, local and network deployments
+will fail. This is a limitation of these BIOS levels.</p>
+<p>To avoid this problem, use BIOS level 1.04, or a BIOS level higher than 1.06 on these systems.</p>
+
+<h2><a name="w2k3_no_os"></a>"No operating system found" during Windows 2003 installation</h2>
+<p>This problem can occur when installing to a system with multiple storage adapters. Please see "Installing an operating system on a
+multi-adapter system" in Appendix D of the User's Guide for more information.</p>
+<h2><a name="w2k8_setup_no_continue"></a>"Setup cannot continue" during Windows 2008 installation</h2>
+<p>This problem can occur when installing to a system with multiple storage adapters. Please see "Installing an operating system on a
+multi-adapter system" in Appendix D of the User's Guide for more information.</p>
+
+<h2><a name="w2k3pw3610"></a>Administrator password required for Windows 2003 installation on System x3610</h2>
+<p>When Emergency Management Services are enabled, an Administrator password is required for Windows 2003 installation
+IBM System x3610.</p>
+<p>In order to complete an unattended installation of Windows 2003 on the x3610, you must include the Administrator
+password in the Windows 2003 answer file used for the installation.</p>
+
+<h2><a name="3100nowol"></a>System x3100 does not power on remotely with Altiris</h2>
+<p>System x3100 does not properly power on remotely using Altiris Deployment Solution because
+Wake-on-LAN is not supported.</li>
+
+<h2><a name="3610no39y6066"></a>System x3610: Network adapter 39Y6066 not supported with Windows Server 2003</h2>
+<p>The driver for network adapter 39Y6066 is not properly installed with any version of Windows Server 2003 on System x3610
+type 7942. It will appear as a generic "Ethernet Controller" yellow bang in device manager.
+
+<h2><a name="uxspierror_nohw"</a>UXSPInstaller returns errors when supported hardware is not installed</h2>
+<p>Toolkit deployment tasks that include installation of UXSPs can return errors if the UXSPI attempts to install
+updates for hardware that is not present in the target system.</p>
+<h3>For Standalone Toolkit Scenarios</h3>
+<p>Look in the C:\IBM_Support\deployment\IBM_WinPEToolkit.log and C:\UXLOG\UX.LOG files on the target server. These files contain additional
+information on what updates the UXSP Installer attempted to apply to the target system. Return codes 171 and 172 in the file
+UX.LOG indicate an update that could not be installed because the applicable hardware was not present.</p>
+<h3>For Altiris Scenarios</h3>
+<p>Altiris jobs might show an error after attempting to deploy UXSPs if the applicable hardware is not present in the target
+server. To determine whether this is the cause of the error, follow these steps:
+<ul>
+<li>Right-click on the failed job under your system in the Altiris Console and select <b>Properties</b>.</li>
+<li>Select the failed task in the Job Schedule Information window and click <b>Status Detail</b>.</li>
+<li>Check the status of the UXSP installation task in the Status Detail window.</li>
+</ul></p>
+<p>If there is a line below <xmp>Performing IBM UXSP Installation</xmp> with a yellow triangle listing return code 60 or 61,
+one or more of the included updates failed to install. The status detail window will refer you to the file <b>ToolkitProcess.log</b>, which contains more
+information on updates that the Toolkit attempted to apply to the target system.</p>
+<p>If the target server is accessible, check C:\UXLOG\UX.LOG on the target server. Return codes 171 and 172 in this file
+indicate an update that could not be installed because the applicable hardware was not present on the target server.</p>
+
+<h2><a name="03withfibre_fail"></a>Installing Windows Server 2003 to a system with a fibre adapter installed fails</h2>
+<p>When installing Windows Server 2003 to a system with a fibre adapter,
+the installation can fail with the error message "QL2300.sys is corrupted. Press any key to continue."</p>
+<p>To sucessfully install Windows Server 2003 to a system with a fibre adapter,
+you must use Windows Server 2003 with Service Pack 2.</p>
+
+<h2><a name="x226x206m_UXSP"></a>xSeries 206m/xSeries  226: Latest UXSP Updates should not be run on these systems</h2>
+<p>Some system updates may result in boot issues, or may fail and require user intervention during automated Toolkit installs. Running the latest system updates acquired by UXSPI  is not recommended on xSeries 206m or xSeries 226.</p>
+
+<h2><a name="locate_disk"></a>"Windows cannot locate the disk and partition specified in the unattend answer file's &lt;ImageInstall&gt; setting" message during Windows Server 2008 installation</h2>
+<p>While performing a Windows installation you might encounter the following error message: 
+"Windows cannot locate the disk and partition specified in the unattend answer file's &lt;ImageInstall&gt; setting".
+This error can occur for different reasons including the installation drive having previously been formatted as a 
+GPT drive or having a different OS previously installed on the system.
+</p>
+<p>To resolve this issue, first restart the system and retry the Windows installation. If this does not resolve the issue
+then delete all partitions and formatting on the drives in the system and retry the Windows installation.
+If this does not resolve the issue and the system has multiple storage adapters, please see "Installing an operating system on a multi-adapter system" 
+in Appendix D of the User's Guide and the readme note for <a href="#locate_disk2">Windows Server 2008 Install with multiple RAID controllers</a> for more information.</p>
+
+<h2><a name="locate_disk2"></a>Windows Server 2008 Install with multiple RAID controllers: "Windows cannot locate the disk and partition specified in the unattend answer file's &lt;ImageInstall&gt; setting"</h2>
+<p>When performing a Windows installation, ServerGuide Scripting Toolkit attempts to 
+install Windows on the first disk of the system presented by Microsoft's diskpart utility.
+Due to the limitations of the system, when multiple storage adapters are present on the
+system, the first disk presented by the diskpart utility is not always the the first
+disk on the system.</p>
+<p>To avoid this problem, please remove all storage adapters and/or disks that are 
+not required for the Windows installation.</p>
+
+<h2><a name="dism_path"></a>DISM fails with return code 126 when running SGTKWinPE.cmd</h2>
+<p>While creating a deployment scenario with SGTKWinPE.cmd, the DISM utility may fail with a return code of 126.
+DISM fails if the path to the mounted Windows PE image is too long.</p>
+<p>To resolve this issue, the path to the TK_Build_ScenarioOutputDirectory directory must be less then 120 characters.
+The TK_Build_ScenarioOutputDirectory directory is located at \sgdeploy\WinPE_ScenarioOutput\.</p>
+
+<h2><a name="compname"></a>"Windows could not parse or process the unattended answer file" message during Windows installation</h2>
+<p>The computer name used for Windows installations must comply to Windows restrictions.
+If it does not, you will receive an error during unattended Windows 2008 installations saying: 
+Windows could not parse or process the unattended answer file for pass (specialize). 
+The settings specified in the answer file cannot be applied. 
+The error was detected while processing settings for component 
+[Microsoft-Windows-Shell-Setup].</p>
+
+<h2><a name="tkconfig"></a>Clicking the browse button in Scripting Toolkit Configuration Utility (TKConfig) gives a blank window without a folder browser</h2>
+<p>Clicking the broswe button when using the Scripting Toolkit Configuration Utility to copy files to the Toolkit source server may give a blank window without a folder browser. If this occurs, the source path of the files to copy must be typed directly into the source path input box.</p>
+
+<h2><a name="remote_hang"></a>Deployment via IMM/AMM/RSA-II may hang if it remains idle at a prompt for an extended period of time</h2>
+<p>If a deployment done through an IMM, AMM, or RSA-II remote module is left idle for an extended period of time,
+the remote system may hang after the next keyboard or mouse interaction. At this time unmount/remove the deployment media if instructed to do so in the command window.
+If the Toolkit deployment process is hung at a point where it is waiting for a key press to restart the system, reboot the remote system using the remote console and the install will proceed successfully.
+At any other point, the system must be rebooted via the remote console, and the deploymented restarted from the beginnning.</p>
+
+
+<h2><a name="intelpackage"></a>Running a UXSP containing Intel package(s) with TK_UXSP_ApplyLatest=Yes or --latest flag may result in UXSPI failure</h2>
+<p>After the UpdateXpress System Pack Installer (UXSPI) runs on your system, the Toolkit log or UXSP log may reveal that UXSPI exited unexpectedly while installing an Intel chipset update.
+This is due to the package reporting completion while subprocesseses are still running. Those subprocess may utilize your system's resource at a level that causes other updates to fail.
+To avoid this issue, you may utilize the UXSPI exclude flag via the TK_UXSP_UXSPIUpdateFlags variable to remove any Intel packages by filename from the UXSP installation.
+To install the remaining hardware devices run your UXSP installation again without the exclusions, and the Intel package(s) will install successfully.
+If this error has already occurred, please re-run the UXSP installation, and the rest of the updates should complete successfully.</p>
+
+
+<h2><a name="gpt_partition"></a>Installation of Windows 2003 or Windows 2008 fails to a drive formerly partitioned using GPT partitioning</h2>
+<p>When installing to a drive that previously used GPT partitioning the operating system installation may fail. This failure is caused by an incomplete cleanup of the drive by Diskpart. To resolve this issue restart the system and retry the Windows installation or use Windows Preinstallation Environment 3.0, available in the Windows Automated Installation Kit for Windows 7, to perform the installation.</p>
+
+
+<h2><a name="win2008_languages"></a>Installation of a non-English version of Windows 2008 or Windows 2008 R2 prompts the user for which language and keyboard to install</h2>
+<p>When performing an installation of Windows 2008 or Windows 2008 R2 using a non-English version of the OS, the unattended installation may be interrupted with a prompt to select the language and keyboard layout to use in the installed OS. To prevent this from happening set the TK_NOS_Win2008_UILanguage variable in your Scenario INI file to the correct setting for the installation. The value for TK_NOS_Win2008_UILanguage is used to populate the UILanguage node in the unattend.xml file. Possible values for this variable can be found in the 'culture' column at <a href="http://technet.microsoft.com/en-us/library/cc722435(WS.10).aspx">http://technet.microsoft.com/en-us/library/cc722435(WS.10).aspx</a></p>
+
+<h2><a name="iscsi_hotfix"></a>Windows 2003 install unsuccessful or yellow exclamation marks present in Device Manager with 49Y4220 or 42C1780 iSCSI option</h2>
+<p>Windows Server 2003 Installs with a 49Y4220 or 42C1780 iSCSI adapter will fail without one of the following Microsoft hotfixes: <br>
+<ul>
+<li>Hotfix for x86 32-bit: <a href="http://support.microsoft.com/kb/957910">http://support.microsoft.com/kb/957910</a></li>
+<li>Hotfix for x86 64-bit: <a href="http://support.microsoft.com/kb/943295">http://support.microsoft.com/kb/943295</a></li>
+</ul><br>
+When installing with the iSCSI adapter present but not intended as the boot device, the hotfix can be run after the Windows installation to allow the device driver to start, and remove the yellow exclamation marks in device manager. If the Windows installation will be done to storage connected to the 49Y4220 or 42C1780, the hotfix must be slipstreamed into your OS files or the installation will not complete. Please refer to the following knowledge base article for slipstream help:<br>
+<a href="http://support.microsoft.com/kb/814847">http://support.microsoft.com/kb/814847</a><br><br>
+<u>Hints and tips</u>:
+<ul>
+<li>Use the entire contents of the Windows Server 2003 disc, rather than copying just the i386 directory.</li>
+<li>In step 9 it is recommended that you add to the new information to the existing svcpack.in_ rather than deleting it and creating a new file. If you choose to create a new file, it must be name svcpack.in_, not svcpack.ini. The information in the [Version] field must also match the version of Windows you are using for your installation, not the Windows Server 2000 information shown in the article.</li>
+<li>The article pertains to Windows 2000 Server and Server 2003 32-bit installations, so the steps are slightly different for the 64-bit slipstream process. For instance, substitute the AMD64 directory wherever the article uses the i386 directory.</li>
+</ul>
+</p>
+
+<h2><a name="raid_uneven"></a>Certain RAID levels may fail if not using the correct number of drives</a></h2>
+<p>When specifying to include all the physical drives for a RAID level, you must ensure that the number of physical drives in the system is correct
+for the RAID level you are specifying.
+</p>
+
+<h2><a name="disks_same"></a>Best Practice for RAID configuration</a></h2>
+<p>When performing RAID configuration, a best practice is to ensure that all the disks connected to the RAID controller are the same size.
+</p>
+
+<h2><a name="ServeRAID5015"></a>Windows 2008 installation may fail if using SeverRAID M5015</a></h2>
+<p>When installing Windows 2008 to a ServeRAID M5015, the installation may fail if the previous RAID level
+was RAID 5 or 60. To fix this issue, perform the installation again.
+</p>
+
+<h2><a name="x3655_SATA"></a>Windows 2003 x64 SP2 installation hangs at 34/33 minutes remaining</a></h2>
+<p>Installing any version of Windows Server 2003 64-bit with Service Pack 2 to 
+SATA drives connected to IBM SAS HBA on an IBM System x3455 or IBM System x3655 may fail.
+<br/>   
+<br/>
+To install any version of Windows Server 2003 64-bit with Service Pack 2 
+to SATA drive(s) connected to SAS HBA part number 25R8060 on an IBM System x3455,
+or to an IBM System x3655 the planar SATA controller must be disabled in the BIOS. 
+To do this:
+<br/>
+<ol>
+   <li>Boot into BIOS Setup by pressing F1</li>
+   <li>Go into  the "Devices and I/O Ports" menu</li>
+   <li>Set "Planar SATA" to disabled</li>
+   <li>Save the changes and exit</li>
+</ol>
+After the OS is installed, the SATA controller may be reenabled.
+After reenabling the SATA controller, install the driver located at C:\drv\SATA to use the controller.
+</p>
+
+<h2><a name="Everyone_Group">The Everyone group doesn't have the default permissions after installing Windows 2003</a></h2>
+<p>When installing Windows 2003 without Service Pack 2 included, 
+the "Everyone" group does not have the same permissions it would have if a retail install was performed.
+<br/>
+<br/>
+To grant the "Everyone" group the same permissions as a retail install, perform the following steps:
+<ol>
+   <li>Open Windows Explorer, right click on the C:\ drive, and select "Properties" from the drop down menu</li>
+   <li>Select the "Security" tab in the "Properties" window and click the "Add..." button</li>
+   <li>In the field to enter the object name enter "Everyone" and click OK</li>
+   <li>Click the "Advanced" button on the "Security" tab in the "Properties" window</li>
+   <li>In the "Advanced Security Settings" window, select the "Everyone" group and click the "Edit..." button</li>
+   <li>In the "Permission Entry" window select the option "This folder only" in the drop down menu for the "Apply onto" field</li>
+   <li>Click the "OK" button in each window to apply the new security settings</li>
+</ol>
+</p>
+
+<h2><a name="WinPEDriverPopup">Popup displayed while running a Toolkit scenario stating "You must restart your computer"</a></h2>
+<p>
+A popup may be displayed while running a Toolkit scenario stating "You must restart your computer to apply these changes.
+Before restarting, save any open files and close all programs."  If this occurs, click the button labeled "Restart Later"
+and continue the Toolkit scenario.
+</p>
+
+<h2><a name="DirectorMSI">Installing an Agent for Director version 6 or higher may fail without Windows Installer 4.5</a></h2>
+<p>
+This is often indicated in the log or onscreen by a return code of 400 the first time the Toolkit attempts to launch the Director Agent, then a return code of 101 on the second attempt. To fix this issue please obtain and install the newer Windows Installer from the following link: <a href="http://support.microsoft.com/kb/942288" target="_blank">http://support.microsoft.com/kb/942288.</a> <br />
+After the installer is updated, either run the Director Agent installer manually on your system, or run the 'IBM Director Agent for Windows Install' job if your installation was performed via Altiris DS.
+</p>
+
+<h2><a name="HS22X5USB">BladeCenter HX5 may fail to boot a Windows PE USB Key in Legacy mode when plugged into the local media tray</a></h2>
+<p>
+When using a USB Key to perform a deployment scenario, the USB Key might not boot in Legacy mode.  This is usually
+indicated by a black screen with a blinking cursor in the upper left corner of the screen.
+<br/>
+<br/>
+To work around this issue, use one of the following alternatives:
+<br/>
+<ul>
+   <li>Plug the USB Key into the aMM (Advanced Management Module) on the back of the BladeCenter Chassis.</li>
+   <li>Boot the USB Key in x64 EFI mode instead of Legacy BIOS mode.  This requires using Windows AIK 2.0 (Windows PE 3.0).</li>
+   <li>Use another USB Key from a different manufacture.</li>
+   <li>Use a different boot media for the deployment scenario (CD or DVD).</li>
+   <li>Boot the ISO through the aMM (Advanced Management Module).</li>
+</ul>
+</p>
+
+
+<br/>
+<h1><a name="_Additional_Files_Utilities"></a>Additional Files, Utilities, And Information</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>This section contains information that is not documented in the <i>IBM ServerGuide Scripting Toolkit User's Reference.</i> </p>
+  <h2>Electronic Service Agent (ESA)</h2>
+  <p>The Electronic Service Agent is a no-charge software tool that resides on your IBM System x<sup>TM</sup> systems
+to monitor hardware events and transmit system inventory information to IBM. With these functions,
+this software can proactively monitor, track and capture system inventory and hardware errors. Follow
+this link to download the IBM xSeries Electronic Service Agent: <a href="http://www.ibm.com/support/electronic">http://www.ibm.com/support/electronic</a></p>
+
+  <h1><a name="_Support_Web_Sites"></a>Support Web Sites</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>The following Web pages provide resources for understanding, using, and troubleshooting IBM deployment and systems management software:</p>
+  <ul>
+    <li>IBM ServerGuide Scripting Toolkit
+    <p>The ServerGuide Scripting Toolkit is a collection of system-configuration tools and installation scripts that you can use to deploy software to your IBM servers in a repeatable, predictable manner.</p>
+    <p><a href="http://www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-TOOLKIT&brandind=5000008" target="_blank">http://www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-TOOLKIT&brandind=5000008</a></p></li>
+    <li>IBM ServerGuide
+    <p>IBM ServerGuide is a tool that simplifies the process of installing and configuring IBM System x and BladeCenter servers.</p>
+    <p><a href="http://www.ibm.com/systems/management/serverguide/" target="_blank">http://www.ibm.com/systems/management/serverguide/</a></p></li>
+    <li>IBM System x and BladeCenter ToolsCenter
+    <p>The IBM System x® ToolsCenter is a collection of server management tools to help manage your IBM System x and BladeServer environment.</p>
+    <p><a href="http://www-947.ibm.com/support/entry/portal/docdisplay?brandind=5000008&lndocid=TOOL-CENTER">http://www-947.ibm.com/support/entry/portal/docdisplay?brandind=5000008&lndocid=TOOL-CENTER</a></p></li>
+    <li>IBM System x and BladeCenter ToolsCenter Information Center
+    <p>The IBM  ToolsCenter for System x and BladeCenter Information Center contains all the information that you need to deploy, configure, update, and diagnose your IBM System x and BladeCenter products.</p>
+    <p><a href="http://publib.boulder.ibm.com/infocenter/toolsctr/v1r0">http://publib.boulder.ibm.com/infocenter/toolsctr/v1r0</a></p></li>
+    <li>IBM ServerProven<sup>&reg;</sup>
+     <p>The IBM ServerProven<sup>&reg;</sup> program validates selected products for compatibility with IBM System x, BladeCenter, and xSeries servers.</p>
+    <p><a href="http://www.ibm.com/servers/eserver/serverproven/compat/us/" target="_blank">http://www.ibm.com/servers/eserver/serverproven/compat/us/</a></p></li>
+    <li>IBM UpdateXpress
+    <p>This Web page provides an overview of UpdateXpress. It also contains links to pages from which you can download UpdateXpress, order an UpdateXpress CD, or purchase a subscription from a vendor other than IBM.</p>
+    <p><a href="http://www.ibm.com/systems/management/xpress/" target="_blank">http://www.ibm.com/systems/management/xpress/</a></p></li>
+    <li>IBM UpdateXpress Server Matrix
+    <p>IBM UpdateXpress can help reduce your cost of computing by providing an effective and simple way to update device drivers, server firmware and firmware of supported options contained within the server on most of your System x and BladeCenter products.</p>
+    <p><a href="http://www-304.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-XPRESS&brandind=5000008" target="_blank">http://www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-XPRESS&brandind=5000008</a></p></li>
+    <li>IBM Support
+    <p>The IBM Support Web site for IBM hardware and systems management software.</p>
+    <p><a href="http://www.ibm.com/systems/support/" target="_blank">http://www.ibm.com/systems/support/</a></p></li>
+    <li>IBM xSeries Systems Management page
+    <p>This Web page provides an overview of IBM systems management software.</p>
+    <p><a href="http://www.ibm.com/systems/management/" target="_blank">http://www.ibm.com/systems/management/</a></p></li>
+  </ul>
+  <h1><a name="_Notices_And_Trademarks"></a>Notices And Trademarks</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. </p>
+  <p>This Program is licensed under the terms of the agreement located in the directory named ...\sgdeploy\SGTKWinPE\Docs\license. By installing, copying, accessing, or using the Program, you agree to the terms of this agreement. If you do not agree to the terms, please uninstall the software and return it to IBM or the reseller from whom you acquired the software for a refund, if any.</p>
+  <p>Additional licenses are included with each System Enablement Pack located in the ...\sgdeploy\updates\uxsp\ibm_utl_tsep*.zip.</p>
+  <p>Some jurisdictions do not allow disclaimer of express or implied warranties in certain transactions, therefore, this statement may not apply to you. This information could include technical inaccuracies or typographical errors. Changes are periodically made to the information herein; these changes will be incorporated in new editions of the publication. IBM may make improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without notice. </p>
+<p>The following terms are trademarks of the IBM Corporation in the United States, other countries, or both: </p>
+<p>BladeCenter </p>
+<p>eServer </p>
+<p>ServeRAID </p>
+<p>ServerGuide </p>
+<p>ServerProven </p>
+<p>System x</p>
+<p>TotalStorage</p>
+<p>xSeries </p>
+<p> </p>
+<p>IBM is a trademark of International Business Machines Corporation in the United States, other countries, or both.</p>
+  <p>Intel is a trademark or registered trademark of Intel Corporation or its subsidiaries in the United States and other countries.</p>
+  <p>Linux is a trademark of Linus Torvalds in the united states, other countries, or both. </p>
+  <p>Microsoft, Windows, and the Windows logo are trademarks of Microsoft Corporation in the United States, other countries, or both.</p>
+  <p>Other company, product, or service names may be trademarks or service marks of others. </p>
+</div>
+</body>
+</html>

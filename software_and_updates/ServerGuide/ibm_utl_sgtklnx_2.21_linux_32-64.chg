@@ -1,0 +1,145 @@
+IBM ServerGuide Scripting Toolkit, Linux Edition 
+
+1.0 Change History
+___________________________________
+
+ServerGuide Scripting Toolkit, Linux Edition
+
+Version 2.21 - December 2010
+	System Enablement Pack Version 2.10:
+	    - System x3630 M3 7377
+	    - System x3755 M3 7146
+	    - Brocade 2-port 10Gb Converged Network Adapter for IBM BladeCenter (81Y1650)
+	    - Advanced Settings Utility  3.61
+	Added support for the following operating systems:
+	    - Red Hat Enterprise Linux 6
+         Updated tools support:
+               - UpdateXpress System Pack Installer version 4.30
+	       - Bootable Media Creator version 2.20 - RHEL6	  
+        Additional support:
+               - Added support for Native uEFI operating system installations
+               - Added support for Director Agent 6.2.1
+               - Added support for RHEL6 as a source server
+	Defects fixed:
+	       - Firmware update fix for missing uxspi utility
+
+Version 2.20 - September 2010
+	System Enablement Pack Version 2.10:
+	    - System x3630 M3 7377
+	    - System x3755 M3 7146
+	    - Brocade 2-port 10Gb Converged Network Adapter for IBM BladeCenter (81Y1650)
+	    - Advanced Settings Utility  3.61
+	Added support for the following operating systems:
+	    - VMware ESX Server 4.1   	
+	Updated tools support:
+               - UpdateXpress System Pack Installer version 4.20
+	       - Bootable Media Creator version 2.20	  
+	       - Septool 2.10    
+	       - Removed UpdateXpress System Pack Installer for RHEL3, RHEL4, and SLES9
+        Additional support:
+               - Added support for Director Agent 6.1.2.3
+               - Updated User Interface
+	       - Added support for IPv6 networks
+	Defects fixed:
+	       - Firmware update fix for missing uxspi utility
+	       - Missing machine types in User Interface	    
+
+Version 2.10 - June 2010 
+	System Enablement Pack Version 2.00:
+	      - System x3620 M3 7376
+              - System x3690 X5 7148, 7149
+	      - System x3850/x3950 X5 dual node 7145,7146
+	      - BladeCenter HX5 7872, 1909
+	      - Advanced Settings Utility 3.60
+        Added support for the following additional operating systems:
+               - SUSE Linux Enterprise Server 11 Service Pack 1
+	       - Red Hat Enterprise Linux 5 Update 5
+               - VMware ESX Server 4.0 Update 2
+	Added support for the following Storage controllers:
+               - ServeRAID-M5025  46M0830
+               - ServeRAID-B5015 SSD 46M0969
+	       - ServeRAID M5000 Series Advance Feature Key 46M0930
+               - IBM 6Gb SAS HBA Controller 46M0907
+	       - IBM 6Gb SSD Host Bus Adapter 46M0914
+        Updated tools support:
+               - UpdateXpress System Pack Installer version 4.10
+	       - Bootable Media Creator version 2.10	       
+        Additional support:
+               - Added support for Director Agent 6.2
+               - Updated User Interface
+
+Version 2.01 - March 2010
+	System Enablement Pack Version 1.02:
+     	      -  System x3850 X5 / x3950 X5 (7145,7146)
+         Updated tools support:
+               - UpdateXpress System Pack Installer version 4.01
+
+Version 2.00_u1 - March 2010
+        - Fixed issue for download of Boot file from IBM.com
+        - Fixed issue where new machine types from System Enablement
+          Packs were not in create boot media wizard.
+
+Version 2.00 - December 2009        
+	System Enablement Pack Version 1.01:
+     	       -  System x3400 M3 (7378,7379)   
+               -  System x3500 M3 (7380)
+               -  System x3550 M3 (7944,4254)
+               -  System x3650 M3 (7945,4255)
+               -  System x iDataPlex dx360 M3 (6391)
+               -  BladeCenter HS22 (7809)
+               -  BladeCenter HS22V (7871,1949)         
+               -  Intel 10Gb Ethernet Expansion Card (CFFh) for IBM
+               -  Emulex Virtual Fabric Adapter (CFFh) for IBM BladeCenter
+               -  PCI-e Gen2.0 Dual Port 10Gb NIC
+               -  Emulex 10GbE Custom Adapter for IBM System x
+               -  NetXtreme II 1000 Express Dual Port Ethernet Adapter
+               -  NetXtreme II 1000 Express Quad Port Ethernet Adapter 
+
+Version 2.00 - December 2009        
+	System Enablement Pack Version 1.00:
+              - System x3200 M3 7327,7328
+              - System x3250 M3 4251,4252,4261
+        Added support for the following additional operating systems:
+               - SUSE Linux Enterprise Server 10 Service Pack 3
+	       - Red Hat Enterprise Linux 5 Update 4
+               - VMware ESX Server 4.0 Update 1
+               - VMware ESX Server 3.5 Update 5
+	Added support for the following RAID controllers:
+               - ServeRAID-MR1015
+               - ServeRAID-MR1015-R5
+               - ServeRAID-BR10il v2
+        Added support for the following Fibre controllers:
+               - Emulex 8Gb FC Single-port HBA 
+               - Emulex 8Gb FC Double-port HBA
+        Updated tools support:
+               - UpdateXpress System Pack Installer version 4.00
+	       - Bootable Media Creator version 2.00
+        Additional support:
+               - Added support for Director Agent 6.1.2
+               - Updated User Interface
+
+Version 1.01 - July 2009
+        
+        Added support for the following additional systems:
+              - System x3400 M2 7836, 7837
+              - System x3500 M2 7839
+        Added support for the following additional operating systems:
+               - SUSE Linux Enterprise Server 11
+               - VMware ESX Server 4.0
+               - Red Hat Enterprise Linux 4 Update 8
+               - Red Hat Enterprise Linux 5 Update 3
+        Added support for the following Fibre controllers:
+               - QLogic 8Gb Fibre Channel Expansion Card (CIOv) for IBM BladeCenter
+               - QLogic 8Gb FC Single-port HBA 
+               - QLogic 8Gb FC Double-port HBA
+        Updated tools support:
+               - UpdateXpress System Pack Installer version 3.01
+               - Fibre HBA Configuration for Boot (scli)
+               - megacli
+        Additional support:
+               - Added support for Director Agent 6.1.1
+
+
+Version 1.0 - March 2009
+
+        Initial release

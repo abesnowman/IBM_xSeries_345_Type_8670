@@ -1,0 +1,260 @@
+IBM ServerGuide Scripting Toolkit, Windows Edition Version 2.40 Change History
+
+****************************************************************************
+|                                                                          |
+|  IBM(R) ServerGuide(TM) Scripting Toolkit, Windows Edition Version 2.40  |
+|                                                                          |
+|  (C) Copyright International Business Machines Corporation               |
+|      2010. All rights reserved.                                          |
+|                                                                          |
+|  US Government Users Restricted Rights -- Use, duplication               |
+|  or disclosure restricted by GSA ADP Schedule Contract with              |
+|  IBM Corp.                                                               |
+|                                                                          |
+|  Notes:                                                                  |
+|  o  Before using this information and the product it supports,           |
+|     read the general information under "NOTICES AND TRADEMARKS"          |
+|     in this document.                                                    |
+|  o  Check the ServerGuide Scripting Toolkit Web site for the             |
+|     latest version of readme. See "SUPPORT WEB SITES" for more           |
+|     information.                                                         |
+|                                                                          |
+|  Updated   19 August 2010                                                |
+|                                                                          |
+****************************************************************************
+
+
+ServerGuide Scripting Toolkit, Windows Edition Change History
+-------------------------------------------------------------
+
+
+Version 2.40 -- September 2010
+------------------------------
+   
+   System Enablement Pack Version 2.10:
+      - Added support for the following servers:
+         - System x3630 M3 (7377)
+         - System x3755 M3 (7164)
+      - Added support for the following adapters:
+         - Brocade 2-port 10Gb Converged Network Adapter for IBM BladeCenter (81Y1650)
+      - Updated tools support:
+         - Advanced Settings Utility 3.61
+   
+   Updated tools support:
+      - UpdateXpress System Pack Installer version 4.20
+      - Septool 2.10
+      - CfgGen 1.12.00.02
+   
+   Additional support:
+      - Added support for IPv6 networks
+   
+   Removed support for the following adapters:
+      - 2Gb QLogic fibre adapters; the included QLogic driver no longer supports 2Gb adapters
+
+
+Version 2.30 -- June 2010
+-------------------------
+
+   System Enablement Pack Version 2.00:
+      - Adds support for the following servers:
+         - System x3620 M3 (7376)
+         - System x3690 X5 (7148, 7149)
+         - System x3850/x3950 X5 dual node (7145,7146)
+         - BladeCenter HX5 (7872, 1909)
+      - Added support for the following additional operating systems:
+         - Windows Server 2008 R2 HPC
+         - Windows 2003 R2
+   	- Added support for the following Storage controllers:
+         - ServeRAID-M5025  46M0830
+         - ServeRAID-B5015 SSD 46M0969
+         - ServeRAID M5000 Series Advance Feature Key 46M0930
+         - IBM 6Gb SAS HBA Controller 46M0907
+         - IBM 6Gb SSD Host Bus Adapter 46M0914
+      - Updated tools support:
+         - Advanced Settings Utility 3.60   
+   
+   Updated tools support:
+      - UpdateXpress System Pack Installer version 4.10
+      - SEP Tool 2.00
+      - MegaCli
+      - CfgGen
+      - Brcli 
+   
+   Additional support:
+      - Added support for Director Agent 6.2
+
+
+Version 2.21 -- March 2010
+--------------------------
+
+   System Enablement Pack Version 1.02:
+      -  Adds support for the following servers:
+         -  System x3850 X5 / x3950 X5 (7145,7146)
+   
+   System Enablement Pack Version 1.01:
+      -  Adds support for the following servers:
+         -  System x3400 M3 (7378,7379)   
+         -  System x3500 M3 (7380)
+         -  System x3550 M3 (7944,4254)
+         -  System x3650 M3 (7945,4255)
+         -  System x iDataPlex dx360 M3 (6391)
+         -  BladeCenter HS22 (7809)
+         -  BladeCenter HS22V (7871,1949)         
+      -  Adds support for the following adapters:
+         -  Intel 10Gb Ethernet Expansion Card (CFFh) for IBM
+         -  Emulex Virtual Fabric Adapter (CFFh) for IBM BladeCenter
+         -  PCI-e Gen2.0 Dual Port 10Gb NIC
+         -  Emulex 10GbE Custom Adapter for IBM System x
+         -  NetXtreme II 1000 Express Dual Port Ethernet Adapter
+         -  NetXtreme II 1000 Express Quad Port Ethernet Adapter   
+   
+   Updated third-party utilities:   
+      -  UpdateXpress System Pack Installer v4.01 (uxspi401.exe)      
+   
+   Added updates: 
+      -  ServerGuide Scripting Toolkit, Windows Edition 2.20 u1 (Update 1)
+
+
+Version 2.20 -- December 2009
+-----------------------------
+
+	Added support for the following additional systems:
+      -  System x3200 M3 7327,7328
+      -  System x3250 M3 4251,4252,4261
+   
+   Added support for the following additional operating systems:
+      -  Windows Server 2008 R2
+	
+   Added support for the following RAID controllers:
+      -  ServeRAID-MR1015
+      -  ServeRAID-MR1015-R5
+      -  ServeRAID-BR10il v2
+   
+   Added support for the following Fibre controllers:
+      -  Emulex 8Gb FC Single-port HBA 
+      -  Emulex 8Gb FC Double-port HBA
+   
+   Updated tools support:
+      -  UpdateXpress System Pack Installer version 4.00 (uxspi400.exe)
+   
+   Additional support:
+      -  Altiris Deployment Solution 6.9 SP3
+      -  Hewlett-Packard Rapid Deployment Pack 6.0
+      -  IBM Systems Director Agent 6.1.2
+      -  Additional Windows 2003 drivers
+      -  Additional Windows 2008 drivers
+      -  Remote deployment using the Integrated Management Module
+      -  System Enablement Pack support
+
+
+Version 2.13 -- July 2009
+-------------------------
+
+	Added support for the following additional systems: 
+      - System x3400 M2 type 7836, 7837
+      - System x3500 M2 type 7839
+
+	Updated third-party utilities: 
+      - megacli.exe
+      - UpdateXpress System Pack Installer 3.01 (uxspi301.exe)
+      - SCLI.exe
+
+	Additional support: 
+      - Altiris Deployment Solution 6.9 SP2
+      - Hewlett-Packard Rapid Deployment Pack 3.83
+      - 64-bit RAID configuration
+      - IBM Systems Director Agent 6.1.1
+
+
+Version 2.1.02 -- March 2009
+----------------------------
+
+   Added support for the following additional systems:
+      - System x3550 M2
+      - System x3650 M2
+      - BladeCenter HS22
+      - iData Plex dx360
+   Added support for the following RAID controllers:
+      - LSI-SAS HBA V2
+      - ServeRAID-BR10i
+      - ServeRAID-BR10ie
+      - ServeRAID-MR10i
+      - ServeRAID-MR10ie
+   Added support for the following Fibre controllers:
+      - Qlogic 8 Gbps cards
+   Updated third-party utilities:
+      - megacli.exe
+      - Cfggen.exe
+      - ASU.exe 3.00
+      - UpdateXpress System Pack Installer 3.00 (uxspi300.exe)
+      - SCLI.exe
+   Additional support:
+      - Altiris Deployment Solution 6.9 SP1
+      - Hewlett-Packard Rapid Deployment Pack 3.82
+      - Additional Windows 2003 drivers
+      - Additional Windows 2008 drivers
+      - IBM Systems Director Agent 6.1
+
+
+Version 2.1.01 -- October 2008
+------------------------------
+
+   Added support for the following additional systems:
+      - System x3610
+      - System x3100
+      - System x3650T
+      - System x3455
+      - System x3850 M2
+      - System x3950 M2
+      - BladeCenter LS22
+      - BladeCenter LS42
+   Added support for the following RAID controllers:
+      - ServeRAID-MR10il
+      - ServeRAID-MR10is
+   Updated PRAID third-party utilities:
+      - megacli.exe
+
+
+Version 2.1 Update 1 -- July 2008
+---------------------------------
+
+   User Guide updates only.
+       
+   Added the following additional systems for Windows 2008 support in both User Guides:
+      - BladeCenter HS21 XM, 7995, 1915
+      - BladeCenter HS21, 8853, 1885
+      - BladeCenter LS21, 7971
+      - BladeCenter LS41, 7972
+      - System x3655, 7943
+
+
+Version 2.1 -- June 2008
+------------------------
+
+   Support for Windows Preinstallation Environment 2.1
+   Support for Hewlett-Packard Rapid Deployment Pack 3.80
+   Support for Altiris Deployment Solution 6.9
+
+   New features:
+      o Windows product keys can be specified as a variable
+      o Altiris tokens are supported in Windows answer files
+
+   Additional operating system support:
+      o Windows 2008 Server, Standard, Enterprise, Web, and Datacenter x86 Editions
+      o Windows 2008 Server, Standard, Enterprise, Web, and Datacenter x64 Editions
+
+   Updated hardware support:
+      o System x3250 type 4366
+      o IBM BladeCenter HS20 type 1883
+      o QLogic System x and BladeCenter Fibre HBAs
+
+   Updated tools support:
+      o Advanced Settings Utility, version 2.4.1
+      o UpdateXpress System Pack Installer version 2.01
+      o Fibre HBA Configuration for Boot (SCLI.EXE)
+      
+
+Version 1.0 -- January 2008
+---------------------------
+
+   Initial release

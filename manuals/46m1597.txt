@@ -1,0 +1,562 @@
+File name: readme.txt
+******************************************************************
+|                                                                |
+|  IBM(R) ServerGuide(TM), Version 8.1.01                        |
+|  Part number 46M1597                                           |
+|                                                                |
+|  (C) Copyright International Business Machines Corporation     |
+|      1996, 2008. All rights reserved.                          |
+|                                                                |
+|  US Government Users Restricted Rights -- Use, duplication     |
+|  or disclosure restricted by GSA ADP Schedule Contract with    |
+|  IBM Corp.                                                     |
+|                                                                |
+|  Notes:                                                        |
+|  o  Before using this information and the product it supports, |
+|     read the general information under "NOTICES AND TRADEMARKS"|
+|     in this document.                                          |
+|  o  Check the ServerGuide Web site for the latest version of   |
+|     readme. See "SUPPORT WEB SITES" for more information.      |
+|                                                                |
+|  Updated   15 Sept 2008                                        |
+|                                                                |
+******************************************************************
+
+CONTENTS
+
+1.0  About this readme file
+
+2.0  Change history
+  2.2  ServerGuide 8.1.01
+  2.1  ServerGuide 8.1
+  
+3.0  Remote Installs Support 
+
+4.0  Supported hardware and operating systems
+
+5.0  Limitations
+  
+6.0  Support Web sites
+
+7.0  Notices and trademarks
+  
+8.0  Other vendor software
+
+
+1.0  ABOUT THIS README FILE
+---------------------------
+
+IBM ServerGuide reduces the complexity of server deployment by 
+detecting installed options and providing device drivers. The 
+ServerGuide wizard detects the server model and installed
+adapters; then, the wizard guides you through setup,
+configuration, and network operating system (NOS) installation.
+
+
+
+2.0 CHANGE HISTORY
+------------------
+
+This section contains information about the ServerGuide change
+history.
+
+2.1  ServerGuide 8.1.01
+------------------------
+
+ServerGuide 8.1.01 includes the following changes:
+
+o  Support for installation of Microsoft Windows 2008 (x86 and x64) for System x3610
+o  Added support for the following servers:
+   -  System x3850 M2/ x3950 M2, machine types 7233, 7234
+   -  BladeCenter LS22, machine type 7901
+   -  BladeCenter LS42, machine type 7902
+
+
+2.2  ServerGuide 8.1
+--------------------
+
+ServerGuide 8.1 included the following changes:
+
+o  Support for installation of Microsoft Windows 2008 (x86 and x64)
+o  Removed support for installation of Microsoft Windows 2000
+o  Added support for the following servers:
+   -  System x3455, machine type 7940, 7941
+o  Removed support for the following servers:
+   -  xSeries 345, machine type 8670
+
+   
+3.0  Remote Installs Support 
+----------------------------
+
+o  Remote Installs are supported using the Remote Supervisor
+   Adapter II (RSA II), BladeCenter Management Module (MM), and
+   BladeCenter Advanced Management Module (AMM).
+
+o Remote Install Limitations: 
+  o For MM only, the left button mouse function doesn't 
+    work with a single click.  The workaround is to use double click to
+    to do selections in ServerGuide graphical user interface.
+  o The same CD/DVD Drive used for ServerGuide CD needs to be use
+    for Windows CD/DVD.
+
+o  Instructions for running ServerGuide via remote disk feature:
+
+1  Install Java(TM) Plug-in and disable cache for Web Browser Java plug-in 
+    to enable remote console to work.
+2  Connect to the RSAII,MM,or AMM Web Management Interface (via Web browser) 
+3  Click on Task "Remote Control"
+4  Start Remote Control, it will open second Web Browser Window
+5  Make sure the target System is Powered Off
+6  Make sure the target System's CD/DVD drive is empty 
+7  Mount the ServerGuide CD
+    Click "Select File..." to load the IBM ServerGuide ISO image.
+      or
+    Click CD/DVD Drive to use IBM ServerGuide CD.
+8  Add to the list of Devices with button ">>"
+9  Select ServerGuide ISO Image or CD/DVD drive
+10 Check box "Write Protected"
+11 Push button "Mount Drive"
+12 Power on the System
+13 When the system is booting up, place the mouse in the center of the screen 
+    until ServerGuide's Language selection screen comes up.  If you have
+    mouse synchronization problems, move the mouse to one of the corners.
+15 Follow IBM ServerGuide prompts
+16 When asked to insert the Windows OS CD/DVD, unmount the remote disk drive,
+    insert Windows CD/DVD, click "Mount Drive" and  then click Next. 
+   NOTE:  Windows 2008 ISO images are not supported at this time.
+17 When the IBM ServerGuide process finishes, unmount the Windows OS CD/DVD and click Next.
+
+   
+4.0  SUPPORTED HARDWARE AND OPERATING SYSTEMS
+---------------------------------------------
+
+This section contains information about ServerGuide support for
+hardware and operating systems. The following table lists all
+supported IBM eServer and xSeries servers and the latest version
+of ServerGuide that supports each server:
+
+*----------------------------------------------------------------*
+|  Server model, machine type                       ServerGuide  |
+|----------------------------------------------------------------|
+|  xSeries 100, machine type 8486                     7.4.16     |
+|  xSeries 205, machine type 8480                     7.3        |
+|  xSeries 206, machine types 8482, 8487              7.4        |
+|  xSeries 206m, machine types 8485, 8490             7.4.16     |
+|  xSeries 225, machine types 8647, 8649              7.4        |
+|  xSeries 226, machine types 8488, 8648              7.4.16     |
+|  xSeries 235, machine type 8671                     7.4.14     |
+|  xSeries 236, machine type 8841                     7.4.16     |
+|  xSeries 255, machine type 8685                     7.4        |
+|  xSeries 260, machine type 8865                     8.1.01     |
+|  xSeries 305, machine type 8673                     7.3        |
+|  xSeries 306, machine types 8836, 1878, 8489        7.4        |
+|  xSeries 306m, machine types 8849, 8491, 1887       7.4.16     |
+|  xSeries 335, machine types 8830, 8676              7.4        |
+|  xSeries 336, machine types 8837, 1879              7.4.16     |
+|  xSeries 345, machine type 8670                     7.4.17     |
+|  xSeries 346, machine types 8840, 1880              7.4.16     |
+|  xSeries 360, machine type 8686                     7.2.03     |
+|  xSeries 365, machine types 8861, 8862              7.4        |
+|  xSeries 366, machine type 8863                     8.1.01     |
+|  xSeries 440, machine type 8687                     7.2.03     |
+|  xSeries 445, machine type 8870                     7.4        |
+|  xSeries 460, machine type 8872                     8.1.01     |
+|  System x3100, machine type 4348                    8.1.01     |
+|  System x3105, machine type 4347                    8.1.01     |
+|  System x3200, machine types 4362, 4363             8.1.01     |
+|  System x3200 M2, machine type 4367, 4368           8.1.01     |
+|  System x3250, machine types 4364, 4365, 4366       8.1.01     |
+|  System x3250 M2, machine types 4190, 4191, 4194    8.1.01     |
+|  System x3350, machine types 4192, 4193             8.1.01     |
+|  System x3400, machine types 7973, 7974, 7975,7976  8.1.01     |
+|  System x3455, machine types 7984, 7986, 7940, 7741 8.1.01     |
+|  System x3500, machine type 7977                    8.1.01     |
+|  System x3550, machine type 7978,1913               8.1.01     |
+|  System x3610, machine type 7942                    8.1.01     |
+|  System x3650, machine type 7979,1914               8.1.01     |
+|  System x3650 T, machine type 7980                  8.1.01     |
+|  System x3655, machine type 7985, 7943              8.1.01     |
+|  System x3755, machine type 8877, 7163              8.1.01     |
+|  System x3800, machine type 8865                    8.1.01     |
+|  System x3800, machine type 8866                    8.1.01     |
+|  System x3850, machine type 7362                    8.1.01     |
+|  System x3850, machine types 8864, 7365             8.1.01     |
+|  System x3850 M2 / System x3950 M2,                            |
+|    machine types 7141, 7144, 7233, 7234             8.1.01     |
+|  System x3950, machine type 8872                    8.1.01     |
+|  System x3950, machine type 8878, 7366, 7363        8.1.01     |
+|  eServer 325, machine type 8835                     7.4.14     |
+|  eServer 326, machine type 8848                     7.4.14     |
+|  eServer 326m, machine type 7969, 7992              7.4.16     |
+|  AMD Opteron LS20 for IBM eServer BladeCenter,                 |
+|     machine type 8850                               8.1.01     |
+|  eServer BladeCenter HS12, machine types 8014,8028,            |
+|                                          1916       8.1.01     |
+|  eServer BladeCenter HS20, machine type 8678        7.2.03     |
+|  eServer BladeCenter HS20, machine type 8832        7.4.14     |
+|  eServer BladeCenter HS20, machine types 8843,1883  8.1.01     |
+|  eServer BladeCenter HS40, machine type 8839        7.4.16     |
+|  BladeCenter HS20, machine type 7981,1884           7.4.16     |
+|  BladeCenter HS21 XM, machine types 7995,1915,2012  8.1.01     |
+|  BladeCenter HS21, machine types 8853,1885          8.1.01     |
+|  BladeCenter LS21, machine types 7971               8.1.01     |
+|  BladeCenter LS22, machine types 7901               8.1.01     |
+|  BladeCenter LS41, machine types 7972               8.1.01     |
+|  BladeCenter LS42, machine types 7902               8.1.01     |
+*----------------------------------------------------------------*
+
+You can use ServerGuide 8.1.01 to deploy the following operating
+systems to supported servers:
+
+o  Windows Server 2008 (Standard, Enterprise,Web and DataCenter Editions) is 
+   supported on the following systems only:
+   - System x3105, machine type 4347
+   - System x3200, machine types 4362, 4363
+   - System x3200 M2, machine type 4367, 4368
+   - System x3250, machine types 4364, 4365, 4366
+   - System x3250 M2, machine types 4190, 4191, 4194
+   - System x3350, machine types 4192, 4193
+   - System x3400, machine types 7973, 7974, 7975,7976
+   - System x3500, machine type 7977
+   - System x3455, machine types 7984, 7986, 7940, 7741
+   - System x3550, machine type 7978,1913
+   - System x3610, machine type 7942
+   - System x3650, machine type 7979,1914
+   - System x3655, machine type 7985, 7943
+   - System x3755, machine type 8877, 7163
+   - System x3850 M2/ 3950 M2, machine types 7141, 7144, 7233, 7234
+   - BladeCenter HS12, machine types 8014, 8028,1916
+   - BladeCenter HS21, machine types 8853,1885 
+   - BladeCenter HS21 XM, machine types 7995,1915,2012
+   - BladeCenter LS21, machine types 7971
+   - BladeCenter LS22, machine types 7901
+   - BladeCenter LS41, machine types 7972
+   - BladeCenter LS42, machine types 7902
+
+o  Windows Server 2003 (Standard, Enterprise, and Web Editions) 32 bit 
+   to all systems
+
+o  Windows 2003 Small Business Server (SBS) Standard/Premium Editions 
+   for the following servers only:
+   - System x3100, machine type 4348
+   - System x3105, machine type 4347 
+   - System x3200, machine types 4362, 4363 
+   - System x3200 M2, machine types 4367, 4368
+   - System x3250, machine types 4364, 4365, 4366 
+   - System x3250 M2, machine types 4190, 4191, 4194
+   - System x3350, machine types 4182, 4193
+   - System x3400, machine types 7973, 7974, 7975,7976  
+   - System x3455, machine types 7984, 7986, 7940, 7941
+   - System x3500, machine type 7977
+   - System x3550, machine type 7978,1913  
+   - System x3610, machine type 7942
+   - System x3650, machine type 7979,1914   
+   - System x3655, machine type 7985, 7943  
+
+o  Windows 2003 R2 Datacenter UV(32 and 64 bit) for the following 
+   servers only:
+   - xSeries 460, machine type 8872
+   - System x3610, machine type 7942
+   - System x3655, machie types 7985
+   - System x3755, 7163
+   - System x3850 M2/ 3950 M2, machine types 7141, 7144, 7233, 7234
+   - System x3950, machine type 8872   
+   - System x3950, machine type 8878, 7366, 7363 
+
+o  Microsoft Windows 2003 x64 (Standard x64 Edition and Enterprise x64
+   Edition) for all systems except:
+   - System x3650 T, machine type 7980 
+
+You can use ServerGuide to deploy the English,(Simplified) Chinese, 
+French, German, Italian, Japanese, Spanish, and Swedish language 
+versions of Microsoft Windows operating systems.
+
+
+
+5.0  LIMITATIONS
+----------------
+The following limitations are applicable to this version of IBM
+ServerGuide:
+
+o  When using ServerGuide in a multi-node server configuration, the 
+   server summary report screen does not indicate a multi-node 
+   configuration.  However, the number of processors reported will 
+   be consistent with your hardware.
+o  When using ServerGuide on an xSeries 460 two node configuration with
+   a ServeRAID 8i adapter present in one node and not in the other, a 
+   NMI error will occur.  The workaround is to boot the xSeries 460 as
+   a single node, install the operating system with ServerGuide and
+   then boot the configuration as multi-node.  
+o  Using ServerGuide on an xSeries 460 two node configuration with a
+   ServeRAID 8i adapter present in both nodes is not supported.  The 
+   workaround is to start the ServerGuide setup in standalone mode by 
+   pressing Esc to bypass partition merge during machine boot.  When 
+   the Windows files are finished copying to the hard drive and the 
+   ServerGuide setup is finished, then the system can be booted in
+   multinode.
+   NOTE:  During installation, ServerGuide may reboot the system in the
+          middle of the setup process.  If the system reboots, press
+          Esc to bypass the partition merge and boot standalone. 
+          Repeat this step each time the system reboots until the 
+          Windows files are copied to the hard drive.
+o  ServerGuide does not support the use of the following IBM Ultra 320 
+   Controller 2 adapter (13N2249, 39R8743, 43W4324, 43W4325).    
+o  ServerGuide does not support installing to any USB storage device or running
+   from a USB flash memory drive.  
+o  When using a MegaRAID controller in System x3850 M2/System x3950 M2
+   for the onboard drives, all RAID configurations need to deleted 
+   before any attempt to use the LSI SAS 1078 onboard controller with
+   the same onboard drives.
+o  When installing to drives attached to an IBM iSCSI Server TX adapter
+   (30R5201), you may not be able to create a 100 GB partition.  
+   The workaroud is to create a partition of a different size (eg 110 GB).
+o  On x3850 M2 and x3950M2, the Microsoft IPMI device driver is 
+   required and is the only supported IPMI driver.  In Windows 2003, 
+   the Microsoft IPMI device driver is only supported on Microsoft 
+   Windows Server 2003 R2. 
+ 
+   To install the Microsoft IPMI driver on an installation of Windows 
+   Server 2003 R2:
+
+   1. In Control Panel, select Add or Remove Programs.
+   2. Select Add/Remove Windows Components.
+   3. Select Management and Monitoring Tools and press 
+      the Details button.
+   4. Choose the Hardware Management option. 
+   5. Press the OK button to select the Hardware Management 
+      Component, and then press the Next button.
+o  All iSCSI adapters require Windows 2003 SP1 or higher for the 
+   driver to function properly.
+o  All Fiber channel adapters require Windows 2003 SP2 or higher for the 
+   driver to function properly.
+o  When performing any Windows Server 2003 installs on System x3105,
+   Service Pack 1 or higher is recommended.  Installs done without Service 
+   Pack 1 will complete, but there will be two yellow warnings in the 
+   Device Manager under 'Other Devices': 
+     PCI Memory Controller 
+     SM Bus Controller
+
+   In order to fix these you must either:
+
+   - Install Service Pack 1 or higher (recommended)
+
+   OR
+
+   - Run the driver package C:\drv\CSNX86\CSNX86.exe on your system and 
+     follow the onscreen instructions, which will include installing 
+     DirectX 9 from the Microsoft website
+o  Partitioning screen appears to hang
+   When using ServerGuide to partition disks of 300 GB or larger, the 
+     partitioning may take 15-20 minutes for the process to complete.
+o  RAID configuration for LSI-SAS adapters
+   For LSI 1064/1064e/1078 SAS controllers or an IBM SAS HBA controller and 
+     LSI 1020/1030 SCSI ServerGuide is unable to unable to remove any logical 
+     volumes including RAID arrays on the adapters due to the limitation of 
+     the adapters.
+   To avoid any problems with RAID configuration, use the Ctrl+C menu 
+     on system POST prior to using ServerGuide to remove all logical volumes.
+o  Critical Error during RAID Configuration of adapter LSI 1078 SAS IR on 
+   the x3850 M2/x3950 M2
+   For the LSI 1078 SAS IR controller, the total number of disks in a 
+     RAID array cannot exceed six.  To avoid any problems with RAID 
+     configuration of the LSI 1078 SAS IR controller, reduce the number 
+     of disks to six or select the RAID Defaults option of ServerGuide 
+     instead a specific RAID level.
+o  "No operating system found" during Windows 2003 or Windows 2008 installation
+   When you perform a Windows installation, ServerGuide attempts to install 
+     Windows to the first disk on the system presented by the diskpart command 
+     line utility.
+   Due to limitations of the system, when multiple storage adapters are 
+     present on the system, the first disk presented by the diskpart utility 
+     is not always the first disk on the system. 
+   To avoid this problem, please remove any or all storage adapters 
+     that are not required for the Windows installation.
+o  Installing any Windows Server 2003 64-bit version with Service Pack 2 to 
+   SATA drives connected to IBM SAS HBA on x3455 or performing Windows Server 
+   2003 64-bit version with Service Pack 2 installation on x3655
+
+   To install any Windows Server 2003 64-bit version with Service Pack 2 
+   to SATA drive(s) connected to SAS HBA part number 25R8060 on a System x3455, 
+   the planar SATA controller must be disabled in the BIOS. Likewise, to 
+   install one of these Operating Systems on System x3655  the onboard SATA 
+   controller must be disabled.  To do this:
+
+   1. Boot into BIOS Setup by pressing F1
+   2. Go into  the "Devices and I/O Ports" menu
+   3. Set "Planar SATA" to disabled 
+   4. Save your changes and exit
+
+   After the OS is installed, you may reenable the SATA controller, but 
+   in order for it to work you will need to install the drivers found in 
+   the C:\drv\SATA directory.  
+
+   Note: Installing an OS to external storage is not supported with this adapter.
+o  Windows 2008 Japanese keyboard information:
+
+   The Windows 2008 unattended install process does not properly set the 
+   keyboard type to the Japanese (106/109 key) keyboard type, even if it 
+   was selected in the Windows 2008 install screen.  
+
+   To set the keyboard type to Japanese (106/109 key) keyboard in Windows 
+   2008 after installation has completed, run C:\jpkbd106.reg and then 
+   reboot the system.
+o  When installing Windows 2003 with an IBM 10GbE PCIe SR Server Adapter 
+   (P/N 42C1760) in the system, you may find a yellow bang in Device Manager 
+   under "Other Device" for the "Ethernet Controller"
+
+   To resolve this problem, 
+   1)  Create an account at: 
+       http://www.netxen.com/support/downloads/drivers_software.asp
+   2)  Log into the account with the OEM  set to 'IBM'.
+   3)  Once you have logged on, download the zip file containing the driver.
+   4)  Unzip the driver package.
+   5)  To install the driver, right click on the "Ethernet Controller" in 
+       Device Manager and select "Update Driver..."
+   6)  On the first screen of the wizard select "Install from a list or 
+       specific location (Advanced)".
+   7)  On the next screen click the checkbox "Include this location in the search:" 
+       and use the browser button to navigate to the unzipped driver directory.
+   8)  The correct subdirectory will either be win2k3\x64 or win2k3\x86 depending 
+       on if you are running a 64-bit or 32-bit version of Windows respectively.
+   9)  After you have selected the correct driver directory then continue to s
+       elect next to navigate through the rest of the Hardware Update Wizard.
+
+6.0  SUPPORT WEB SITES
+----------------------
+     
+The following Web pages provide resources for understanding, 
+using, and troubleshooting IBM deployment and systems-management 
+software:
+ 
+o  IBM Remote Deployment Manager page
+
+   http://www.ibm.com/servers/eserver/xseries/systems_management/
+   ibm_director/extensions/rdm.html
+ 
+   This Web page provides an overview of IBM Remote Deployment 
+   Manager.
+ 
+o  IBM ServerGuide page
+ 
+   http://www.ibm.com/systems/management/serverguide.html
+ 
+   This Web page provides an overview of ServerGuide.
+ 
+o  IBM ServerGuide Scripting Toolkit page
+
+   http://www.ibm.com/systems/management/sgstk.html
+ 
+   This Web page provides an overview of the ServerGuide Scripting 
+   Toolkit.
+ 
+o  IBM ServerProven(R) page
+ 
+   http://www.ibm.com/servers/eserver/serverproven/compat/us/
+ 
+   This Web page provides compatibility information about 
+   hardware, software, and middleware.
+ 
+o  IBM Support page
+ 
+   http://www.ibm.com
+ 
+   This is the IBM Support Web site for IBM hardware and 
+   systems-management software. 
+ 
+o  IBM Systems Management Software: Download/Electronic Support 
+   page
+ 
+   http://www.ibm.com/pc/us/eserver/xseries/systems_management/
+   dwnl.html
+ 
+   Use this Web page to download IBM systems-management software.
+ 
+o  IBM UpdateXpress page
+ 
+   http://www-03.ibm.com/systems/management/xpress.html
+ 
+   This Web page provides an overview of UpdateXpress. It also 
+   contains links to pages from which you can download 
+   UpdateXpress, order an UpdateXpress CD, or purchase a 
+   subscription from a vendor other than IBM.
+ 
+o  IBM xSeries Systems Management page
+ 
+   http://www.ibm.com/eserver/xseries/systems_management/ 
+
+o  Electronic Service Agent™
+ 
+   www.ibm.com/support/electronic 
+ 
+   The Electronic Service Agent™ is a "no-charge" software tool that 
+   resides on your IBM xSeries® systems to monitor hardware events and
+   transmit system inventory information to IBM.  With these functions, 
+   this software can proactively monitor, track and capture system 
+   inventory and hardware errors. Follow the link below to download the 
+   IBM xSeries® Electronic Service Agent™:.
+
+
+7.0  NOTICES AND TRADEMARKS
+---------------------------
+
+INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS
+PUBLICATION "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+PURPOSE. Some jurisdictions do not allow disclaimer of express or
+implied warranties in certain transactions, therefore, this
+statement may not apply to you.
+
+This information could include technical inaccuracies or
+typographical errors. Changes are periodically made to the
+information herein; these changes will be incorporated in new
+editions of the publication. IBM may make improvements and/or
+changes in the product(s) and/or the program(s) described in this
+publication at any time without notice.
+
+The following terms are trademarks of the IBM Corporation in the
+United States, other countries, or both:
+   
+BladeCenter
+eServer
+IBM
+Netfinity
+ServerGuide
+ServerProven
+ServeRAID
+xSeries
+           
+Adaptec and HostRAID are trademarks of Adaptec, Incorporated, in
+the United States, other countries, or both.           
+
+Intel, Intel Inside (logos), MMX and Pentium are trademarks of
+Intel Corporation in the United States, other countries, or both.
+
+Linux is a trademark of Linus Torvalds in the United States, other
+countries, or both.
+
+Microsoft and Windows are trademarks of Microsoft Corporation in 
+the United States, other countries, or both.
+
+Red Hat, the Red Hat "Shadow Man" logo, and all Red Hat-based
+trademarks and logos are trademarks or registered trademarks of
+Red Hat, Inc., in the United States and other countries.
+         
+Other company, product, or service names may be trademarks or
+service marks of others.
+      
+(C) Copyright IBM Corporation 1996, 2008. All rights reserved.
+
+Note to U.S. Government Users Restricted Rights -- Use,
+duplication, or disclosure restricted by GSA ADP Schedule Contract
+with IBM Corp.
+
+
+
+8.0  OTHER VENDOR SOFTWARE
+--------------------------
+
+This readme file contains license information and notices related to certain Third Party Code contained in 
+this product.
+
+

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ibmupdate.xsl"?>
+<!DOCTYPE CIM SYSTEM "cimv20.dtd">
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+   <MESSAGE ID="1" PROTOCOLVERSION="1.0">
+      <SIMPLEREQ>
+         <IMETHODCALL NAME="CreateInstance">
+            <LOCALNAMESPACEPATH>
+               <NAMESPACE NAME="root"/>
+               <NAMESPACE NAME="cimv2"/>
+            </LOCALNAMESPACEPATH>
+            <IPARAMVALUE NAME="NewInstance">
+               <INSTANCE CLASSNAME="IBMPSG_SystemUpdateElement">
+                  <PROPERTY NAME="Name" TYPE="string">
+                     <VALUE>UpdateXpress System Pack Installer</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementID" TYPE="string">
+                     <VALUE>BLUE</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementState" TYPE="uint16">
+                     <VALUE>1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="TargetOperatingSystem" TYPE="uint16">
+                     <VALUE>36</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="Version" TYPE="string">
+                     <VALUE>Version 9.63 -[BLUE08E-9.63]-</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableMachineTypes" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>BladeCenter HS23E-[8038]-</VALUE>
+                        <VALUE>BladeCenter HS23E-[8039]-</VALUE>
+                        <VALUE>BladeCenter HX5-[1909]-</VALUE>
+                        <VALUE>BladeCenter HX5-[1910]-</VALUE>
+                        <VALUE>BladeCenter HX5-[7872]-</VALUE>
+                        <VALUE>BladeCenter HX5-[7873]-</VALUE>
+                        <VALUE>Flex System x220 Compute Node-[2585]-</VALUE>
+                        <VALUE>Flex System x220 Compute Node-[7906]-</VALUE>
+                        <VALUE>Flex System x222 Compute Node-[7916]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[7863]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[8737]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[8738]-</VALUE>
+                        <VALUE>Flex System x240 Compute Node-[8956]-</VALUE>
+                        <VALUE>Flex System x440 Compute Node-[7917]-</VALUE>
+                        <VALUE>IBM BladeCenter HS23-[1929]-</VALUE>
+                        <VALUE>IBM BladeCenter HS23-[7875]-</VALUE>
+                        <VALUE>IBM Flex System x880 X6-[4259]-</VALUE>
+                        <VALUE>IBM Flex System x880 X6-[7903]-</VALUE>
+                        <VALUE>IBM NeXtScale nx360 M4-[5455]-</VALUE>
+                        <VALUE>IBM System x iDataPlex Direct Water Cooled dx360 M4 server-[7918]-</VALUE>
+                        <VALUE>IBM System x iDataPlex Direct Water Cooled dx360 M4 server-[7919]-</VALUE>
+                        <VALUE>System X iDataPlex dx360 M4-[7912]-</VALUE>
+                        <VALUE>System X iDataPlex dx360 M4-[7913]-</VALUE>
+                        <VALUE>System x3300 M4-[7382]-</VALUE>
+                        <VALUE>System x3500 M4-[7383]-</VALUE>
+                        <VALUE>System x3530 M4-[7160]-</VALUE>
+                        <VALUE>System x3550 M4-[7914]-</VALUE>
+                        <VALUE>System x3630 M4-[7158]-</VALUE>
+                        <VALUE>System x3650 M4 BD-[5466]-</VALUE>
+                        <VALUE>System x3650 M4-[7915]-</VALUE>
+                        <VALUE>System x3690 X5-[7147]-</VALUE>
+                        <VALUE>System x3690 X5-[7148]-</VALUE>
+                        <VALUE>System x3690 X5-[7149]-</VALUE>
+                        <VALUE>System x3690 X5-[7192]-</VALUE>
+                        <VALUE>System x3750 M4-[8718]-</VALUE>
+                        <VALUE>System x3750 M4-[8722]-</VALUE>
+                        <VALUE>System x3750 M4-[8733]-</VALUE>
+                        <VALUE>System x3750 M4-[8752]-</VALUE>
+                        <VALUE>System x3850 X5 / x3950 X5-[7145]-</VALUE>
+                        <VALUE>System x3850 X5 / x3950 X5-[7146]-</VALUE>
+                        <VALUE>System x3850 X6 / x3950 X6-[3837]-</VALUE>
+                        <VALUE>System x3850 X6 / x3950 X6-[3839]-</VALUE>
+                        <VALUE>x3100 M5-[5457]-</VALUE>
+                        <VALUE>x3250 M5-[5458]-</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="applicableOperatingSystems" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>Linux</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="buildNumber" TYPE="string">
+                     <VALUE>BLUE08E</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="description" TYPE="string">
+                     <VALUE>UpdateXpress System Pack Installer</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="ibmSchemaVersion" TYPE="string">
+                     <VALUE>3.1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="identificationCode" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_rhel7_x86-64</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installCommandLine" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_rhel7_x86-64.bin</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installDirectory" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installationNotes" TYPE="string">
+                     <VALUE>This update is packaged as a self-extracting shell script.This package must be run on a ext2 or ext3 filesystem. You must be logged in as root.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installLog" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="languageEdition" TYPE="string">
+                     <VALUE>All</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="manufacturer" TYPE="string">
+                     <VALUE>IBM</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="rebootRequired" TYPE="uint8">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="regions" TYPE="string">
+                     <VALUE>Worldwide</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="releaseDate" TYPE="datetime">
+                     <VALUE>20180328000000.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistory" TYPE="string">
+                     <VALUE>See change history file</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="severity" TYPE="uint8">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedInstallCommandLine" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_rhel7_x86-64.bin up -u</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedUninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="uninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="type" TYPE="uint16">
+                     <VALUE>11</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="category" TYPE="string">
+                     <VALUE>Utility</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crc" TYPE="string">
+                     <VALUE>3a7b0eba</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="size" TYPE="uint32">
+                     <VALUE>61951</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="readme" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_anyos_noarch.txt</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="genericBuildID" TYPE="string">
+                     <VALUE>BLKB</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableVPDIDs" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>0x138</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="applicableProductIDs" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>0x002</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="xmlFilename" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_rhel7_x86-64.xml</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unpack" TYPE="uint16">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="orderedMachineTypeList" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>7192</VALUE>
+                        <VALUE>1909</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>7919</VALUE>
+                        <VALUE>7917</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>7903</VALUE>
+                        <VALUE>7913</VALUE>
+                        <VALUE>8737</VALUE>
+                        <VALUE>5458</VALUE>
+                        <VALUE>2585</VALUE>
+                        <VALUE>7149</VALUE>
+                        <VALUE>8733</VALUE>
+                        <VALUE>5466</VALUE>
+                        <VALUE>7147</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>7872</VALUE>
+                        <VALUE>7145</VALUE>
+                        <VALUE>7383</VALUE>
+                        <VALUE>3839</VALUE>
+                        <VALUE>7918</VALUE>
+                        <VALUE>3837</VALUE>
+                        <VALUE>7906</VALUE>
+                        <VALUE>7916</VALUE>
+                        <VALUE>1910</VALUE>
+                        <VALUE>8718</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>8738</VALUE>
+                        <VALUE>7912</VALUE>
+                        <VALUE>4259</VALUE>
+                        <VALUE>8956</VALUE>
+                        <VALUE>5457</VALUE>
+                        <VALUE>8722</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>5455</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>7148</VALUE>
+                        <VALUE>7863</VALUE>
+                        <VALUE>7158</VALUE>
+                        <VALUE>7873</VALUE>
+                        <VALUE>8752</VALUE>
+                        <VALUE>7146</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                        <VALUE>209</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSArchitectureList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                        <VALUE>2</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="payload" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_rhel7_x86-64.bin</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crcType" TYPE="uint32">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="timestamp" TYPE="datetime">
+                     <VALUE>20180328164819.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistoryFile" TYPE="string">
+                     <VALUE>ibm_utl_uxspi_9.63_anyos_noarch.chg</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="updateSelection" TYPE="string">
+                     <VALUE>auto</VALUE>
+                  </PROPERTY>
+               </INSTANCE>
+            </IPARAMVALUE>
+         </IMETHODCALL>
+      </SIMPLEREQ>
+   </MESSAGE>
+</CIM>

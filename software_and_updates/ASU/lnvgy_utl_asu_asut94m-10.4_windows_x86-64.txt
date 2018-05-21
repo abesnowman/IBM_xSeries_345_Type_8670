@@ -1,0 +1,415 @@
+         Lenovo Advanced Settings Utility for x86_64 Windows
+            Version 10.4 (Build ID ASUT94M)
+               Installation README File
+
+
+CONTENTS
+________
+
+       1.0   Overview
+       2.0   Installation and Setup Instructions
+       3.0   Configuration Information
+       4.0   Unattended Mode
+       5.0   Web Sites and Support Phone Number
+       6.0   Trademarks and Notices
+       7.0   Known Issue & Limitations
+       8.0   RDCLI Supported Hardware and Software
+       9.0   Disclaimer
+
+       1.0   Overview
+
+             1.1  This README file contains the latest information about
+                  installing the Advanced Settings Utility.
+
+             1.2  Limitations: N/A
+
+             1.3  Enhancements: N/A
+
+             1.4  Recommendations and Prerequisites for the Update: N/A
+
+             1.5  Dependencies
+
+               -  Definition files must be at version 2.4.1 or below.
+
+       2.0   Installation and Setup Instructions
+
+             The procedure to install the Advanced Settings Utility (ASU)
+             for x86_64 Windows is as follows:
+
+             1.   Copy the .exe to a directory on the hard drive.
+
+             2.   Double-click on the .exe or run it from the command
+                  line.  asu64.exe will be extracted to the hard disk.
+
+             - UEFI-Compliant Systems
+             
+             The ASU 3.0 supports configuring settings in UEFI-compliant
+             servers. 
+
+             The IMM has both an external LAN connection and a USB device
+             that supports LAN-over-USB (internal LAN connection).
+             The protocol used over the internal and external LAN are the
+             same, which allows ASU to be used remotely or locally. 
+
+             ASU may also still communicate with the IMM locally via the
+             KCS interface that was used on previous versions of ASU for
+             BIOS-based Systems. 
+
+             In order for the local LAN-over-USB connection to work properly,
+             the USB device must be configured.
+
+             The LAN-over-USB (RNDIS) device driver must be installed and
+             activated on the Operating System. In order to install the
+             device driver for LAN-over-USB device, there must be no
+             network device on the system configured with an IP adress of
+             169.254.x.y other than the Lenovo USB Remote NDIS Network Device
+             (the LAN-over-USB device).
+             
+             The files ibm_rndis_server_os.inf and device.cat are used to 
+             install a device driver for Lenovo USB Remote NDIS Network Device.
+             These files will be extracted along with asu64.exe in the 
+             same directory.
+             
+             Note: In order for ASU to automatically install the driver, the
+             ibm_rndis_server_os.inf and device.cat must be placed in the same
+             directory as asu64.exe.
+             
+             - BIOS-based Systems
+             
+             For ASU version 2.1 and greater, ASU supports
+             certificate generation using RSA/RSAII commands.
+             As part of the rsa command "generate" a xml
+             file is needed as an argument for the generate command.
+             The xml file contains information that is needed at
+             the time of certificate generation.
+
+             When the extraction is done a template.xml is
+             provided in the same directory where this readme
+             is placed.  In the template.xml, XXXX indicates
+             fields where the user should imput the information
+             for that particular item in the xml file. The items
+             have min and max lengths which are defined in the xml file.
+             If the item is defined as "Optional" and if it is
+             not needed, the user should delete that item from
+             the xml file before executing the generate command.
+
+             The xml file supports the two types of RSA certificate
+             generation: "Generate Self-Signed Certificate" and
+             "Generate Certificate Signing Request (CSR)".
+             Syntax of the ASU commands are:
+
+             asu64 generate RSA_Generate_SSL_Server_Certificate temp.xml
+             asu64 generate RSA_Generate_SSL_Server_CSR temp.xml
+             asu64 generate RSA_Generate_SSL_Client_Certificate temp.xml
+             asu64 generate RSA_Generate_SSL_Client_CSR temp.xml
+
+
+             2.1: Windows PE instructions for RSA operations
+
+                 For ASU to communicate with RSA on Windows PE, the
+                 RSAII Device Driver needs to be installed on the WinPE Boot CD.
+                 Also for the ASU to communicate with the BMC on Windows PE, the BMC
+                 Device Driver needs to be installed on the WinPE Boot CD.
+                 To establish communication with RSAII both the IBMSPREM.exe and IBMSPSVC.exe
+                 need to be executed once after boot.  This can be accomplished
+                 by updating the OEMRunOnce section in winbom.ini file to execute
+                 IBMSPREM.exe and IBMSPSVC.exe.
+
+                 To update the winbom.ini file perform the following:	
+
+                 Edit e:\winpe\winbom.ini
+                 Add the following:
+
+                    [OEMRun]
+                    "IBMSPREM App Execution", "X:\RSAII\IBMSPREM.EXE"
+                    "IBMSPSVC App Execution", "X:\RSAII\IBMSPSVC.EXE -install"
+
+
+             2.2: Windows PE setup on versions 1.x
+
+                 For ASU to work properly on Windows PE 1.x, either a
+                 writable TEMP directory must be created, or ASU's helper
+                 device driver must be extracted on the Windows PE CD.  To
+                 extract the device driver, run "asu.exe extractdriver",
+                 and make sure that wflash.sys is in the same directory as
+                 asu.exe at all times.
+
+
+             2.3: Windows PE setup on version 2.0 (Windows Automated Installation Kit)
+
+	         The Windows PE image will need additional packages to be
+                 installed.  WinPE-MDAC-Package and WinPE-WMI-Package must
+                 be installed via instructions found in the Windows Automated
+                 Installation Kit documentation or via Microsoft's website.
+
+
+             2.4: Microsoft Vista Notes
+
+                 If the operating system is Microsoft Vista, the
+                 asu utility must be run with Administrator privileges. This
+                 may be done by logging in under the 'Administrator' ID or,
+                 when logged in as a user with Administrator privileges.
+
+                 If logging into Microsoft Vista as 'Administrator", executing
+                 the asu utility there are no additions steps require.
+
+                 If logging into Microsoft Vista, as a user, the user must
+                 select one of the following two ways to execute the asu
+                 utility with Administrator privileges.
+                 A. Turn User Account Control (UAC) off.
+                      Procedure to turn User Account Control off:
+                       - Click on the start icon.
+                       - Click on Control Panel
+                       - Click on User Accounts.
+                       - In User Account panel, Click on
+                       'Turn User Account Control on or off'.
+                       - When User Account Control panel appears Click on 'Continue'.
+                       - In User Account Control On or Off panel, if 'Use User
+                       Account Control (UAC) to help protect your computer' box is
+                       checked, then uncheck the box.
+                       - Click OK.
+                       - When Microsoft Windows warning message 'You must restart
+                       your computer to apply these changes', Click 'Restart Now'.
+
+                       The system will restart, when Microsoft Vista login screen
+                       appears, login in using the same user account. After restart
+                       has completed, the administrator privileges are active.
+
+                  B. Executing asu utility with administrator approval.
+                      If User Account Control (UAC) is active, asu execution
+                      must be executed with administrator approval.
+                      Procedure to execute with adminstrator approval from the
+                      command prompt:
+                        - Right click on 'Command Prompt" icon. Left click on 
+                          'Run as administrator'.  The User Account Control message
+                          window pops up.  Click on 'Continue'. The Administrator Command
+                          Prompt window appears.
+
+                        - In the Administrator Command Prompt window execute
+                          the desired asu commands.
+
+       3.0   Configuration Information
+
+	     ASU 2.0(and higher) contains the RSA and BMC definition files(patches) already. 	
+             Depending on the machine that you are running, BIOS CMOS definition
+             file(patch) might also be present. To check what definition files(patches)
+             are avaliable run "asu64 patchlist". The patches that are available will be
+             displayed.
+
+             If the system does not have RSA, and the user issues any commands that would
+             use the RSA an error message is presented to remove the RSA patch.  To remove
+             the RSA patch, the user should execute "asu64 patchlist" to determine which patch #
+             corresponds to the RSA patch. Execute the asu command "asu64 patchremove #",
+             where # is the patch number that corresponds to the RSA patch. Similarly,
+             if the system does not have a BMC, the user would use the same steps as
+             was described to remove the RSA patch.
+
+             If a BIOS CMOS definition file(patch) is not present and the operator
+             needs this definition file(patch), then the operator needs to add it.
+
+             The steps to add the BIOS definition file(patch) to asu:
+
+             3.1  Download/copy the definition file .exe to the same directory
+                  on the hard drive to which asu.exe was extracted. The BIOS definition
+                  file .exe can be downloaded from the support download site for the
+                  selected machine/model.
+
+             3.2  Extract the definition file by running the .exe at the command line.
+                  This will place the "<definition file>.def" in the directory the .exe is
+                  executed from.
+
+             3.3  Run "asu64 patchadd <definition file>.def" where
+                         <definition file>.def is the .def extracted from the
+                         downloaded .exe.
+
+       4.0   Unattended Mode
+
+             All ASU operations are command line based and don't wait for user
+             input.  As such, ASU can be scripted by using "batch" mode (see the
+             Advanced Settings Utility User's Guide for more details) or any
+             scripting facility of your operating system.
+
+       5.0   Web Sites and Support Phone Number
+
+             5.1  Lenovo Support Web Site:
+                  http://www.pc.Lenovo.com/support
+
+             5.2  Lenovo Marketing Web Site:
+                  http://www.pc.Lenovo.com/ww/eserver/xseries/
+
+             5.3  If you have any questions about this update or problems
+                  applying the update go to the following Help Center World
+                  Telephone Numbers URL:
+                  http://www.pc.Lenovo.com/qtechinfo/YAST-3P2QYL.html.
+
+
+       6.0   Trademarks and Notices
+
+             6.1  Lenovo and the e(logo) are registered trademarks of
+                  International Business Machines Corporation.
+
+             6.2  U.S. Government Users Restricted Rights - Use, duplication
+                  or disclosure restricted by GSA ADP Contract with Lenovo
+                  Corporation.  Lenovo web site pages may contain other
+                  proprietary notices and copyright information which should
+                  be observed.
+             
+             6.3  To view licenses in English supply the "--license" option to
+                  ASU.  Additional licenses in other languages can be found in
+                  the License_Agreement_International.pdf file. This file is
+                  part of the ASU application package.  The ASU application
+                  package is available for download from the Tools Center web
+                  site.
+
+        7.0   Known Issue
+ 			 
+             7.1  According to IMM mutinode design spec,Partition changes will fail 
+                  if any of the systems specified in the change are powered on. These
+                  changes include:
+                      IMM.PartitionEnabled
+                      IMM.PartitionNodes
+
+                  There are 2 scenarios: 
+                      1. For non-blade system, 
+                          Poweroff the system, modify through out of band.
+                      2. For blade system, 
+                          Modify through AMM complex configuration.
+                      
+             7.2  IMM only supports one remote presence client connection.
+                  If a remote presence console launched in web UI, RDCLI will fail.
+                  Remote presence console must be closed when using RDCLI.
+
+             
+             7.3  Limitations on x3755 M3 type (7164):
+                  1.  Settings are read-only:
+                      BMC_User02LAN_Priv
+                      BMC_User02Serial_Priv
+                      BMC_User02Name
+                      BMC_NetworkMACAddress
+                  2.  Settings have dependence on other settings:
+                      BMC_NetworkIPAddress
+                      BMC_NetworkIPSubnetMask
+                  These settings can be set when BMC_NetworkIPAddrSource is "Static Address"
+                  3.  Settings need proper values
+                      BMC_NetworkIPDefaultGateway
+                      BMC_NetworkIPBackupGateway
+                  Value of these settings must follow same pattern as BMC_NetworkIPAddress 
+                  and BMC_NetworkIPSubnetMask
+                  4.  Settings must wait for one second to take effective after config:
+                      BMC_NetworkIPAddress
+                      BMC_NetworkIPSubnetMask
+                      BMC_NetworkIPDefaultGateway
+                  5.  BMC_NetworkIPAddrSource only supports DHCP/Static Address/Other
+                  6.  Can not Show/set BMC network related settings when the network port is in "shared" mode.
+
+              7.4  Can not load default value for boot order          
+                  Due to uEFI design limitations, currently ASU can not load default value for boot order, so
+                  when you use loaddefault command for boot order, it does not change, still remains order before
+                  the command is executed.
+
+              7.5  Some uEFI settings can not be modified when run ASU on ESXi
+                     uEFI.AdminPassword
+                     PXE_CONFIGURATION.NicPortPxeMode
+                     PXE_CONFIGURATION.NicPortPxeProtocol
+
+              7.6  Related retain tips
+                   H197143, H193576, H172116, H201792
+                   You can go to www.Lenovo.com and enter tip ids as key word and search the related documents
+                                        
+        8.0   RDCLI Supported Hardware and Software  
+             Beginning in ASU 3.60 the following additional RDCLI files are packaged in
+             the RPM and linux tgz file. 
+             
+             8.1 Functional Prerequisite
+             		 The target IMM-based system's remote disk function has already been enabled. 
+             		 
+             8.2 Supported Servers
+             		 All IMM based rack & tower systems.
+
+             		 Note: Currently RDCLI does NOT support BladeCenter Blades base on IMM. 
+             
+             8.3 Supported Operating Systems
+                 Redhat 4, Redhat5, Linux SLES 10 and newer SLES Operating System as Client
+                 Operationg System.
+                 
+             8.4 Supported IMM Version
+                   RDCLI supports IMM YUOO73M Version 1.14 and above.
+
+                 
+             8.5 Command line interface
+                 A) To perform a mount:
+                 rdmount {-s <sp> -d <path>} [-l <login> -p <password>] | -h -v
+                 Note: 
+                 -s (required) The ip address of the IMM (service processor) on the target machine
+                 -d (required) The path on the client machine to the cd-rom or .iso file to mount
+                 -l (optional) Userid on the IMM to perform authentication with (default is USERID)
+                 -p (optional) Password on the IMM to perform authentication with (default is PASSW0RD)
+                 -w (optional) Authentication port user want to communicate to SP
+                 -h Display the command line help text
+                 -v  Request verbose output.
+										
+                 B) To query an existing successful mounting record:
+                     rdmount 每q
+										
+                 C) rdumount has a very simple interface as follows:
+                     rdumount <token> | -h
+                     Note: 
+                     The ＆token＊ value is an unique id of an existing successful mounting
+                     record on the client Operating System.
+                     -h Display command line help text for the rdumount command.
+             
+                 
+             8.6 Usage Example
+             
+                 A) To mount a CD-ROM in the /dev/cdrom drive or an .iso file to a target
+                    system with an IMM ip address 192.168.0.1, using "USERID" as login id
+                    and "PASSW0RD" as login password:
+                     rdmount 每s 192.168.0.1 每d /dev/cdrom -l USERID 每p PASSW0RD
+                     rdmount 每s 192.168.0.1 每d /home/install.iso -l USERID 每p PASSW0RD
+                     rdmount 每s 192.168.0.1 每d /home/install.iso -l USERID 每p PASSW0RD -w 90
+
+                 If remote IMM has an IPv6 address:
+                     rdmount -s 2002:325b:1000::097D:5AF5 每d /dev/cdrom -l USERID -p PASSW0RD 
+                     rdmount -s 2002:325b:1000::097D:5AF5 每d /home/install.iso -l USERID -p PASSW0RD
+                     rdmount 每s 2002:325b:1000::097D:5AF5 每d /dev/cdrom -l USERID 每p PASSW0RD 每w 90
+                     2002:325b:1000::097D:5AF5 is an IPv6 address of IMM.
+                    
+                 Result:
+                     1. Success: Tell user mounting is successful.
+                     2. Fail: Tell user the command operation is fail.
+								 
+                 B) To query for the existing mount information on the local client:
+	                   rdmount -q
+
+	               Result:
+	                   1. Success: List all available mounting information on this client system,
+	                      in the format:
+	                           "Token 507: drive path /home/install.iso, mounted to SP 192.168.0.1,
+	                           by user USERID"
+                     2. Fail: Tell user the command operation is fail.
+
+                 Note: 
+                     "Token" is an unique id of an existing successful mounting record on the
+                     client Operating System. You will not be able to know the mounting record
+                     on another remote client system.
+                 
+                 C) To unmount a CD-ROM or .iso file with already known unique mounting record id 507:
+                     rdumount 507
+									
+                 Result:
+                     1. Success:  The mounting file will be unmounted from the remote IMM system.
+                     2. Fail: Tell user the command operation is fail.
+										
+										
+                  
+
+       9.0   Disclaimer
+
+                  THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+                  KIND.  Lenovo DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR
+                  IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES
+                  OF FITNESS FOR A PARTICULAR PURPOSE AND MERCHANTABILITY WITH
+                  RESPECT TO THE INFORMATION IN THIS DOCUMENT.  BY FURNISHING
+                  THIS DOCUMENT, Lenovo GRANTS NO LICENSES TO ANY PANTENTS OR
+                  COPYRIGHTS.
+

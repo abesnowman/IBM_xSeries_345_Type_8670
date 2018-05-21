@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE CIM SYSTEM "cimv20.dtd">
+<?xml-stylesheet type="text/xsl" href="ibmupdate.xsl" ?>
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+ <MESSAGE ID="1" PROTOCOLVERSION="1.0">
+  <SIMPLEREQ>
+   <IMETHODCALL NAME="CreateInstance">
+    <LOCALNAMESPACEPATH>
+     <NAMESPACE NAME="root"/>
+     <NAMESPACE NAME="cimv2"/>
+    </LOCALNAMESPACEPATH>
+    <IPARAMVALUE NAME="NewInstance">
+     <INSTANCE CLASSNAME="IBMPSG_SystemUpdateElement">
+        <PROPERTY NAME="Name" TYPE="string"><VALUE>Integrated System Management Processor Firmware Update</VALUE></PROPERTY>
+        <PROPERTY NAME="SoftwareElementID" TYPE="string"><VALUE>GE8T</VALUE></PROPERTY>
+        <PROPERTY NAME="SoftwareElementState" TYPE="uint16"><VALUE>1</VALUE></PROPERTY>
+        <PROPERTY NAME="TargetOperatingSystem" TYPE="uint16"><VALUE>58</VALUE></PROPERTY>
+        <PROPERTY NAME="Version" TYPE="string"><VALUE>Version 1.09 -[GE8T22C-1.09]-</VALUE></PROPERTY>
+        <PROPERTY.ARRAY NAME="applicableMachineTypes" TYPE="string"><VALUE.ARRAY><VALUE>IBM eServer xSeries 345-[8670]-</VALUE></VALUE.ARRAY></PROPERTY.ARRAY>
+        <PROPERTY.ARRAY NAME="applicableOperatingSystems" TYPE="string"><VALUE.ARRAY><VALUE>Windows 2000</VALUE><VALUE>Windows 2003</VALUE></VALUE.ARRAY></PROPERTY.ARRAY>
+        <PROPERTY NAME="buildNumber" TYPE="string"><VALUE>GE8T22C</VALUE></PROPERTY>
+        <PROPERTY NAME="description" TYPE="string"><VALUE>Integrated System Management Processor Firmware Update</VALUE></PROPERTY>
+        <PROPERTY NAME="ibmSchemaVersion" TYPE="string"><VALUE>2.0</VALUE></PROPERTY>
+        <PROPERTY NAME="identificationCode" TYPE="string"><VALUE>41y7965w</VALUE></PROPERTY>
+        <PROPERTY NAME="installCommandLine" TYPE="string"><VALUE>41y7965w.exe</VALUE></PROPERTY>
+        <PROPERTY NAME="installDirectory" TYPE="string"><VALUE>.</VALUE></PROPERTY>
+        <PROPERTY NAME="installLog" TYPE="string"><VALUE></VALUE></PROPERTY>
+        <PROPERTY NAME="installationNotes" TYPE="string"><VALUE>This update is packaged as a self-extracting Package for the web (PFW). To unpack, this update requires that your TEMP environment variable be set to a path with read/write access. You must be logged in as an administrator.</VALUE></PROPERTY>
+        <PROPERTY NAME="languageEdition" TYPE="string"><VALUE>All</VALUE></PROPERTY>
+        <PROPERTY NAME="manufacturer" TYPE="string"><VALUE>IBM</VALUE></PROPERTY>
+        <PROPERTY NAME="rebootRequired" TYPE="uint8"><VALUE>3</VALUE></PROPERTY>
+        <PROPERTY NAME="regions" TYPE="string"><VALUE>Worldwide</VALUE></PROPERTY>
+        <PROPERTY NAME="releaseDate" TYPE="datetime"><VALUE>20060201000000.000000-300</VALUE></PROPERTY>
+        <PROPERTY NAME="revisionHistory" TYPE="string"><VALUE></VALUE></PROPERTY>
+        <PROPERTY NAME="severity" TYPE="uint8"><VALUE>1</VALUE></PROPERTY>
+        <PROPERTY NAME="unattendedInstallCommandLine" TYPE="string"><VALUE>41y7965w.exe -s -a -s</VALUE></PROPERTY>
+        <PROPERTY NAME="unattendedUninstallCommandLine" TYPE="string"><VALUE>not supported</VALUE></PROPERTY>
+        <PROPERTY NAME="uninstallCommandLine" TYPE="string"><VALUE>not supported</VALUE></PROPERTY>
+        <PROPERTY NAME="type" TYPE="uint16"><VALUE>1</VALUE></PROPERTY>
+        <PROPERTY NAME="category" TYPE="string"><VALUE>BMC/H8</VALUE></PROPERTY>
+        <PROPERTY NAME="crc" TYPE="string"><VALUE>e7117eec</VALUE></PROPERTY>
+        <PROPERTY NAME="readme" TYPE="string"><VALUE>41y7965w.txt</VALUE></PROPERTY>
+     </INSTANCE>
+    </IPARAMVALUE>
+   </IMETHODCALL>
+  </SIMPLEREQ>
+ </MESSAGE>
+</CIM>

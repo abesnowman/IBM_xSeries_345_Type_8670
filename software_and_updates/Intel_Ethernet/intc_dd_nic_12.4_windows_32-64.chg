@@ -1,0 +1,56 @@
+
+v12.4 Drivers Software Release for eServer System x Intel-based Fast and Gigabit
+Ethernet products
+
+
+Change History and Driver Versions Details
+==========================================
+
+
+Drivers Family       Driver Name      v12.4      Previous v12.3    Comments
+==============       ===========      =====      ==============    ========
+
+Microsoft Windows NDIS drivers:
+
+Gigabit (PCI/PCI-X)
+=======
+
+NDIS5 32-bit         E1000NT5.SYS     8.10.1.0    8.9.1.0          W2K 
+NDIS5 32-bit         E1000325.SYS     8.10.1.0    8.9.1.0          W03XP32
+NDIS6 32-bit         E1G60I32.SYS     8.3.9.0     8.2.17.0         WS08 x86
+NDIS5 EM64T          E1G5132e.sys     8.10.1.0    8.9.1.0          WS03 x64
+NDIS6 EM64T          E1G6032Ee.SYS    8.3.9.0     8.2.17.0         WS08 x64
+
+
+Gigabit (PCI-e)
+=======
+
+NDIS5 32-bit         E1E5032.SYS      9.12.13.0   9.10.8.0         W2K
+NDIS5 32-bit         E1E5132.SYS      9.12.13.0   9.10.8.0         W03XP32
+NDIS5 EM64T          E1E5132E.SYS     9.12.13.*   9.10.8.0         WS03 x64
+NDIS6 32-bit         E1E6032.SYS      9.12.16.0   9.10.8.0         WS08 x86 
+NDIS6 EM64T          E1E6032E.SYS     9.12.16.0   9.10.8.0         WS08 x64       
+
+
+
+Notes:
+
+This v12.4 sw release replaces all previous sw releases for IBM eServer System x
+Intel-based Gigabit Ethernet Adapters.
+
+
+The key updates with this v12.4 software release include:
+=========================================================
+
+Support Microsoft Windows Server 2008.
+
+Support x3950M2 and x3850M2 for multinodes configuration for Windows 2003 and 2008.
+
+Support System x iDataplex GS20 Rack Center.
+
+
+
+
+
+
+

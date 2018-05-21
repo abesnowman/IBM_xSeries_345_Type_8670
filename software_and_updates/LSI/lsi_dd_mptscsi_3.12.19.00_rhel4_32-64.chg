@@ -1,0 +1,7 @@
+LSI 1030 SCSI Controller Driver for Linux (RHEL 4 and SLES 9)
+
+NOTE TO SERVICE - Reference RETAIN N/A
+
+Version 3.12.19.00
+-------------------
+ - Initial release (for update from native RHEL 4 or SLES 9 driver)

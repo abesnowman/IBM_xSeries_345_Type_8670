@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ibmupdate.xsl"?>
+<!DOCTYPE CIM SYSTEM "cimv20.dtd">
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+   <MESSAGE ID="1" PROTOCOLVERSION="1.0">
+      <SIMPLEREQ>
+         <IMETHODCALL NAME="CreateInstance">
+            <LOCALNAMESPACEPATH>
+               <NAMESPACE NAME="root"/>
+               <NAMESPACE NAME="cimv2"/>
+            </LOCALNAMESPACEPATH>
+            <IPARAMVALUE NAME="NewInstance">
+               <INSTANCE CLASSNAME="IBMPSG_SystemUpdateElement">
+                  <PROPERTY NAME="Name" TYPE="string">
+                     <VALUE>IBM ServerGuide Scripting Toolkit, Windows Edition</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementID" TYPE="string">
+                     <VALUE>SGTK</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementState" TYPE="uint16">
+                     <VALUE>1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="TargetOperatingSystem" TYPE="uint16">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="Version" TYPE="string">
+                     <VALUE>Version 2.40 -[SGTK-2.40]-</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableMachineTypes" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>BladeCenter HS12-[1916]-</VALUE>
+                        <VALUE>BladeCenter HS12-[8014]-</VALUE>
+                        <VALUE>BladeCenter HS12-[8028]-</VALUE>
+                        <VALUE>BladeCenter HS20-[1883]-</VALUE>
+                        <VALUE>BladeCenter HS20-[8832]-</VALUE>
+                        <VALUE>BladeCenter HS20-[8843]-</VALUE>
+                        <VALUE>BladeCenter HS21 XM-[1915]-</VALUE>
+                        <VALUE>BladeCenter HS21 XM-[7995]-</VALUE>
+                        <VALUE>BladeCenter HS21-[1885]-</VALUE>
+                        <VALUE>BladeCenter HS21-[8853]-</VALUE>
+                        <VALUE>BladeCenter HS22-[1936]-</VALUE>
+                        <VALUE>BladeCenter HS22-[7809]-</VALUE>
+                        <VALUE>BladeCenter HS22-[7870]-</VALUE>
+                        <VALUE>BladeCenter HS22V-[1949]-</VALUE>
+                        <VALUE>BladeCenter HS22V-[7871]-</VALUE>
+                        <VALUE>BladeCenter LS20-[8850]-</VALUE>
+                        <VALUE>BladeCenter LS21/LS41-[7971]-</VALUE>
+                        <VALUE>BladeCenter LS21/LS41-[7972]-</VALUE>
+                        <VALUE>BladeCenter LS22/LS42-[7901]-</VALUE>
+                        <VALUE>BladeCenter LS22/LS42-[7902]-</VALUE>
+                        <VALUE>IBM System x3650-[1914]-</VALUE>
+                        <VALUE>IBM System x3650-[7979]-</VALUE>
+                        <VALUE>IBM System x3650-[7980]-</VALUE>
+                        <VALUE>IBM System x3800-[8866]-</VALUE>
+                        <VALUE>IBM eServer x460/IBM System x3950-[7363]-</VALUE>
+                        <VALUE>IBM eServer x460/IBM System x3950-[8872]-</VALUE>
+                        <VALUE>IBM eServer xSeries 206m-[8485]-</VALUE>
+                        <VALUE>IBM eServer xSeries 206m-[8490]-</VALUE>
+                        <VALUE>IBM eServer xSeries 226-[8488]-</VALUE>
+                        <VALUE>IBM eServer xSeries 226-[8648]-</VALUE>
+                        <VALUE>IBM eServer xSeries 236-[8841]-</VALUE>
+                        <VALUE>IBM eServer xSeries 336-[1879]-</VALUE>
+                        <VALUE>IBM eServer xSeries 336-[8837]-</VALUE>
+                        <VALUE>IBM eServer xSeries 345-[4146]-</VALUE>
+                        <VALUE>IBM eServer xSeries 345-[8670]-</VALUE>
+                        <VALUE>IBM eServer xSeries 346-[1880]-</VALUE>
+                        <VALUE>IBM eServer xSeries 346-[8840]-</VALUE>
+                        <VALUE>Smart Analytics System-[7949]-</VALUE>
+                        <VALUE>System x iDataPlex dx360 M2 server-[6380]-</VALUE>
+                        <VALUE>System x iDataPlex dx360 M2 server-[7321]-</VALUE>
+                        <VALUE>System x iDataPlex dx360 M2 server-[7323]-</VALUE>
+                        <VALUE>System x iDataPlex dx360 M3-[6391]-</VALUE>
+                        <VALUE>System x3100-[4348]-</VALUE>
+                        <VALUE>System x3105-[4347]-</VALUE>
+                        <VALUE>System x3200 M2-[4367]-</VALUE>
+                        <VALUE>System x3200 M2-[4368]-</VALUE>
+                        <VALUE>System x3200 M3-[7327]-</VALUE>
+                        <VALUE>System x3200 M3-[7328]-</VALUE>
+                        <VALUE>System x3200-[4362]-</VALUE>
+                        <VALUE>System x3200-[4363]-</VALUE>
+                        <VALUE>System x3250 M2-[4190]-</VALUE>
+                        <VALUE>System x3250 M2-[4191]-</VALUE>
+                        <VALUE>System x3250 M2-[4194]-</VALUE>
+                        <VALUE>System x3250 M2-[7657]-</VALUE>
+                        <VALUE>System x3250 M3-[4251]-</VALUE>
+                        <VALUE>System x3250 M3-[4252]-</VALUE>
+                        <VALUE>System x3250 M3-[4261]-</VALUE>
+                        <VALUE>System x3250-[4364]-</VALUE>
+                        <VALUE>System x3250-[4365]-</VALUE>
+                        <VALUE>System x3250-[4366]-</VALUE>
+                        <VALUE>System x3350-[4192]-</VALUE>
+                        <VALUE>System x3350-[4193]-</VALUE>
+                        <VALUE>System x3400 M2-[7836]-</VALUE>
+                        <VALUE>System x3400 M2-[7837]-</VALUE>
+                        <VALUE>System x3400 M3-[7378]-</VALUE>
+                        <VALUE>System x3400 M3-[7379]-</VALUE>
+                        <VALUE>System x3400-[7973]-</VALUE>
+                        <VALUE>System x3400-[7974]-</VALUE>
+                        <VALUE>System x3400-[7975]-</VALUE>
+                        <VALUE>System x3400-[7976]-</VALUE>
+                        <VALUE>System x3455-[7940]-</VALUE>
+                        <VALUE>System x3455-[7941]-</VALUE>
+                        <VALUE>System x3455-[7984]-</VALUE>
+                        <VALUE>System x3455-[7986]-</VALUE>
+                        <VALUE>System x3500 M2-[7839]-</VALUE>
+                        <VALUE>System x3500 M3-[7380]-</VALUE>
+                        <VALUE>System x3500-[7977]-</VALUE>
+                        <VALUE>System x3550 M2-[4198]-</VALUE>
+                        <VALUE>System x3550 M2-[7946]-</VALUE>
+                        <VALUE>System x3550 M3-[4254]-</VALUE>
+                        <VALUE>System x3550 M3-[7944]-</VALUE>
+                        <VALUE>System x3550-[1913]-</VALUE>
+                        <VALUE>System x3550-[7978]-</VALUE>
+                        <VALUE>System x3610-[7942]-</VALUE>
+                        <VALUE>System x3620 M3-[7376]-</VALUE>
+                        <VALUE>System x3630 M3-[7377]-</VALUE>
+                        <VALUE>System x3650 M2-[4199]-</VALUE>
+                        <VALUE>System x3650 M2-[7947]-</VALUE>
+                        <VALUE>System x3650 M3-[4255]-</VALUE>
+                        <VALUE>System x3650 M3-[7945]-</VALUE>
+                        <VALUE>System x3655-[7943]-</VALUE>
+                        <VALUE>System x3655-[7985]-</VALUE>
+                        <VALUE>System x3690 X5-[7148]-</VALUE>
+                        <VALUE>System x3690 X5-[7149]-</VALUE>
+                        <VALUE>System x3755 M3-[7164]-</VALUE>
+                        <VALUE>System x3755-[7163]-</VALUE>
+                        <VALUE>System x3755-[8877]-</VALUE>
+                        <VALUE>System x3800/x260-[8865]-</VALUE>
+                        <VALUE>System x3850 M2 / x3950 M2-[7141]-</VALUE>
+                        <VALUE>System x3850 M2 / x3950 M2-[7144]-</VALUE>
+                        <VALUE>System x3850 M2 / x3950 M2-[7233]-</VALUE>
+                        <VALUE>System x3850 M2 / x3950 M2-[7234]-</VALUE>
+                        <VALUE>System x3850 X5 / x3950 X5-[7145]-</VALUE>
+                        <VALUE>System x3850 X5 / x3950 X5-[7146]-</VALUE>
+                        <VALUE>System x3850-[7365]-</VALUE>
+                        <VALUE>System x3850-[8864]-</VALUE>
+                        <VALUE>System x3850/x366-[7362]-</VALUE>
+                        <VALUE>System x3850/x366-[8863]-</VALUE>
+                        <VALUE>System x3950-[7366]-</VALUE>
+                        <VALUE>System x3950-[8878]-</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="applicableOperatingSystems" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>NONE</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="buildNumber" TYPE="string">
+                     <VALUE>SGTK</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="description" TYPE="string">
+                     <VALUE>IBM ServerGuide Scripting Toolkit, Windows Edition</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="ibmSchemaVersion" TYPE="string">
+                     <VALUE>3.0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="identificationCode" TYPE="string">
+                     <VALUE>ibm_utl_sgtkwin_2.40_windows_32-64</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installCommandLine" TYPE="string">
+                     <VALUE>N/A</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installDirectory" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installationNotes" TYPE="string">
+                     <VALUE>This is the ServerGuide Scripting Toolkit Windows Edition.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installLog" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="languageEdition" TYPE="string">
+                     <VALUE>All</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="manufacturer" TYPE="string">
+                     <VALUE>IBM</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="rebootRequired" TYPE="uint8">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="regions" TYPE="string">
+                     <VALUE>Worldwide</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="releaseDate" TYPE="datetime">
+                     <VALUE>20100921000000.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistory" TYPE="string">
+                     <VALUE>Initial Release</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="severity" TYPE="uint8">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedInstallCommandLine" TYPE="string">
+                     <VALUE>N/A</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedUninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="uninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="type" TYPE="uint16">
+                     <VALUE>12</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="category" TYPE="string">
+                     <VALUE>Utility</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crc" TYPE="string">
+                     <VALUE>41201f4b</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="size" TYPE="uint32">
+                     <VALUE>136050</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="readme" TYPE="string">
+                     <VALUE>ibm_utl_sgtkwin_2.40_windows_32-64.htm</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="xmlFilename" TYPE="string">
+                     <VALUE>ibm_utl_sgtkwin_2.40_windows_32-64.xml</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unpack" TYPE="uint16">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="orderedMachineTypeList" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>4367</VALUE>
+                        <VALUE>7149</VALUE>
+                        <VALUE>7986</VALUE>
+                        <VALUE>8670</VALUE>
+                        <VALUE>4254</VALUE>
+                        <VALUE>8841</VALUE>
+                        <VALUE>1880</VALUE>
+                        <VALUE>1913</VALUE>
+                        <VALUE>7366</VALUE>
+                        <VALUE>7233</VALUE>
+                        <VALUE>7141</VALUE>
+                        <VALUE>7972</VALUE>
+                        <VALUE>7376</VALUE>
+                        <VALUE>7941</VALUE>
+                        <VALUE>7946</VALUE>
+                        <VALUE>8832</VALUE>
+                        <VALUE>7148</VALUE>
+                        <VALUE>8853</VALUE>
+                        <VALUE>6391</VALUE>
+                        <VALUE>7163</VALUE>
+                        <VALUE>7377</VALUE>
+                        <VALUE>4366</VALUE>
+                        <VALUE>7234</VALUE>
+                        <VALUE>7973</VALUE>
+                        <VALUE>7947</VALUE>
+                        <VALUE>7940</VALUE>
+                        <VALUE>7809</VALUE>
+                        <VALUE>8866</VALUE>
+                        <VALUE>8843</VALUE>
+                        <VALUE>4252</VALUE>
+                        <VALUE>7980</VALUE>
+                        <VALUE>7657</VALUE>
+                        <VALUE>8837</VALUE>
+                        <VALUE>4146</VALUE>
+                        <VALUE>1879</VALUE>
+                        <VALUE>7978</VALUE>
+                        <VALUE>8648</VALUE>
+                        <VALUE>4194</VALUE>
+                        <VALUE>4365</VALUE>
+                        <VALUE>7378</VALUE>
+                        <VALUE>7901</VALUE>
+                        <VALUE>7164</VALUE>
+                        <VALUE>7146</VALUE>
+                        <VALUE>4251</VALUE>
+                        <VALUE>4347</VALUE>
+                        <VALUE>7979</VALUE>
+                        <VALUE>7836</VALUE>
+                        <VALUE>7365</VALUE>
+                        <VALUE>7949</VALUE>
+                        <VALUE>7971</VALUE>
+                        <VALUE>8865</VALUE>
+                        <VALUE>7327</VALUE>
+                        <VALUE>4364</VALUE>
+                        <VALUE>1885</VALUE>
+                        <VALUE>7379</VALUE>
+                        <VALUE>4348</VALUE>
+                        <VALUE>7362</VALUE>
+                        <VALUE>7945</VALUE>
+                        <VALUE>8485</VALUE>
+                        <VALUE>4192</VALUE>
+                        <VALUE>7328</VALUE>
+                        <VALUE>4363</VALUE>
+                        <VALUE>6380</VALUE>
+                        <VALUE>8864</VALUE>
+                        <VALUE>7870</VALUE>
+                        <VALUE>8490</VALUE>
+                        <VALUE>7145</VALUE>
+                        <VALUE>7976</VALUE>
+                        <VALUE>8850</VALUE>
+                        <VALUE>7321</VALUE>
+                        <VALUE>8878</VALUE>
+                        <VALUE>7839</VALUE>
+                        <VALUE>1936</VALUE>
+                        <VALUE>7363</VALUE>
+                        <VALUE>7944</VALUE>
+                        <VALUE>4193</VALUE>
+                        <VALUE>8863</VALUE>
+                        <VALUE>1883</VALUE>
+                        <VALUE>7902</VALUE>
+                        <VALUE>4362</VALUE>
+                        <VALUE>7144</VALUE>
+                        <VALUE>1916</VALUE>
+                        <VALUE>7977</VALUE>
+                        <VALUE>8877</VALUE>
+                        <VALUE>7974</VALUE>
+                        <VALUE>7984</VALUE>
+                        <VALUE>1949</VALUE>
+                        <VALUE>4190</VALUE>
+                        <VALUE>7943</VALUE>
+                        <VALUE>8028</VALUE>
+                        <VALUE>4198</VALUE>
+                        <VALUE>8014</VALUE>
+                        <VALUE>4261</VALUE>
+                        <VALUE>1915</VALUE>
+                        <VALUE>7323</VALUE>
+                        <VALUE>8840</VALUE>
+                        <VALUE>7837</VALUE>
+                        <VALUE>7985</VALUE>
+                        <VALUE>4255</VALUE>
+                        <VALUE>7995</VALUE>
+                        <VALUE>8488</VALUE>
+                        <VALUE>7942</VALUE>
+                        <VALUE>4191</VALUE>
+                        <VALUE>7871</VALUE>
+                        <VALUE>8872</VALUE>
+                        <VALUE>4199</VALUE>
+                        <VALUE>7380</VALUE>
+                        <VALUE>1914</VALUE>
+                        <VALUE>4368</VALUE>
+                        <VALUE>7975</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSArchitectureList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                        <VALUE>0</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="payload" TYPE="string">
+                     <VALUE>ibm_utl_sgtkwin_2.40_windows_32-64.zip</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="payloadCompressionType" TYPE="uint32">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="relativePathAndName" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>ibm_utl_sgtkwin_2.40_windows_32-64.zip</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="crcType" TYPE="uint32">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="timestamp" TYPE="datetime">
+                     <VALUE>20100921094029.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistoryFile" TYPE="string">
+                     <VALUE>ibm_utl_sgtkwin_2.40_windows_32-64.chg</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="updateSelection" TYPE="string">
+                     <VALUE>auto</VALUE>
+                  </PROPERTY>
+               </INSTANCE>
+            </IPARAMVALUE>
+         </IMETHODCALL>
+      </SIMPLEREQ>
+   </MESSAGE>
+</CIM>

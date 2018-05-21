@@ -1,0 +1,1418 @@
+                              IBM Systems
+                 IBM UpdateXpress System Pack Installer
+                                 Readme
+
+Version 9.63
+
+Contents
+
+Chapter 1. About UpdateXpress System Pack Installer
+Chapter 2. Information resources
+  2.1 Documentation
+  2.2 Web resources
+Chapter 3. Installation and upgrade information
+Chapter 4. Requirements
+  4.1 VMWare ESXi Support
+Chapter 5. Known limitations, problems, and workarounds
+  5.1 Limitations and problems
+  5.2 Workarounds
+Chapter 6. Notices
+  6.1 Trademarks
+
+Chapter 1. About UpdateXpress System Pack Installer
+
+IBM UpdateXpress System Pack Installer is a software application that
+applies UpdateXpress System Packs and individual updates to your system.
+
+
+
+UpdateXpress System Packs contain Windows and Linux firmware and device
+driver updates. UpdateXpress System Pack Installer allows you to acquire
+and deploy these updates, as well as compare updates, and is available
+with the UpdateXpress System Pack.
+
+Chapter 2. Information resources
+
+You can find additional information about IBM UpdateXpress System Pack
+Installer in the product documentation and on the World Wide Web.
+
+
+
+
+
+2.1 Documentation
+
+The following documentation resource provides additional information
+about UpdateXpress System Pack Installer.
+
+
+
+In addition to these release notes, you can find information about how
+to use UpdateXpress System Pack Installer, v9.63 in the IBM UpdateXpress
+System Pack Installer User's Guide.
+
+This publication is available in the IBM System x?and BladeCenter?
+Tools Center on the Web at
+publib.boulder.ibm.com/infocenter/toolsctr/v1r0/topic/uxspi/uxlite_userguide.pdf.
+
+This documentation is available in Portable Document Format (PDF). You
+need Adobe Acrobat Reader or Xpdf to view it. If you need the Adobe
+Acrobat Reader, you can download it directly from Adobe at
+www.adobe.com/products/acrobat/readstep2.html.
+
+2.2 Web resources
+
+The following pages provide resources for understanding, using, and
+troubleshooting IBM System x and systems-management tools.
+
+
+
+Websites
+*  IBM ToolsCenter for System x and BladeCenter 
+
+   www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=TOOL-CENTER&brandind=5000016
+
+    
+
+   View this website to download tools that support IBM System x and IBM
+   BladeCenter products.
+
+*  UpdateXpress 
+
+   www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-XPRESS&brandind=5000016
+
+    
+
+   View this website to download the tool, UpdateXpress System Pack
+   libraries and tools, including UpdateXpress System Pack Installer.
+
+*  Support for IBM BladeCenter 
+
+   www-304.ibm.com/systems/support/supportsite.wss/brandmain?brandind=5000020
+
+    
+
+   View this website to find information about online technical support,
+   downloads and drivers, and RETAIN?tips, and to provide feedback
+   about IBM BladeCenter products.
+
+*  Support for IBM System x 
+
+   http://www-947.ibm.com/support/entry/portal/Overview?brandind=Hardware~Systems~System_x
+
+    
+
+   View this website to find information about online technical support,
+   downloads and drivers, and RETAIN tips, and to provide feedback about
+   IBM System x products.
+
+*  IBM ServerProven?
+
+   www.ibm.com/servers/eserver/serverproven/compat/us/
+
+    
+
+   View this website to learn about hardware compatibility of IBM System
+   x and IBM BladeCenter systems with IBM applications and middleware.
+
+*  IBM System x Firmware Update Best Practices 
+
+   http://www.ibm.com/support/entry/portal/docdisplay?lndocid=MIGR-5082923&brandind=5000008
+
+    
+
+   View this white paper for more information on best practices for
+   updating System x firmware.
+
+
+
+Forums
+*  IBM System x Forum 
+
+   www.ibm.com/developerworks/forums/forum.jspa?forumID=740
+
+    
+
+   View this website on ibm.com?to learn about various forums that are
+   available to discuss technology-related and product-related issues
+   pertaining to IBM System x hardware and software products. This
+   website includes a link for obtaining the forum using a Rich Site
+   Summary (RSS) feed.
+
+*  IBM BladeCenter Forum 
+
+   www.ibm.com/developerworks/forums/forum.jspa?forumID=819
+
+    
+
+   View this website on ibm.com to learn about various forums that are
+   available to discuss technology-related and product-related issues
+   pertaining to IBM BladeCenter hardware and software products. This
+   website includes a link for obtaining the forum using a Rich Site
+   Summary (RSS) feed.
+
+Chapter 3. Installation and upgrade information
+
+
+
+Complete installation instructions, including supported hardware and
+operating systems, are provided in the IBM System x ToolsCenter
+information center on the Web at
+publib.boulder.ibm.com/infocenter/toolsctr/v1r0/topic/uxspi/uspi_r_requirements.html.
+
+Chapter 4. Requirements
+
+4.1 VMWare ESXi Support
+
+Table. VMware ESXi Support (IBM customized image)
+
+|VMware ESXi Version| 4.1 U1 and | 4.1 U3 | 5.0.x, 5.1.x | 5.5  | 5.5 U1 |
+|                   |    4.1 U2  |        |   and Patch  |      |        |
+|uEFI/iMM/DSA/FPGA  |     Y      |    Y   |      Y       |  Y   |   Y    |
+|LSI                |     N      |    N   |      Y       |  N   |   Y    |
+|Broadcom           |     N      |    N   |      Y       |  N   |   Y    |
+|QLogic CNA         |     Y      |    Y   |      Y       |  N   |   Y    |
+|QLogic FC          |    N/A     |   N/A  |      Y       |  N   |   Y    |
+|Emulex             |     N      |    Y   |      Y       |  N   |   Y    |
+|Brocade            |     Y      |    Y   |      Y       |  N   |   Y    |
+
+
+Chapter 5. Known limitations, problems, and workarounds
+
+The following limitations, problems, and workarounds are applicable to
+IBM UpdateXpress System Pack Installer, v9.63.
+
+5.1 Limitations and problems
+
+The following limitations are applicable to IBM UpdateXpress System Pack
+Installer.
+
+
+Host must be discovered by MegaRAID Storage Manager before UXSPi can upgrade 
+MegaRAID Storage Manager to a newer version
+         For MegaRAID Storage Manager (MSM) to work correctly, the supported 
+         SAS/SATA controller must be plugged into the machine, and the driver 
+         and firmware must be flashed for the controller. With MegaRAID Storage
+         Manager installed on a system, before you can upgrade it to a newer 
+         version using UXSPi, the following prerequisite must be met: 
+         You can launch the prior version of MSM and discover the host 
+         successfully. Otherwise the upgrade task using UXSPi may fail.
+         
+AMD Driver Pack current version is always undetectable
+         UpdateXpress System Pack Installer does not detect the current
+         version of the AMD Driver Pack. The resulting behavior is that
+         the AMD Driver Pack update package is recommended for
+         deployment on every execution of the UpdateXpress System Pack
+         Installer, regardless of the current version.
+
+Intel Driver Pack current version is always undetectable
+         UpdateXpress System Pack Installer does not detect the current
+         version of the Intel Driver Pack. The resulting behavior is
+         that the Intel Driver Pack update package is recommended for
+         deployment on every execution of the UpdateXpress System Pack
+         Installer, regardless of the current version.
+
+UpdateXpress System Pack Installer does not support onboard Intel NIC 
+adapter firmware updates
+         This limitation applies to some models of the System x3250 M3
+         and iDataPlex(TM) dx360 M3, Intel PCIe adapters 49Y4230 and
+         49Y4240, and the Intel 10Gb, dual port Ethernet Expansion Card
+         CFFh for IBM BladeCenter, model 42C1810.
+
+UpdateXpress System Pack Installer always installs the LSI driver
+         If the hardware for a driver component is not present in the
+         system or is disabled, the installer will not install the
+         driver. The one exception is for the Windows LSI driver. This
+         driver is always installed. You cannot physically remove the
+         LSI chip because it is a standard component on the planar of
+         the system. However, you can disable it. Thus, even in
+         instances when it is disabled, the UpdateXpress System Pack
+         Installer installs the LSI driver.
+
+Broadcom NetXtreme firmware update requires version 3.58b or greater of 
+the tg3 driver
+         The Broadcom NetXtreme firmware update requires version 3.58b
+         or greater of the tg3 driver to support the firmware update
+         process. Version 3.58b or greater of the driver must be loaded
+         and currently running before the firmware update will apply
+         successfully.
+
+Linux device driver updates require specific packages
+         The Linux device driver update packs require the following
+         packages to be installed: 
+         *  rpm-build, perl, and bash for Redhat Enterprise Linux.
+         *  perl and bash for SuSE Enterprise Linux.
+
+
+ServeRAID 8i, 8k/8k-l, 8s, 8e and 7t Firmware is only detected on 
+Windows when the Filter driver is active
+         Detection of ServeRAID 8i, 8k/8k-l, 8s, 8e and 7t Firmware
+         versions requires a filter driver. This filter driver is
+         installed as part of the ServeRAID Manager. It is also
+         installed whenever the ServeRAID firmware update packages from
+         the UpdateXpress System Packs are installed. The ServeRAID
+         firmware update packages return an error code when executed
+         without the filter driver installed. The Windows system
+         requires a reboot before this driver becomes active. Re run the
+         ServeRAID firmware update to complete the update.
+
+7e SATA/SCSI HostRAID and 8e SAS/SATA HostRAID controllers are not 
+supported on Windows 2008
+         7e SATA/SCSI and 8e SAS/SATA HostRAID controllers are not
+         supported on Windows Server 2008 (32bit / 64 bit). In addition,
+         when running UXSPI on Server 2008 R2 to compare or update
+         displays a dialog box stating "Integrated RAID On Chip (IROC)
+         Library has stopped working". You must press "Close the
+         Program" twice for the UXSPI to continue.
+
+Firmware ibm_fw_hdd_sas-1.10.01_linux_32-64 displays different versions
+         The SAS/SATA Hard Disk Drive (HDD) Update Program incorrectly
+         reports different versions of the installed version and update
+         version of the firmware. The following results are displayed in
+         the comparison: 
+         *  Update: SG9XCS2D200GEIBM (/dev/sg1)
+         *  New Version: SA03SE6A
+         *  Installed Version : SE6C
+
+
+Baseboard Management Controller (BMC) and CPLD firmware updates require 
+IPMI drivers
+         BMC and CPLD firmware updates require installed and running
+         IPMI drivers. If the IPMI drivers are not running, the BMC and
+         CPLD firmware version cannot be detected and the online updates
+         will not install.
+
+Detection of Integrated Management Module (IMM) firmware version 
+requires IPMI drivers
+         IPMI drivers are required to detect the installed version of
+         the IMM firmware. If the IPMI drivers are not running, the IMM
+         firmware version cannot be detected. Installation of the IMM
+         firmware update, however, is not dependent on the IPMI driver.
+
+Gathering inventory may take 15 to 20 minutes when Linux Remote 
+Supervisor Adapter II (RSA II) daemon is installed without Linux RSA II 
+card installed
+         On Linux systems, the gathering inventory phase of the install
+         can take as long as 18-20 minutes when the system has the RSA
+         II daemon installed without having the RSA II card installed.
+         The updates you select are still applied after the delay in the
+         gathering inventory phase.
+
+On Windows, only active and loaded drivers associated with a device are 
+detected
+         For Windows systems, the UXSP Installer only detects the
+         presence and version information for drivers that are active
+         and loaded. A driver for a device may have been installed, but
+         it will not be detected until the operating system associates
+         the driver with its matching device. Drivers that are not
+         associated with a matching device are not detected.
+
+Different 'New Version' displayed before and after update
+         The 'New Version' displayed before and after update may differ
+         if the update is undetectable before updating. If the update is
+         currently uninstalled or undetected, this field displays the
+         version of the overall update package. If the update is
+         detected, this field displays the individual update contained
+         within the update package. The version of the overall update
+         package may be different than the version of the individual
+         update file.
+
+Offline updates are not deployed
+         Offline updates are not compared or deployed by UpdateXpress
+         System Pack Installer. Offline updates are legacy firmware
+         updates that cannot be directly applied from the OS.
+
+x460 / MXE-460 / x3950 is only supported in single node
+         Multi node support is not available for the x460 / MXE-460 /
+         x3950. If you want to update an x460 / MXE-460 / x3950 multi
+         node, you must break apart the nodes and update as single
+         nodes.
+
+Only BIOS versions of QLogic FC firmware are detected
+         The QLogic Fibre Channel firmware update updates both QLogic FC
+         BIOS and firmware. However, the firmware versions of QLogic
+         Fibre Channel firmware updates are not reported. Only the BIOS
+         versions of the QLogic FC firmware are detected. Comparing the
+         update BIOS version to the installed BIOS version is sufficient
+         to determine if the QLogic firmware is backlevel.
+
+Only Firmware versions of LSI 1064, 1068 and 1078 firmware updates are 
+detected
+         The LSI 1064, 1068 and 1078 firmware update updates both LSI
+         BIOS and firmware. However, the BIOS versions of LSI firmware
+         updates are not reported. Only the firmware versions of the LSI
+         firmware are detected. 
+
+         For example, instead of displaying:
+
+              Update            : SAS1064 Firmware
+              New Version       : 1.23.81.00
+              Installed Version : 1.23.81.00
+         
+              Update            : SAS1064 Bios
+              New Version       : 6.18.01.00
+              Installed Version : 6.18.01.00
+
+         Only the firmware version is displayed:
+
+              Update            : SAS1064 Firmware
+              New Version       : 1.23.81.00
+              Installed Version : 1.23.81.00
+
+
+UpdateXpress System Pack Installer does not support AMM firmware update 
+in some cases
+         UpdateXpress System Pack Installer does not support the update
+         of AMM firmware if the AMM firmware package build id is later
+         than BPET54V and the installed AMM firmware build id is earlier
+         than BPET62G.
+
+Unable to read inserted CD-ROM while updates are being applied on 
+Windows
+         When applying updates on a Windows system using the UXSP
+         Installer, a CD-ROM that is inserted into the CD-ROM drive
+         cannot be read until all updates have completed. An existing
+         CD-ROM that is in the drive can be read provided it is inserted
+         before the updates start.
+
+Emulex firmware update requires either the Corekit or the HBA Anywhere 
+application
+         Detection of Emulex firmware update and deployment of Emulex
+         firmware update require either the Emulex CoreKit or the HBA
+         Anywhere application to be already installed.
+
+Emulex firmware version not detected on Windows when using Emulex 
+Corekit
+         UpdateXpress System Pack Installer cannot detect the Emulex
+         firmware version installed on Windows when the Emulex Corekit
+         is used to install the device driver and utility. For firmware
+         detection to work correctly, you have to install Emulex
+         HBAnyware application utility.
+
+On LS21/LS41, the LSI 1064 onboard cannot be distinguished from 
+expansion card
+         On the LS21/LS41, the LSI 1064 onboard cannot be distinguished
+         from the LSI 1064 expansion adapter. This means that when
+         running in compare or update mode each installed LSI 1064
+         adapter is displayed under each LSI 1064 update that is
+         present. The version comparison is performed and depending on
+         the versioning, the update may be incorrectly determined to be
+         backlevel and may be selected. The updates themselves can
+         distinguish between the adapters and will flash the correct
+         firmware on each adapter.
+
+Acquisition of Windows updates does not distinguish between the 
+different versions of Windows
+         Windows 2000, Windows 2003 and Windows 2008 updates are
+         organized in a single Windows UXSP. Similarly the tool acquires
+         all Windows updates (either UXSP or latest individual) for a
+         given system by selecting the OS of Windows. This means that
+         although Windows updates for a given system can be acquired,
+         there may not be updates for the Windows version of interest.
+         For example the acquired UXSP may support Windows 2000 and
+         Windows 2003, but not support Windows 2008. You may wish to use
+         this UXSP to update on Windows 2008. In that case you will get
+         an error code of 33, "Cannot find UpdateXpress System Pack XML
+         file for this Machine Type and Operating System."
+
+There is no built-in timeout for completion of updates
+         UpdateXpress System Pack Installer does not require that
+         updates complete within a certain time period. If an update
+         does not end UpdateXpress System Pack Installer will run
+         indefinitely.
+
+The LSI HBA expansion card is undetectable on HS20 (8843) and LS20 blade 
+servers
+         The LSI HBA expansion card (LSI 1064) is undetectable on HS20
+         (8843) and LS20 blade servers. The LSI HBA expansion card
+         update can still be applied even if the installed version is
+         not detected.
+
+The version number is not reported for the RSA 2 firmware
+         Only the build ID of RSA 2 firmware is reported. The version
+         number is not reported. For example:
+         [ ]  IBM System x3350 Remote Supervisor Adapter II Update
+              Severity          : Initial Release
+              Reboot            : Reboot Required to take effect
+              Update ID         : ibm_fw_rsa2_k3ep05a_linux_i386
+              New Version       : 1.00 (K3EP05A)
+              Installed Version :      (K3EP05A)
+
+
+The version number is not always reported for Diagnostics
+         The build number of the Diagnostics is always reported; the
+         version number is not always reported.
+
+The build number of the BMC and IMM are not always reported
+         The version number of the Baseboard Management Controller (BMC)
+         or Integrated Management Module (IMM) is always reported; the
+         build number is not always reported.
+
+8e SATA Controller will not be detected in Windows 2008 environment. 
+          Don't try to run the update for this adapter because it will
+         fail. This is a limitation with the Adaptec HRCCONF tool.
+
+Second OS image not always updated when using an ICPM card.
+         If the tftp server is set up on the AMM that the ICPM card is
+         plugged into, UpdateXpress System Pack Installer updates the
+         boot image and only one OS image. You ee the error, "Could not
+         find update file" when the product tries to update the second
+         OS image. The AMM version must be at least BPET42D to properly
+         configure the ICPM card.
+
+UXSPI only supports updating two files for legacy Management Modules.
+         UpdateXpress System Pack Installer only supports updating two files for 
+         legacy Management Modules.
+         
+Cobia card on Windows 64-bit will require a 64-bit native build Broadcom 
+CIM provider.
+         
+Device driver update returns code 1603
+         This indicates a general device driver update problem, such as
+         the current device driver is a higher level than the one
+         available in the update, or the hardware is not present. No
+         further action is required.
+
+Firmware update from bootable media is not supported for System x3450
+         For the System x3450, firmware must be updated from within an
+         installed operating system.
+
+Using Windows Server 2003 with IPv6 requires site-local addresses to 
+provide the file-sharing capabilities required by UXSPI
+         Therefore link-local and global IPv6 addresses are not
+         supported as remote targets.
+
+Additional considerations when using VMWare ESX remote functions
+         To use the remote functions of VMWare ESX, you must make the
+         following changes: 
+
+         Enable SSH access for the root user
+                  By default, SSH access is blocked for the root user.
+                  To enable it, edit the file /etc/ssh/sshd_config to
+                  change the value of PermitRootLogin to Yes.
+
+         Open firewall ports on the ESX host to allow access for a 
+         service or management agent
+                  By default, the ESX host blocks firewall ports used by
+                  the service and management agents. You must open these
+                  ports to allow the agent to access the server. To
+                  allow access: 
+                  1. Log on to the VI client and select the server from
+                     the inventory panel.
+                  2. Click the Configuration tab and select Security
+                     Profile.
+                  3. Select the SSH Client and SSH Server check box and
+                     click OK.
+
+
+         Libusb_support must be enabled to allow update of the RSA2 
+         driver on VMWare 4.0
+                  You must enable this support manually prior to running
+                  the update. To enable support, run the command
+                  esxcfg-module -s libusb_support=1 usb.o and then
+                  restart the machine for the change to take effect.
+
+         Configure the firewall to allow uEFI/DSA/IMM updates on 
+         uEFI/IMM systems
+                  To perform these updates, you must configure the
+                  firewall to ensure that the flash utilities can
+                  connect to the IMM. 
+
+                  On VMware 3.5 systems: 
+                  1. esxcfg-firewall --allowIncoming
+                  2. esxcfg-firewall --allowOutgoing
+                  3. ifconfig cdceth0 169.254.x.x
+                  4. route del -net 169.254.0.0 netmask 255.255.0.0 lo
+                  5. Then ping 169.254.95.118 to ensure that you can
+                     connect to the IMM using the Ethernet over USB
+                     interface.
+
+                  For VMware 4.0 systems: 
+                  1. esxcfg-firewall --allowIncoming
+                  2. esxcfg-firewall --allowOutgoing
+                  3. esxcfg-vswitch -l
+                  4. esxcfg-vswitch -L vusb0 vSwitch0
+                  5. ifconfig vswif0 169.254.xxx.xxx netmask 255.255.0.0
+                  6. Then ping 169.254.95.118 to ensure that you can
+                     connect to the IMM using the Ethernet over USB
+                     interface.
+
+
+LSI BUS messages appear during inventory gathering
+         An LSI provider used by the UpdateXpress System Pack Installer
+         to gather LSI adapter data during inventory collection prints
+         many lines of LSI BUS messages to the screen. These messages
+         can be ignored.
+
+The Intel-based Gigabit Ethernet Drivers for Windows v14.0 does not 
+support Windows Server 2008 R2
+         The Intel-based Gigabit Ethernet Drivers for Windows
+         (intc_dd_nic_14.0_windows_32-64.exe) does not support Windows
+         Server 2008 R2. If you attempt to run this driver, you get an
+         error stating that the install did not succeed. The driver
+         updates that are in v14.0 are already bundled with Windows
+         Server 2008 R2 so it is not necessary to run this update.
+
+Attempting to backlevel Broadcom from 2.1.1a shows undetected
+         Broadcom packages 2.1.0c and earlier cannot determine version
+         data if 2.1.1a has already been applied. However the 2.1.0c
+         packages can still be applied and version detection is
+         corrected.
+
+UXSPI Acquisition function requires access through firewall
+         To acquire support files from the IBM website, UXSPI requires
+         access through the local firewall. You must open HTTP port 80
+         and HTTPS port 443 in order to use the acquisition function.
+
+ServeRAID B5015 controller not detected on System x3850 X5 with SLES 11 
+SP1
+         The UpdateXpress System Pack Installer cannot detect the
+         ServeRAID B5015 controller on System x3850 X5 servers running
+         SLES 11 Service Pack 1.
+
+ServeRAID B5015 firmware version not detected on RHEL 5 U5, RHEL 6
+         The UpdateXpress Ssytem Pack Installer cannot detect the
+         firmware version of the ServeRAID B5015 when running on RHEL 5
+         U5 or RHEL 6.
+
+Broadcom adapters are not supported with VMware ESX 4.0, 4.1
+         The UpdateXpress System Pack Installer cannot detect the
+         firmware of Broadcom adapters in VMware ESX 4.0 or 4.1
+         environments.
+         
+Brocade firmware version cannot be detected on RHEL 6.2, RHEL 5.8, SLES 
+11.2, and ESX 4.1 
+         The Brocade firmware version displays as undetectable from the
+         UpdateXpress System Pack Installer in RHEL 6.2, RHEL 5.8, SLES
+         11.2, and ESX 4.1. This is a limitation of the Brocade CIM
+         provider version 3.0.1.0. There is no known workaround.
+
+UXSPI requires up to 2 GB of free memory to guarantee firmware update
+         If the operating system is booted from USB or CD/DVD, UXSPI
+         requires up to 2 GB of free memory to guarantee an update of
+         the firmware. The operating system itself uses memory space,
+         requiring that the memory size should be 4 GB or more.
+
+USB key can be lost during update of IMM firmware via USB key
+         When updating the Integrated Management Module (IMM) firmware
+         using a USB key, updating the firmware causes the IMM to
+         unmount the USB key, making it unavailable for any remaining
+         updates. 
+
+         To avoid this problem when updating IMM firmware from a USB
+         key, perform the firmware update as a separate update, or
+         perform any other updates prior to updating the IMM firmware.
+
+
+UXSPI hangs when attempting to perform updates on System x3950 X5 type 
+7146
+         The System x3950 X5 might hang after you select Updates from
+         the TUI or GUI menus, returning an unrecognizable error. This
+         can be caused by the failure of one or more of the solid-state
+         drives installed in the device. 
+
+         If you encounter this error, perform diagnostics on the
+         solid-state drives and replace any failed ones.
+
+
+Emulex 10Gb Fibre Channel adapter is not supported.
+         The Emulex 10Gb Fibre Channel adapter is not supported by
+         UXSPI.
+
+libstdc++.so.6 is required for UXSPI updates
+         The module libstdc++.so.6, which is installed by default by
+         VMware 3.5 and other operating systems, is required by UXSPI.
+         If this module was not installed when the operating system was
+         installed, or was subsequently uninstalled, you receive the
+         following error: Error while loading shared libraries:
+         libstdc++.so.6: cannot open shared object file: No such file or
+         directory, and updates will fail. 
+
+         If you encounter this error, ensure that libstdc++.so.6 is
+         installed on the target system and try running updates again.
+
+
+Some systems cannot recognize some USB keys
+         Some IBM systems do not recognize SanDisk SDCZ36 4 and 8 Gb USB
+         keys. If you experience difficulty using one of these keys, try
+         a different type of USB key or create your bootable media using
+         a CD or DVD.
+
+Firefox displays warning for unresponsive script when performing remote 
+updates
+         When using remote access through the Advanced Management Module
+         (AMM) to perform updates remotely using the UXSPI GUI, Firefox
+         may display a warning indicating that a script on the page is
+         busy or may have stopped responding, and give you the option to
+         stop the script or to continue. This behavior is caused by
+         network latency through the AMM. Select Continue and allow the
+         script to continue running. The update will complete normally.
+
+Updates fail to complete when "New Hardware Found" pop-ups displayed
+         Before deploying updates, you should close any pop-up or dialog
+         boxes opened by the operating system. In particular, you must
+         close any "New Hardware Found" pop-ups displayed by Windows.
+         Until these are closed, Windows will not allow the new hardware
+         to be updated, causing UXSPI to hang.
+
+Brocade 10Gb Dual port combined network adapter driver mismatch
+         When using UXSPI to update systems with the Brocade installed,
+         you might receive a message warning that the BCU and driver
+         versions do not match. This is a known issue and can be safely
+         ignored. UpdateXpress Service Pack Installer (UXSPi) cannot
+         detect the Brocade firmware version if the Brocade driver
+         version is not equal to the provider version used by UXSPi. If
+         you are using UXSPi 4.40, install Brocade driver 2.3.0.0. If
+         you are using UXSPi 5.00, install Brocade driver 3.0.0.0.
+
+Unnecessary SEPs included in download for System x3850 X5 machine type 
+7145
+         When downloading System Enablement Packs (SEPs) for the System
+         x3850 X5, type 7145, UXSPI does not filter versions of the SEP
+         designed to work with previous versions of UXSPI, which causes
+         them to be downloaded along with the current version. These
+         SEPs will not be used and can be safely ignored.
+
+64-bit Linux requires compat-libstdc++
+         To run 32-bit binaries and utilities, including UXSPI, 64-bit
+         Linux operating systems require the compatibility library
+         compat-libstdc++. You can use the following command to
+         determine whether this library is installed: 
+         rpm -qa | grep compat-libstdc++-296 
+
+Updating Mellanox may require you to manually uninstall rpm
+         If a Mellanox update fails, manually remove the rpm files from
+         the Mellanox update log. The mellanox log path and file name
+         can be found in the uxspi log.
+
+Log files cannot be saved to a USB key in a remote console
+         When performing updates to a target system from a remote
+         console, UXSPI is unable to save the resulting log files to a
+         USB key connected to the remote console.
+
+MPT2SAS firmware update causes UXSPI exit on Linux
+         When using the UpdateXpress System Pack Installer (UXSPi)
+         command-line interface (CLI) to update the IBM HBA/LSI on-board
+         6Gb firmware in Linux operating systems, UXSPi will exit
+         without an "Installation Successful" message after performing
+         this update. The SAS firmware is installed correctly but the
+         updates (firmware and drivers for other devices in the system)
+         after it are not executed. This issue does not affect the UXSPi
+         Graphical User Interface (GUI) or the individual update for the
+         IBM HBA/LSI on-board 6 Gb adapter.
+
+UXSPI cannot inventory the backup firmware versions for iMM and uEFI
+         UXSPI is unable to detect the firmware versions in the backup
+         banks for iMM and uEFI. UXSPI always reports the firmware
+         version for the primary banks of these devices.
+
+UXSPI cannot determine the machine type when multiple Samba shares are 
+mounted on SLES 11.1 x86
+         When a system running SLES 11.1 x86 has multiple Samba shares
+         mounted, UXSPI is unable to determine the machine type of the
+         system.
+
+Windows 2003 File and print sharing not supported over IPv6
+         UXSPI does not support the use of Windows 2003 File and print
+         sharing when using IPv6 addressing.
+
+RSA II version is not detected when running UXSPI from bootable media
+         When running from media created by the Bootable Media Creator,
+         UXSPI is unable to detect the RSA II version on the target
+         system.
+
+Brocade driver 3.0 or higher required to detect Brocade firmware version
+         In order to detect the firmware version of installed Brocade
+         cards, you must upgrade your Brocade driver to 3.0 or higher.
+
+UXSPI continues to run remotely when interrupted locally
+         When UXSPI is run on a remote system, it is launched in a
+         separate process from the one on the local machine. When CTRL+C
+         is used to interrupt the local process, the remote process
+         continues to run. This can result in incomplete updates and
+         instability on the remote system. If you must interrupt the
+         local process, log on to the remote system and manually stop
+         the UXSPI process there as well.
+
+Power saving function not supported for ESXi updates
+         The Power Saving function is not supported for VMware ESXi
+         updates.
+
+UXSPI runs slowly on multi-node Windows systems 
+         When initially running UXSPI on a multi-node system running
+         Windows 2011, it can take up to 15 minutes for UXSPI to start.
+         This does not impact the update function.
+
+Broadcom 10Gb Base T dual port NIC not supported with RHEL 5
+         The Broadcom 10Gb Base T dual port NIC is not supported when
+         using UXSPI with RHEL 5.
+
+Abnormal GUI when saving logs in a bootable environment
+         When saving log files in a bootable environment, the layout of
+         buttons in the GUI might not be consistent. The layout of
+         buttons can change from instance to instance, even when using
+         the same environment.
+
+Format mismatch for some LSI and ServeRAID adapters
+         When comparing the installed version of firmware for some LSI
+         and ServeRAID adapters using UXSPI, the installed version of
+         firmware might be displayed in a different format than the
+         version displayed by the System Update Package XML file. For
+         example, the installed version might be displayed as: 
+         07.19.00.00_07.18.01.05
+
+         while the version in the System Update Package is displayed as:
+         07.19.00.00
+
+         This is a difference in display only and does not affect the
+         compare function.
+
+Duplicate IP addresses when updating IMM, uEFI, and DSA
+         When using UXPSI to update IMM, uEFI, and DSA, you might
+         encounter IP address duplication. This is because some NICs use
+         IP addresses 169.254.95.118 or 169.254.95.120. These IP
+         addresses are reserved for IMM LAN-over-USB.
+
+UXSPI fails to update Emulex 8Gb FC Single-port HBA on vSphere 5.0 U1
+          UXSPI fails to update Emulex 8Gb FC Single-port HBA on vSphere
+         5.0 Update 1 when it's with Emulex 4Gb FC Dual-port PCI-e HBA
+         in the same system.
+
+Broadcom firmware update on ESXi is only supported on vSphere 5.0 U1 and 
+vSphere 5.1 with patch
+          UXSPI doesn't support Broadcom firmware update on vSphere 5.0
+         U1 and vSphere 5.1. It works only when the customized patch is 
+         installed. 
+
+Some parameters on updating IO module have some restrictions 
+         The values of UXSPI parameters,including --io-uploadpath,--mm-file,
+         --mm-file2, --io-file,and --io-file2, are URL format strings. 
+         The username,the password,and the file path of the URL cannnot contain 
+         the blank character and some special characters, including ':','@'. 
+    
+UXSPi requires rebooting VMWare ESXi after a loop of ESW firmware update      
+         It's required that users reboot VMWare ESXi every time after finishing
+	 one loop when using UXSPi to flash iMM/uEFI/DSA on VMWare ESXi in loops. 
+         
+Make sure switch telnet access is enabled before updating it
+         Telnet access of some switches are disable by default, you should 
+         change it to enable manually.
+
+Mounted directory will be rejected when running  UXSPI on SLES10 
+         The specified mount directory will be unmounted when running UXSPI on SLES10 
+         Keep the current working directory at the mount point, such as 
+         '/mnt' will prevent unmount the related network when running UXSPI. 
+         
+Ensure telnet connection enabled and password unchanged for Cisco switches 
+         If users click "Reset the switch to factory defaults" on management 
+         page for Cisco Switch, please make sure that telnet connection is
+         enabled and the password isn't changed.
+         
+Brocade Device Driver doen't support SLES11.3
+        Neither inbox driver or the latest Brocade device driver package can't
+        work on SLES11.3. 
+
+Firmware update for a switch may fail when the IP address of the switch is 
+allocated by DHCP
+         UpdateXpress System Pack Installer requires the IP address of a switch 
+         is stable during the firmware update process. If the IP address is 
+         changed after reboot, UXSPI will fail to reconnect to the switch and 
+         return an error.
+         
+Requirement when updating x-FW in out-of-band way on Flex system
+         If you want to update x-FW in out-of-band way on Flex system, please
+         create IPMI account via IMM web page and make sure the account is the 
+         same as CMM login account on Flex system. 
+         
+UXSPI doesn't support running in bootable environment on which is uEFI boot
+         BoMC doesn't support creating the media to boot on the systems which                  
+         only support uEFI boot. Now BoMC only supports legacy boot. Therefore
+         UXSPI doesn't support running in bootable environment on which is uEFI
+         boot.
+
+Detection of Mellanox firmware version on windows requires Mellanox 
+Firmware Tools (MFT) 
+         Mellanox Firmware Tools (MFT) are required to detect the installed 
+         version of the Mellanox firmware on windows. If the MFT is not 
+         installed, the  Mellanox Firmware version cannot be detected. 
+         Installation of the Mellanox firmware update, however, is not 
+         dependent on the MFT.
+
+OpenSSL on ESXi4.1,ESXi5.0 and ESXi5.1 can only support TLS level 1.0.
+         OpenSSL on ESXi4.1,ESXi5.0 and ESXi5.1 can only support TLS level 1.0.
+         So if user set IMM TLS min level to 1.1 or 1.2, TC will fail to get and
+         set IMM configuration through those ESXi system.
+         
+UXSPi v9.50 and subsequent releases do not support Windows 2003
+         UXSPi v9.50 and subsequent releases do not support Windows 2003. You 
+         can use UXSPi 9.41 on Windows 2003 systems. The file is available for 
+         download from IBM Support Fix Central web page.
+         
+There is no QLogic adapter support for the IBM customized VMWare ESXi 4.1 image
+         There are no QLogic drivers and there is no provider for these adapters:
+            QLogic 10Gb Virtual Fabric Adapter for IBM BladeCenter
+            Qlogic QLE8262 Dual Port 10GbE SFP+ Adapter
+            Qlogic MEZZ 16Gb 2p FC Adapter
+
+         There is currently no support for them on the IBM customized VMWare 
+         ESXi 4.1 image. In addition, even if you manually install the Qlogic 
+         driver and provider, there is still no support. 
+         
+Detection of Emulex firmware version requires the installation of Emulex 
+OneCommand Manager
+         Emulex OneCommand Manager (core version) is required for detecting the 
+         installed version of Emulex firmware. If it is not installed, the 
+         Emulex firmware can not be detected. The installation of Emulex 
+         irmware, however, is not dependent on Emulex OneCommand Manager. 
+         
+RETAIN tips
+
+The following tips in IBM's Remote Technical Assistance Information
+Network (RETAIN) apply to this release of UXSPI. Please visit the IBM
+support pages to view these tips: 
+*  H202233 MPT2SAS FW UPDATE CAUSES UXSPI EXIT ON LINUX OSES
+*  H202234 7164: UXSPI LIST MULTIPLE UEFI UPDATES
+*  H202235 VMWARE ESXI 4.1: NO BROADCOM/LSI/EMULEX UPDATE SUPPORT
+*  H202237 SERVERAID B5015 SSD CONTROLLER FIRMWARE VERSION UNDETECTED
+*  H202238 7164: NO ESW UPDATE SUPPORT ON VMWARE ESXI4.1U1
+*  H202239 BROCADE OPTION DIVICE DRIVER UPDATE FAILS EVERY OTHER TIME
+*  H202240 MULTI UPDATE INSTANCE WILL CAUSE VMWARE ESXI UPDATE FAIL
+*  H202241 IMM UPDATE OPTION MISSED WHEN INSTALL UXSP
+*  H202242 ONLY DETECTED ONE INSTALLED LSI 1068E RAID CARD OF THE TWO
+*  H202243 GUI DOESN'T MATCH WITH CLI
+*  H203984 2583: UXSPI UNABLE TO DETECT HDD FW VERSION ON WIN 2008 & R2
+*  H204993: PYTHON SCRIPT HANGS CALLING UXSPI TO UPDATE UEFI TO 173V
+*  H205607: BROCADE ADAPTER SHOWS UNDETECTED IN THE VMWARE INVENTORY
+*  H207166: UXSPI NEEDS REQUISITE XML FILE TO KNOW IF THE REQ WAS MET
+
+5.2 Workarounds
+
+The following known problems and workarounds are applicable to
+UpdateXpress System Pack Installer, v9.63.
+
+
+
+The error message: Exiting from the current instance is displayed when 
+only one instance of UXSPI is running. 
+         UXSPI uses semaphores to prevent UXSP Installer from running
+         multiple instances at the same time. When UXSP Installer exits
+         ungracefully, the semaphore might not get released, preventing
+         another instance of UXSP Installer from starting. 
+
+         Workaround: Run UXSP Installer from command line with
+         -semdestroy option. Then, run UXSP Installer as usual.
+
+
+UXSPI does not support running multiple copies of itself
+         Because only one UXSPI tool should apply updates to a system at
+         a time, UXSPI does not support running multiple UXSPI tools on
+         a local system at once. You can, however, run the tools against
+         multiple remote systems at once by using the -remote argument.
+
+         Workaround:  To use the -remote argument, you must set the
+         environment variable UXSPI_MULTIPLE_INSTANCE to 1 on the system
+         running the tool. The following example demonstrates this
+         argument for Windows for simultaneously running remote updates
+         on servers 10.6.9.58 and 10.0 8.137:
+         SET UXSPI_MULTIPLE_INSTANCE=1
+         start cmd.exe /K uxspi500.exe up --remote=10.6.9.58  
+         --remote-user=administrator --remote-password=passw0rd
+         start cmd.exe /K uxspi500.exe up --remote=10.0 8.137 
+         --remote-user=administrator --remote-password=passw0rd
+
+          The following example demonstrates this argument for Linux for
+         simultaneously running remote updates on servers 10.6.9.58 and
+         10.0 8.137:
+         export UXSPI_MULTIPLE_INSTANCE=1
+         uxspi500.rhel5 up --remote=10.6.9.58  --remote-user=root 
+         --remote-password=passw0rd > log1.txt 2>err1.txt &
+         uxspi500.rhel5 up --remote=10.0 8.137 --remote-user=root 
+         --remote-password=passw0rd > log2.txt 2>err2.txt &
+
+
+Cancelling remote Update System Pack Installer instance might cancel 
+other running Update System Pack Installers
+         
+
+         A remote Update System Pack Installer, started using the
+         --remote option or from a third party connection package such
+         as Windows Remote Desktop Connection, cannot detect another
+         Update System Pack Installer instance running on the same
+         remote system. Running multiple instances on the same system is
+         supported; however, clicking Cancel from the graphical user
+         interface terminates all Update System Pack Installers
+         instances running on the remote system.
+
+         Workaround: It is preferred that you do not run multiple
+         instances of Update System Pack Installer on the same remote
+         system. If you do, manually check if any other administrators
+         are running Update System Pack Installer before clicking
+         Cancel.
+
+
+Acquisition of latest updates for a new machine type does not update 
+UXSPI supported machine types list
+         The list of supported machine types in the UpdateXpress System
+         Pack Installer GUI includes all machine types supported at the
+         time UXSPI was released. New machine types are added to the
+         list when an UpdateXpress System Pack is released for the new
+         machine type, or when the installer is updated. Acquiring
+         updates for a new machine type does not update the supported
+         machine types list in the GUI.
+
+         Workaround: Acquire the UpdateXpress System Pack for the new
+         machine type, restart the GUI to update the supported machine
+         types list, and then acquire the latest updates for the new
+         machine type.
+
+
+Unable to execute UpdateXpress System Pack Installer from USB key
+         Some Linux operating systems (for example, SLES 10)
+         automatically mount USB devices with the noexec parameter. This
+         parameter disallows any user to run a program directory from
+         the mounted device.
+
+         Workaround: To run a file from a USB device in this
+         configuration, either copy the entire UXSP to your hard disk
+         drive, and execute from that location, or remount the USB
+         device with the exec parameter. You can accomplish the second
+         option by first unmounting the USB device by issuing: umount
+         /mnt/usbkey as root (assuming /mnt/usbkey is the mount point of
+         your USB device). You can then remount the device by specifying
+         the mount command with the exec  parameter. For example: mount
+         /dev/sdb1 /mnt/usbkey -o exec).
+
+
+Linux drivers are not active immediately
+         The Linux device drivers require activation. The UpdateXpress
+         System Pack Installer loads the new driver into the file
+         system, but the operating system does not use the new driver
+         until it is loaded.
+
+         Workaround: To modify this behavior, remove the existing driver
+         with the rmmod command and load the new driver with the
+         modprobe command. Alternatively, the new driver can become
+         active upon reboot of the system.
+
+
+Linux LSI Logic SCSI 1020/1030/1064/1068 Controllers are not detected 
+after install
+         The Linux device drivers require activation. The UpdateXpress
+         System Pack Installer loads the new driver into the file
+         system, but the operating system does not use the new driver
+         until it is loaded.
+
+         Workaround: The mptctl driver must be loaded. Run the lsmod
+         command to verify that mptcl is loaded. If it is not loaded,
+         run the following command to load the driver: modprobe mptctl.
+
+
+Linux version of UpdateXpress System Pack Installer requires 
+compatibility libraries
+         The 64-bit UXSP Installer requires the compatibility libraries.
+         However, the compatibility libraries are not installed by
+         default in RHEL4. Thus, when you execute the installer, it
+         returns an error that says there is a missing library file.
+
+         Workaround: Ensure you install the legacy software development
+         packages.
+
+
+The path passed to the local path argument (-l or --local) must not 
+exceed 234 characters
+         The local path argument cannot exceed 234 characters
+
+         Workaround: Copy the UpdateXpress System Pack to a directory
+         that is less than 234 characters.
+
+
+Firmware updates for Broadcom network card on Linux or CD/DVD and 
+USB-Key bootable-media are not applied when the network card is not up 
+and active
+         On Linux, a Broadcom network interface controller must be up
+         and active for firmware Paiutes to be applied. Also, on Linux
+         and when updating from the bootable-media each network Port
+         must be connected to a switch or router.
+
+         Workaround: Ensure the network interface controller that you
+         are updating is up and active for each port and connected to a
+         switch or router.
+
+
+UXSP Installer does not always start on Linux systems
+         In rare cases the UXSP installer may fail to successfully start
+         on Linux. In those cases the following error message is sent to
+         stderr:
+         ----------------------------------------------------------
+         WARNING! This package doesn't appear to match your system.
+         It is likely that it will not properly execute.
+         The following information was determined for your system:
+         
+         distribution = Red Hat
+         release = 4
+         processor architecture = Intel 64-bit"
+         ----------------------------------------------------------
+
+          
+
+         Distribution, release and processor architecture will vary to
+         match the Linux system. The installer will return an error code
+         of 1.
+
+         Workaround: Restart the Installer. It will succeed the next
+         time.
+
+
+USB key fails on RHEL5
+         When a USB key is inserted on RHEL5, by default it is mounted
+         as noexec. This means no application can run, including the
+         UpdateXpress System Pack Installer.
+
+         Workaround: Override the default noexec mount option. For
+         example, mount a USB key device of /dev/sdc1 as /media/disk. To
+         do so, perform the following steps:
+         umount /dev/sdc1 
+         mkdir /media/disk 
+         mount -o exec /dev/sdc1 /media/disk
+
+
+User Account Control (UAC) on Windows Vista and Windows Server 2008 
+prevents the installer from running without popup
+         The UAC is a security control that normally prompts you before
+         running application at a privileged level on Windows Vista and
+         Windows Server 2008.
+
+         Workaround: To disable this feature for the UpdateXpress System
+         Pack Installer, launch the ibm_utl_uxspi_9.63_winsrvr_32-64.exe
+         command prompt with elevated privileges. 
+         1. Right-click ibm_utl_uxspi_9.63_winsrvr_32-64.exe and select
+            Run as Administrator.
+         2. Click Yes at the UAC prompt command window.
+
+          
+
+         UpdateXpress System Pack Installer is launched with a full
+         administrator security token.
+
+
+Broadcom firmware is not detected or updated from CD/DVD bootable-media 
+on x3550 system
+         On x3550 system, the CD/DVD bootable-media may not detect the
+         Broadcom firmware version or successfully apply the firmware
+         update.
+
+         Workaround: Use USB key instead of CD/DVD bootable-media or
+         ensure the Baseboard Management Controller (BMC) is updated to
+         version 1.27 build level GFBT43A or later and reboot the
+         system.
+
+
+Unable to boot from USB Key bootable-media on systems with onboard SATA 
+drives
+         Systems that only support onboard SATA drives, systems such as
+         x336 and x306m systems, fail to boot the USB Key
+         bootable-media. Systems using ServeRAID adapters, or with LSI
+         onboard 1064 or higher, do not experience this problem.
+
+         Workaround: Create a CD bootable-media and apply the firmware
+         updates from CD-ROM instead of the USB key.
+
+
+Booting from USB Key bootable-media on a x3755 may display video error 
+messages
+         When booting from USB Key bootable-media on a x3755, you may
+         see video error messages about the video resolution. The error
+         is displayed for 30 seconds unless you press the Enter key.
+
+         Workaround: Ignore this error message.
+
+
+Bootable media might not display all updates in the list view
+         The Bootable media Text User Interface (TUI) might not display
+         all the updates in the list view when the total number of
+         updates in the list view exceeds the size of the display
+         screen. This is particularly true for the System x3755, which
+         displays a small screen size in the Bootable media text user
+         interface mode. 
+
+         Workaround: Toggle to see the full update detail list using the
+         Full View selection.
+
+
+Additional requirements for Windows 2003 remote server updates in IPv6 
+networks
+         To perform remote server updates of a Windows 2003 server in an
+         IPv6 network, you must perform the following steps: 
+         1. Set up the IPv6 network on the target server. Refer to
+            Miscrosoft Step-by-Step guide at:
+            http://www.microsoft.com/downloads/details.aspx?FamilyID=fd7e1354-3a3b-43fd-955f-11edd39551d7&displaylang=en
+         2. Enable file sharing connections over the IPv6 on the target
+            server. To do this, add a key named
+            DisableStrictNameChecking to the registry:
+            HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanmanServer\Parameters,
+            with type REG_DWORD and value=1.
+
+
+DSA (diags) firmware is not always installed if the IMM is downlevel
+         Because the DSA firmware update is run before the IMM firmware
+         update, if the IMM firmware is too downlevel, the DSA firmware
+         update fails.
+
+         Workaround: Run the update twice. The first update will bring
+         the IMM firmware to the current level, which allows the second
+         update to update the DSA firmware. A reboot is not required
+         between the updates.
+
+
+Update of IBM HBA/LSI Onboard 6Gb firmware exits CLI
+         When using the UpdateXpress Service Pack Installer (UXSPi)
+         Command Line Interface (CLI) to update the IBM HBA/LSI on-board
+         6Gb firmware in Linux distributions (e.g., RHEL5 and RHEL4),
+         UXSPi will exit without an "Installation Successful" message
+         after performing this update. The SAS firmware is installed
+         correctly but the updates(firmware and drivers for other
+         devices in the system) after it are not executed. This issue
+         does not affect the UXSPi Graphical User Interface (GUI) or the
+         individual update for the IBM HBA/LSI on-board 6 Gb adapter.
+
+Full corequisite checking is not performed when using CLI
+         When specifying update packages from the command line, UXSPI
+         does not perform full checking of corequisite packages.
+         Specifically, while both pre- and co-requisites are checked for
+         the current package, if a package that is a prerequisite of the
+         current package also has a corequisite, this is not checked. In
+         rare instances, this can cause the update to fail. This issue
+         does not affect the UXSPI GUI.
+
+         Workaround: To avoid this issue, you must manually select any
+         corequisite packages required by packages that are
+         prerequisites of the one you are installing. Alternately, you
+         can use the GUI.
+
+
+RHEL 6 requires installation of SOAPpy
+         To function properly on RHEL 6, UXSPI requires that the
+         full-featured SOAP library for Python (SOAPpy) be installed
+         manually after operating system installation. 
+
+         To install this library and all prerequisites manually, follow
+         these steps: 
+         1. Insert the RHEL 6 installation CD.
+         2. On the target system, select Add/Remove Software.
+         3. In the search box, enter lib and click on Search to bring up
+            a list of available libraries.
+         4. Select the Full-Featured SOAP Library for Python
+            (SOAPpy-0.11.6-11.el6) and accept all of the prerequisites.
+         5. Click Apply to install the files.
+
+
+Running UXSPI remotely from a USB key via AMM can take an extremely long 
+time to boot
+         When running UXSPI from a USB via an Advanced Management Module
+         (AMM), boot times can be as long as 20-30 minutes. This is a
+         limitation of this scenario.
+
+         Workaround: To avoid this problem, create a CD or DVD image of
+         the boot media for use in remote scenarios requiring the AMM.
+         Boot time using CD or DVD media is analogous to boot time when
+         running locally on the target system.
+
+
+Undetected failure when two clients update the same VMware ESXi target
+         When separate UXSPI clients attempt to remotely update the same
+         VMware ESXi target system, both updates will fail, but no error
+         is reported.
+
+         Workaround: Allow only one UXSPI client to perform a remote
+         update to a VMware ESXi system at a time.
+
+UXSPI fails to update DSA package 
+         UXSPI fails to update the DSA package when the Diagnostics
+         option is set in the Boot Options menu in uEFI.
+
+         Workaround: Remove Diagnostics from the Boot Options menu and
+         AC-Cycle the system before flashing DSA with UXSPI. Restarting
+         the system does work. You must verify that Diagnostics is not
+         in Boot Options before flashing DSA.
+
+UXSPI doesn't support upload a directory to tftp server
+        Due to the limitation of tftp server, UXSPI doesn't support upload a 
+        directory to tftp server. Therefore, if the payload of an IO module 
+        firmware is a directory, UXSPI doesn't support to update it automatically
+        via tftp server.
+        
+        Workaround: Upload the directory to tftp server manually and the use 
+        option "--io-file" to update the firmware. Alternatively, use ftp or sftp
+        server.
+
+UXSPI fails to device driver for IBM Flex System FC5022 2-port 16Gb FC Adapter 
+in CLI mode
+        UXSPI fails to update the device driver for IBM Flex System FC5022 
+        2-port 16Gb FC Adapter in CLI mode on Windows.
+         
+        Workaround: Update the device driver with UXSPI in GUI mode.
+
+UXSPI sometimes fails to update IMM on vSphere 5.0,5.0 U1 and 5.1
+        UXSPI sometimes fails to update IMM on vSphere 5.0,5.0 U1 and 5.1 due to
+        the operation system IPMI deadlock issue on on vSphere 5.0,5.0 U1 and 5.1.
+        vSphere 5.1 U1 and 5.0 U2  are preferred.
+
+Chapter 6. Notices
+
+This information was developed for products and services offered in the
+U.S.A.
+
+IBM may not offer the products, services, or features discussed in this
+document in other countries. Consult your local IBM representative for
+information on the products and services currently available in your
+area. Any reference to an IBM product, program, or service is not
+intended to state or imply that only that IBM product, program, or
+service may be used. Any functionally equivalent product, program, or
+service that does not infringe any IBM intellectual property right may
+be used instead. However, it is the user's responsibility to evaluate
+and verify the operation of any non-IBM product, program, or service.
+
+IBM may have patents or pending patent applications covering subject
+matter described in this document. The furnishing of this document does
+not grant you any license to these patents. You can send license
+inquiries, in writing, to: 
+
+IBM Director of Licensing
+IBM Corporation
+North Castle Drive
+Armonk, NY 10504-1785
+U.S.A. 
+
+For license inquiries regarding double-byte (DBCS) information, contact
+the IBM Intellectual Property Department in your country or send
+inquiries, in writing, to: 
+
+IBM World Trade Asia Corporation
+Licensing
+2-31 Roppongi 3-chome, Minato-ku
+Tokyo 106-0032, Japan 
+
+The following paragraph does not apply to the United Kingdom or any
+other country where such provisions are inconsistent with local law:
+INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION
+"AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+Some states do not allow disclaimer of express or implied warranties in
+certain transactions, therefore, this statement may not apply to you.
+
+This information could include technical inaccuracies or typographical
+errors. Changes are periodically made to the information herein; these
+changes will be incorporated in new editions of the publication. IBM may
+make improvements and/or changes in the product(s) and/or the program(s)
+described in this publication at any time without notice.
+
+Any references in this information to non-IBM websites are provided for
+convenience only and do not in any manner serve as an endorsement of
+those websites. The materials at those websites are not part of the
+materials for this IBM product and use of those websites is at your own
+risk.
+
+IBM may use or distribute any of the information you supply in any way
+it believes appropriate without incurring any obligation to you.
+
+Licensees of this program who wish to have information about it for the
+purpose of enabling: (i) the exchange of information between
+independently created programs and other programs (including this one)
+and (ii) the mutual use of the information which has been exchanged,
+should contact:
+
+IBM Corporation
+Software Interoperability Coordinator, Department 49XA 
+3605 Highway 52 N 
+Rochester, MN 55901 
+U.S.A.
+
+Such information may be available, subject to appropriate terms and
+conditions, including in some cases, payment of a fee.
+
+The licensed program described in this document and all licensed
+material available for it are provided by IBM under terms of the IBM
+Customer Agreement, IBM International Program License Agreement or any
+equivalent agreement between us.
+
+Any performance data contained herein was determined in a controlled
+environment. Therefore, the results obtained in other operating
+environments may vary significantly. Some measurements may have been
+made on development-level systems and there is no guarantee that these
+measurements will be the same on generally available systems.
+Furthermore, some measurements may have been estimated through
+extrapolation. Actual results may vary. Users of this document should
+verify the applicable data for their specific environment.
+
+Information concerning non-IBM products was obtained from the suppliers
+of those products, their published announcements or other publicly
+available sources. IBM has not tested those products and cannot confirm
+the accuracy of performance, compatibility or any other claims related
+to non-IBM products. Questions on the capabilities of non-IBM products
+should be addressed to the suppliers of those products.
+
+All statements regarding IBM's future direction or intent are subject to
+change or withdrawal without notice, and represent goals and objectives
+only.
+
+All IBM prices shown are IBM's suggested retail prices, are current and
+are subject to change without notice. Dealer prices may vary.
+
+This information is for planning purposes only. The information herein
+is subject to change before the products described become available.
+
+This information contains examples of data and reports used in daily
+business operations. To illustrate them as completely as possible, the
+examples include the names of individuals, companies, brands, and
+products. All of these names are fictitious and any similarity to the
+names and addresses used by an actual business enterprise is entirely
+coincidental.
+
+COPYRIGHT LICENSE:
+
+This information contains sample application programs in source
+language, which illustrate programming techniques on various operating
+platforms. You may copy, modify, and distribute these sample programs in
+any form without payment to IBM, for the purposes of developing, using,
+marketing or distributing application programs conforming to the
+application programming interface for the operating platform for which
+the sample programs are written. These examples have not been thoroughly
+tested under all conditions. IBM, therefore, cannot guarantee or imply
+reliability, serviceability, or function of these programs.
+
+Each copy or any portion of these sample programs or any derivative
+work, must include a copyright notice as follows:
+
+?your company name) (year). Portions of this code are derived from IBM
+Corp. Sample Programs.
+
+?Copyright IBM Corp. _enter the year or years_. All rights reserved.
+
+If you are viewing this information softcopy, the photographs and color
+illustrations may not appear.
+
+5.1 Trademarks
+
+IBM, the IBM logo, and ibm.com are trademarks or registered trademarks
+of International Business Machines Corp., registered in many
+jurisdictions worldwide. Other product and service names might be
+trademarks of IBM or other companies. A current list of IBM trademarks
+is available on the Web at "Copyright and trademark information" at
+www.ibm.com/legal/copytrade.shtml.
+
+Microsoft, Windows, Windows NT, and the Windows logo are trademarks of
+Microsoft Corporation in the United States, other countries, or both.
+
+Java and all Java-based trademarks are trademarks of Sun Microsystems,
+Inc. in the United States, other countries, or both.
+
+Linux is a trademark of Linus Torvalds in the United States, other
+countries, or both.
+
+Intel is a trademark of Intel Corporation in the U.S. and other
+countries.
+
+Other company, product, or service names may be trademarks or service
+marks of others.
+

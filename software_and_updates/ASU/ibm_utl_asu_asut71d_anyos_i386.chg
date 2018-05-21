@@ -1,0 +1,279 @@
+            IBM Advanced Settings Utility
+           Version 3.63 (Build ID LEVEL)
+             Change History File
+             v3.63 (ASUT71D) - December 14, 2012
+             ------------------------------------
+             - Critical Fix (Refer to Security Bulletin CVE-2012-3329):
+               - Fixed a potential security vulnerability with ASU temporary file creation
+             
+             v3.62 (ASUT71A) - December 17, 2010
+             ------------------------------------
+             - Support Redhat 6 
+             
+             v3.61 (ASUT70K) - September 17, 2010
+             ------------------------------------
+             - Add certificate management
+             - Add remote password encryption
+             - Add the ability to reboot all IMM for IMM based Multi-node Systems
+             - Support RDCLI on IPv6 network environment
+
+             v3.60 (ASUT69K) - June 26, 2010
+             ------------------------------------
+             - Added ASU support for IMM based Multi-node Systems.
+             - Added nodes command for multi nodes
+             - Wrapped RDCLI for IMM based systems in ASU
+             - Added the ability to take down LAN-over-USB interface
+             - Updated SLP logic for multi nodes
+
+             v3.50 (ASUT68G) - November 24, 2009
+             ------------------------------------
+             - Include rebootimm in usage output
+             - Add ASU support for RSA Remote Mouse Mode setting on Athena
+             - Updates to cdc_interface.sh script
+             - Create RPM package for ASU
+             - Fixed add patch problem
+
+             v3.01 (ASUT67N) - August 24, 2009
+             ------------------------------------
+             - reset to factory defaults support to loaddefault
+             - added record managment support
+             - added --instances option to showvalues
+             - add instance data to showvalues output
+             - added --license option
+             - support instance creation and deletion
+             - fixed problems with spaces in directory names
+             - fixed remove patch problem
+             - fixed text validation for windows 64 bit
+             - improved ASU help
+
+             v3.00 (ASUT65D) - March 23, 2009
+             ------------------------------------
+             - IMM support
+             - createuuid support
+             - New command line support
+             - save/restore/replicate support
+             - logging support
+             - improved return codes
+             - Savestat support
+             - new rsa settings
+             - new version number scheme
+
+             v2.5.0 (ASUT52C) - October 21, 2008
+             ------------------------------------
+             - Fixed Solaris problem where showvalues did not work correctly
+
+             v2.5.0 (ASUT52B) - September 2, 2008
+             ------------------------------------
+             - Added support for AMI BIOS checksum algorithm
+
+             v2.4.1 (ASUT52A) - June 5, 2008
+             ------------------------------------
+             - Fixed memory corruption during set BMC_ThermalProfile setting for iDataPlex systems
+
+             v2.4.0 (ASUT51A) - May 27, 2008
+             ------------------------------------
+             - Fixed patchadd/patchremove problem for Windows Server 2003 R2 SP2
+              
+             v2.4.0 (ASUT50B) - May 8, 2008
+             ------------------------------------
+             - change RSA multinode code to use the Query Node Number dot command to ensure the
+               correct node is addressed by an RSA command
+             - Added code to the Windows preexec code to close and unload the device driver
+
+             v2.4.0 (ASUT49A) - April 17, 2008
+             ------------------------------------
+             - Removed BMC_HostName from the bmc.def file since it is not supported on all BMCs
+
+             v2.4.0 (ASUT48A) - April 10, 2008
+             ------------------------------------
+             - fixed iDataPlex Thermal Profile by allowing multi-byte CMOSSetting values
+               for BMCSettings and BMCBlockSettings
+             
+             v2.4.0 (ASUT47A) - April 1, 2008
+             ------------------------------------
+             - fixed showlocation option for BMC_HostName, BMC_SetPowerRestorePolicy
+               and BMC_GetPowerRestorePolicy settings
+
+             v2.4.0 (ASUT46A) - March 25, 2008
+             ------------------------------------
+             - added return code 30 for no BIOS def file preset
+
+             v2.4.0 (ASUT45A) - February 20, 2008
+             ------------------------------------
+             - added ultrasilent and new error codes
+             - added code to have replicate command ignore copyright information in the input file
+             - added support for new RSA settings: NTP clock synchronization, Event Log Alert,
+               Remote Console Port, Password Policy settings
+             - added support for new BMC settings: BMC Host Name, Enable/Disable BMC Users           
+
+             v2.3.0 (ASUT44A) - February 7, 2008
+             ------------------------------------
+             - cleaned up wording in Readme file
+             
+             v2.3.0 (ASUT44A) - February 7, 2008
+             ------------------------------------
+             - fixed bug where ipmi driver closed on single node system
+             - fixed bug in ipmi mapping layer
+
+             v2.3.0 (ASUT43A) - February 6, 2008
+             ------------------------------------
+             - fixed bug where ipmi driver not always closed
+             - removed changes from ASUT42A to fix version 2.3.0
+
+             v2.3.1 (ASUT42A) - January 28, 2008
+             ------------------------------------
+             - added ultrasilent and new error codes
+             
+             v2.3.0 (ASUT41A) - January 23, 2008
+             ------------------------------------
+             - added workaround for multinode numbering bug
+
+             v2.3.0 (ASUT40A) - January 14, 2008
+             ------------------------------------
+             - updated change text and version to asu40a.
+             - add Windows PE instructions to the DOS readme
+
+             v2.3.0 (ASUT39A) - January 7, 2008
+             ------------------------------------
+             - add Windows PE 2.0 instructions to the Windows readme
+             - fixed generation of linux device strings for multinode
+             - added new "IBM Director over LAN (comprehensive)" value for "AlertRecipientNotificationMethods" to the rsa.def file
+             - added Copyright statement 
+             - fixed inconsistent open ipmi failure
+
+             v2.3.0 (ASUT38A) - December 1, 2007
+             ------------------------------------
+             - updated change text and version to asu38a.
+             - add support for multi node systems using the -nx option (where x is the selected node)
+             - correct bmc ipmi mapping close function
+
+             v2.2.0 (ASUT37A) - October 22, 2007
+             ------------------------------------
+             - updated change text and version to asu37a.
+             - add Microsoft's Longhorn support with BMC IPMI driver
+
+             v2.1.0 (ASUT36A) - Sept. 11, 2007
+             ------------------------------------
+             - update rsa def file to add selections to several rsa commands.
+
+             v2.1.0 (ASUT35A) - August 30, 2007
+             ------------------------------------
+             - correct problem when doing extract with BMC settings with CMOS settings
+               in the same def file.
+
+             v2.1.0 (ASUT34A) - August 22, 2007
+             ------------------------------------
+             - updated asu to support BIOS crtm.
+
+             v2.1.0 (ASUT33A) - June 26, 2007
+             ------------------------------------
+             - updated asu to include sample xml for RSA's generate command
+               that generates a certificate.
+
+             v2.1.0 (ASUT32A) - June 12, 2007
+             ------------------------------------
+             - updated asu to allow users to use "bios" "bmc" or "rsa" instead
+               of using "all" option. This allows the user to select a group
+               of settings.
+
+             v2.1.0 (ASUT32A) - June 12, 2007
+             ------------------------------------
+             - add additional rsa settings/commands. Allows the users to setup
+               Server and Client Certificates.  To support this, additional
+               asu commands was added to the asu.  These commands are only for
+               the rsa.  The new commands are import, export, and generate.
+               The rsa def file has added the new commands
+
+             v2.0.1 (ASUT31A) - April 19, 2007
+             ------------------------------------
+             - allow customer to run ASU in readonly directory.
+
+             v2.0.1 (ASUT30A) - March 22, 2007
+             ------------------------------------
+             - fix bug when declaring earlysum,cmoscrc or cmossum settings
+
+             - update ASU to display a clearer message when user trys to
+               access RSA or BMC when its not in the system.
+
+             - update wflash.sys driver to support Vista, update build to
+               use this wflashy.sys. Added information to readme for
+               execution under Vista. The asu utility must be run with
+               Administrator privileges when in Vista OS.
+
+             - add support for BIOS setup option for auto power on/off.
+
+             v2.0.0 (ASUT29A) - November 21, 2006
+             ------------------------------------
+             - BMC Support
+
+             - Native Open IPMI Driver support
+
+             - Def-less enablement
+
+             - WinPE support
+
+             - Support of boot order on blades
+
+             - New settings added to RSA definition file
+
+             v1.8.1 (ASUT23C) - November 20, 2006
+             ------------------------------------
+             - Added support for Solaris BMC driver
+
+             - Allowed ASU to run from PATH
+
+             - Fixed "Press any key" in exthelp
+
+             - Clarified error messages when ASU not patchable
+
+             V1.8.0 (ASUT22A) - October 14, 2006
+             -----------------------------------
+             - Added Solaris versions of ASU
+
+             V1.6.4 (ASUT21A) - September 20, 2006
+             -------------------------------------
+             - Added support for System x3105, x3455, Intellistation M-50 Pro
+
+             V1.6.3 (ASUT20A) - March 23, 2006
+             ---------------------------------
+             - Added support for e326m
+
+             V1.6.2 (ASUT18A) - January 25, 2006
+             ---------------------------------
+             - Fixed support for x206/x306
+
+             - Changes to error messages and help text
+
+             V1.6.0 (ASUT14A) - January 10, 2006
+             ---------------------------------
+             - Fixed BMC support
+
+             - Added support for x206, x306, x226, e325, e326
+
+             - Added support for Intellistation Z-20 Pro
+
+             - Added support for value encryption
+
+             V1.5.0 (ASUT12A) - July 15, 2005
+             ---------------------------------
+             - Added support for BladeCenter HS20 (8843)
+
+             V1.4.0 (ASUT11A) - June 3, 2005
+             ---------------------------------
+             - Added support for x236, x336, x346, x366
+
+             V1.3.0 (ASUT10A) - March 14, 2004
+             ---------------------------------
+             - Fixed error in help lookup on xseries xx6 systems
+
+             - Fixed exact value matches being ambiguous (i.e., "4800" matched
+               "4800" and "48000"
+
+             - Fixed RSAKeystroke parsing
+
+             - Fixed resetrsa command
+
+             V0.9.11 (ASUT02A) - April 13, 2004
+             ----------------------------------
+             - Initial release.
+

@@ -1,0 +1,336 @@
+IBM ServerGuide Scripting Toolkit version 1.3.0
+
+1.0 Change History
+___________________________________
+
+ServerGuide Scripting Toolkit 1.3.07 includes the following changes:
+
+Support for the following hardware:
+
+    * System x3200 M2 (4367, 4368)
+    * System x3250 M2 (4190, 4191, 4194)
+    * System x3350 (4192, 4193)
+    * System x3850 M2/x3950 M2 (7141, 7144)
+
+Support for the following RAID controllers:
+
+    * ServeRAID 8s
+    * ServeRAID-MR10i
+    * ServeRAID-MR10k
+    * ServeRAID-MR10M
+    * LSI SAS 1078 IR
+
+ServerGuide Scripting Toolkit 1.3.06u1 includes the following changes:
+
+Support for the following new hardware:
+    o IBM BladeCenter S (8886)
+
+ServerGuide Scripting Toolkit 1.3.06 includes the following changes:
+
+Updated DOS PRAID third party utilities:
+    o cfggen
+    o megacli
+
+Support for the following operating systems:
+    o Red Hat Enterprise Linux 5
+    o Novell SUSE Linux Enterprise Server 10 SP1
+    o VMWare ESX Server 3
+
+New Configurator support:
+    o New user interface
+    o Support for new operating systems
+
+Updated utilities:
+    o DDCopy.exe now supports the /I parameter
+
+New Configurator located at: \sgshare\sgdeploy\TKConfig
+
+Additional support for Altiris Deployment Solution:
+    o Support for Altiris Deployment Solution 6.8 SP2
+    o Support for new operating system deployments for RHEL 5, 
+      SLES 10 SP1, and VMWare ESX 3
+
+
+
+ServerGuide Scripting Toolkit 1.3.04 includes the following changes:
+
+    * Support for the following servers:
+
+          o BladeCenter HS21 XM
+
+    * New and updated RAID support:
+
+          o Support for LSI MegaRAID SAS 8480
+          o Updated PRAID utilities
+                + megaraid.exe
+                + cfggen.exe
+
+Software support:
+
+    * Support for UpdateXpress System Pack (UXSP) installation
+    * Support for Altiris Deployment Support 6.8 SP1, including support for UXSP installation
+
+
+The ServerGuide Scripting Toolkit 1.3.03 included the following changes:
+
+    * Support for the following servers:
+          o IBM System x3105 (4347)
+          o IBM System x3200 (4362, 4363)
+          o IBM System x3250 (4364, 4365, 4366)
+          o IBM System x3455 (7984, 7986)
+          o IBM System x3755 (8877)
+          o IBM System x3650 (7979)
+          o IBM System x3550 (7978)
+          o IBM System x3500 (7977)
+          o IBM System x3400 (7973, 7974, 7975, 7976)
+          o AMD Opteron LS21 for IBM BladeCenter (7971)
+          o AMD Opteron LS41 for IBM BladeCenter (7972)
+          o IBM BladeCenter HS21 (8853, 1885, 7995)
+    * Support for new RAID controllers:
+          o ServeRAID 8k
+          o ServeRAID 8k-l
+          o Updated PRAID utilities:
+                + acusas.exe
+                + acuahci.exe
+                + acusas8e.exe 
+          o Firmware Update for ServeRAID 8k, 8k-l 
+    * Support for Altiris 6.5 SP1
+    * Removed the need for ADS users to download InfoZip. 
+
+ServerGuide Scripting Toolkit 1.3.02
+
+The ServerGuide Scripting Toolkit 1.3.02 includes the following changes:
+
+    * A correction to the target location where the Toolkit Configurator copies Windows operating system files.
+    * A correction to an out-of-memory issue that can occur when creating a RAID configuration with multiple RAID adapters in the same system, for example a system with a ServeRAID-8i adapter and a ServeRAID 6M adapter. 
+
+ServerGuide Scripting Toolkit 1.3.01
+
+The ServerGuide Scripting Toolkit 1.3.01 includes the following changes:
+
+    * Support for the following servers:
+          o eServer BladeCenter HS20, machine type 7981. 
+    * The Toolkit has the following enhancements:
+          o PRAID adds support for new RAID LSI 1064x SAS Controller.
+          o The RAID utilities for ServeRAID 8i are updated.
+          o Provides hardware configuration that is independent of an operating system deployment. The following types of standalone hardware configuration are available:
+                + RAID configuration.
+                + Fibre configuration.
+                + BIOS updates.
+                + ServeRAID BIOS and firmware updates. 
+          o Updates all Linux OS installations to use syslinux.com to enable Linux support for more servers.
+          o Adds a DOS-based shutdown utility (tshudwn.exe).
+          o Adds a utility to copy only required drivers to a target server (ddcopy.exe). Available for DOS and Windows Preinstallation Environment (Windows PE) 32-bit and x64-bit platforms.
+          o Adds Windows PE x64-bit versions of the following utilities: clini.exe, dscan.exe, unattend.exe.
+          o Supports changing the Toolkit base directory, sgtk, to eight characters.
+          o The InstallShield wizard is now the only supported installation method. The Scripting Toolkit ZIP file is still available and supported for manually replacing files. 
+    * Enhancements to the IBM Toolkit Configuration Utility:
+          o Supports Application setup for the IBM Director Agent for Windows (32-bit) Version 5.1 or higher.
+          o Supports OS utility setup for syslinux.com utility.
+          o Adds setting up the following operating systems:
+                + SUSE Linux Enterprise Server (SLES) 9 SP3 for 32-bit and 64-bit (x64) platforms.
+          o Supports setting up Microsoft Windows installation files from Microsoft CDs that contain more than one version of the operating system per CD. 
+    * Support for the Microsoft Automated Deployment Services (ADS) has the following enhancements:
+          o Adds support for Microsoft ADS 1.1.
+          o Automates the previously manual procedure for creating tasks in the ADS console.
+          o Provides ADS-ready images for server disposal, RAID configuration, system BIOS, and IBM ServeRAID BIOS and firmware updates.
+          o Provides a tool to automatically copy drivers to the target ADS server. 
+    * The following support has been removed or dropped:
+          o Red Hat Enterprise Linux AS 2.1.
+          o Microsoft ADS 1.0.
+          o Altiris Deployment Solution 5.6, Linux version.
+          o Altiris Deployment Solution 6.0, Windows version.
+          o Red Hat Linux installs using loadlin.exe is no longer supported.
+          o IBM Director Agent 4.2x. 
+
+ServerGuide Scripting Toolkit 1.3
+
+ServerGuide Scripting Toolkit 1.3 includes the following changes:
+
+    * ServeRAID BIOS and firmware update for 8i
+    * PRAID adds support to ServeRAID 8e SAS, ServeRAID 8e SATA
+    * Support for the following servers:
+          o xSeries 100 type 8486
+          o xSeries 206m type 8485, 8490
+          o xSeries x306m type 8849, 8491, 1887
+          o eServer 326m type 7969
+    * Support for the following operating systems:
+          o Red Hat Enterprise Linux AS 3 ( x86 64-bit)
+          o Red Hat Enterprise Linux ES 3 (32-bit, x86 64-bit)
+          o Red Hat Enterprise Linux AS 4 (32-bit, x86 64-bit)
+          o Red Hat Enterprise Linux ES 4 (32-bit, x86 64-bit)
+    * Support for Altiris Deployment Solution 6.5, Windows version Windows 98 boot environment only. No support for:
+          o FreeDos
+          o Linux
+          o WinPE (32-bit)
+    * Package for the Web replaced with an InstallShield GUI installer for Windows source server setup.
+    * Addition of Toolkit Configuration utility to replace manual steps of Windows source server setup:
+          o Support for setting up Windows device drivers from a ServerGuide CD
+                + Windows device drivers for Windows 2000
+                + Windows device drivers for Windows 2003
+          o Support for setting up the following Operating Systems:
+                + Windows 2000 Server
+                + Windows 2000 Advanced Server
+                + Windows Server 2003 - Standard Edition
+                + Windows Server 2003 - Enterprise Edition
+                + Windows Server 2003 - Web Edition
+                + Red Hat Enterprise Linux AS 2.1
+                + Red Hat Enterprise Linux AS 3 32-bit and x64
+                + Red Hat Enterprise Linux ES 3 32-bit and x64
+                + Red Hat Enterprise Linux AS 4 32-bit and x64
+                + Red Hat Enterprise Linux ES 4 32-bit and x64
+          o Support to setup loadlin.exe.
+
+ServerGuide Scripting Toolkit 1.2.01
+
+ServerGuide Scripting Toolkit 1.2.01 includes the following changes:
+
+    * Support for the following servers:
+          o xSeries 260, machine type 8865
+          o xSeries 460, machine type 8872
+    * Additional Altiris support:
+          o Support for Altiris Deployment Solution 6.1 SP2 for Windows
+          o Creation of a helper batch file for Altiris Deployment Solution for Windows
+                + Automatically loads the IBM supplied Altiris binary file.
+                + Creates a custom IBM tools menu in the Altiris console.
+    * Support for the Windows Server 2003 (Standard or Enterprise) with integrated Service Pack 1.
+    * Addition of the following Win PE 32 utilities: hwdetect.exe, savestat.exe, clini.exe, dscan.exe, unattend.exe
+    * Addition of the following Win PE x64 utilities: hwdetect.exe, savestat.exe
+    * Addition of the following Linux utility: hwdetect
+    * Clini32.exe has been renamed to clini.exe and moved to sgtk\utils\win32 directory.
+    * Dscan32.exe has been renamed to dscan.exe and moved to sgtk\utils\win32 directory.
+    * Removal of the \b parameter from the altboot.exe utility.
+
+ServerGuide Scripting Toolkit 1.2
+
+ServerGuide Scripting Toolkit 1.2 includes the following changes:
+
+    * Support for the following servers:
+          o xSeries 366, machine type 8863
+          o eServer 326, machine type 8848
+          o AMD Opteron LS20 for IBM eServer BladeCenter, machine type 8850
+    * RAID/Storage configuration (DOS)
+          o NEW Policy based RAID configuration and replication (PRAID.EXE)
+          o Single user interface for configuring and replicating RAID controller settings
+          o Ability to use the PRAID policies file to describe how your RAID controller should be configured or replicated
+          o Customizable logic to determine what configuration to use with which controllers. This logic can include the machine type of the server, the number of drives connected to the controller, and the RAID controller type.
+          o AUTO mode to configure using default settings
+          o Ability to configure all RAID controllers in a system with a single program call
+          o Features to save useful information about each captured configuration, including machine type, date and time of capture
+          o Ability to restore all controllers to factory-default settings
+          o ServeRAID 7e support on the xSeries 226 and xSeries 236 (utility upgrade)
+          o ServeRAID 8i support (new utility)
+          o Fibre configuration utility fix
+          o Update configuration utilities to latest level
+    * Additional Altiris support for:
+          o Fibre configuration task
+          o Windows Director Agent installation task (post OS)
+          o Windows Director Agent install with Scripted OS install
+          o Policy based RAID configuration
+          o Policy based RAID configuration Capture and Deploy
+    * Core Toolkit
+          o DHCP support added
+          o Router support added
+    * Drop support for the following servers:
+          o xSeries 360, machine type 8686
+          o xSeries 440, machine type 8687
+          o eServer BladeCenter HS20, machine type 8678
+
+ServerGuide Scripting Toolkit 1.1.01
+
+ServerGuide Scripting Toolkit 1.1.01 included the following changes:
+
+    * Support for the following servers:
+          o xSeries 226, machine type 8648
+          o xSeries 236, machine type 8841
+          o xSeries 336, machine types 8837 and 1879
+          o xSeries 346, machine types 8840 and 1880
+          o eServer BladeCenter HS20, machine types 8843 and 1883
+    * Additional Altiris support:
+          o Support for Altiris Deployment Solution 6.1 SP1 for Windows
+          o Additions to Altiris Deployment Solutions for Windows version 6.0 and 6.1:
+                + New to Hardware Configuration Events:
+                      # Capture RAID configuration
+                      # Deploy RAID configuration
+                      # Added operating system version specific installation events
+                + New to System Update Events:
+                      # Windows Post-OS updates:
+                            * Run the UpdateXpress RemoteUX utility to update drivers
+                            * Run the UpdateXpress RemoteUX utility to update firmware
+                            * Capture CMOS settings to a binary file
+                            * Deploy CMOS settings from a binary file
+                      # Perform IBM ServeRAID BIOS and firmware updates
+                + Additions to Altiris Deployment Solutions Linux version 5.6:
+                      # New to Hardware Configuration Events:
+                            * Capture RAID configuration
+                            * Deploy RAID configuration
+                      # Added operating system version-specific installation events
+                      # New to System Update Events:
+                            * Capture CMOS settings to a binary file
+                            * Deploy CMOS settings from a binary file
+                      # Perform IBM ServeRAID BIOS and firmware update
+    * Updated the ipssend.exe and ipssendl.exe utilities to version 7.10B to support IBM ServeRAID 7k on the xSeries 346
+    * A workaround has been provided to prevent a target machine with a Remote Supervisor Adapter-II from stopping when an operating system is being cloned using the Altiris Deployment Solution (Windows or Linux). All cloning jobs that are provided for the Altiris Deployment Solution have been changed to use "text" mode.
+
+ServerGuide Scripting Toolkit 1.1
+
+ServerGuide Scripting Toolkit 1.1 included the following changes:
+
+    * New source tree directory structure to accommodate more deployment scenarios
+    * Support for Altiris Deployment Solution for Windows 6.0 and 6.1
+    * Support for Altiris Deployment Solution for Linux 5.6 SP1
+    * Enhanced Microsoft ADS support
+          o Update the system BIOS
+          o Update the ServeRAID BIOS and Firmware
+          o Install the Windows Director Agent
+    * Support for Installing Red Hat Enterprise Linux AS 3
+    * Support for configuring Fibre Channel host bus adapters, including the following:
+          o IBM TotalStorage(R) FC2-133 Host Bus Adapter
+          o IBM HS20 Fibre Channel Expansion Card
+          o FAStT FC-2 Host Bus Adapter
+    * Enhanced support for configuring supported RAID controllers and adapters, including the following:
+          o IBM ServeRAID 4H
+          o IBM ServeRAID 4Lx
+          o IBM ServeRAID 4Mx
+          o IBM ServeRAID 5i
+          o IBM ServeRAID 6i
+          o IBM ServeRAID 6i+
+          o IBM ServeRAID 6M
+          o IBM ServeRAID 7e (Adaptec HostRAID) SATA
+          o IBM ServeRAID 7e (Adaptec HostRAID) SCSI
+          o IBM ServeRAID 7t
+          o Integrated SCSI controllers with RAID capabilities based on the LSI 1020 and LSI 1030 chipsets.
+          o LSI IDEal RAID controller in an IBM eServer BladeCenter HS20, machine type 8832
+    * Updated most utilities to newer versions, for example:
+          o ipssend.exe is now at version 7.0
+          o Fixed intermittent hang in savestat.exe
+          o Added new command line options to clini.exe
+    * Support for installing Windows with a BladeCenter Management Module virtual diskette
+    * Support for installing Director Agent with Windows
+    * Reworked environment variables to reduce DOS environment space
+    * Updated "IBM ServerGuide Scripting Toolkit User's Reference" document
+
+ServerGuide Scripting Toolkit 1.0.02
+
+ServerGuide Scripting Toolkit 1.0.02 included the following changes:
+
+    * Support for the following servers:
+          o xSeries 206, machine type 8482
+          o xSeries 306, machine type 8836
+          o eServer BladeCenter HS40, machine type 8839
+
+ServerGuide Scripting Toolkit 1.0.01
+
+ServerGuide Scripting Toolkit 1.0.01 included the following changes:
+
+    * Support for the following servers:
+          o xSeries 225, machine type 8649
+          o eServer 325, machine type 8835
+          o Reduced DOS environment space usage
+
+ServerGuide Scripting Toolkit 1.0
+
+This was the first release of ServerGuide Scripting Toolkit.
+
+(C) Copyright International Business Machines Corporation 2007.
+    All rights reserved.

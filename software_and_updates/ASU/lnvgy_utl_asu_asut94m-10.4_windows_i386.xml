@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ibmupdate.xsl"?>
+<!DOCTYPE CIM SYSTEM "cimv20.dtd">
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+   <MESSAGE ID="1" PROTOCOLVERSION="1.0">
+      <SIMPLEREQ>
+         <IMETHODCALL NAME="CreateInstance">
+            <LOCALNAMESPACEPATH>
+               <NAMESPACE NAME="root"/>
+               <NAMESPACE NAME="cimv2"/>
+            </LOCALNAMESPACEPATH>
+            <IPARAMVALUE NAME="NewInstance">
+               <INSTANCE CLASSNAME="IBMPSG_SystemUpdateElement">
+                  <PROPERTY NAME="Name" TYPE="string">
+                     <VALUE>Lenovo Advanced Settings Utility (ASU)</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementID" TYPE="string">
+                     <VALUE>asut</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementState" TYPE="uint16">
+                     <VALUE>1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="TargetOperatingSystem" TYPE="uint16">
+                     <VALUE>58</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="Version" TYPE="string">
+                     <VALUE>Version 10.4 -[asut94m-10.4]-</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableMachineTypes" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>BladeCenter HS23E-[8038]-</VALUE>
+                        <VALUE>BladeCenter HS23E-[8039]-</VALUE>
+                        <VALUE>IBM BladeCenter HS23-[1929]-</VALUE>
+                        <VALUE>IBM BladeCenter HS23-[7875]-</VALUE>
+                        <VALUE>System x3100 M4-[2582]-</VALUE>
+                        <VALUE>System x3250 M4-[2583]-</VALUE>
+                        <VALUE>System x3300 M4-[7382]-</VALUE>
+                        <VALUE>System x3500 M4-[7383]-</VALUE>
+                        <VALUE>System x3530 M4-[7160]-</VALUE>
+                        <VALUE>System x3550 M4-[7914]-</VALUE>
+                        <VALUE>System x3630 M4-[8103]-</VALUE>
+                        <VALUE>System x3650 M4-[7915]-</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="applicableOperatingSystems" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>Windows 2008</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="buildNumber" TYPE="string">
+                     <VALUE>asut94m</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="description" TYPE="string">
+                     <VALUE>Lenovo Advanced Settings Utility (ASU)</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="ibmSchemaVersion" TYPE="string">
+                     <VALUE>3.1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="identificationCode" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_windows_i386</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installCommandLine" TYPE="string">
+                     <VALUE>Double-click on the .exe or run it from the command line</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installDirectory" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installationNotes" TYPE="string">
+                     <VALUE>The procedure to install the Advanced Settings Utility (ASU)for Windows is as follows:
+1.   Copy the .exe to a directory on the hard drive.
+2.   Double-click on the .exe or run it from the command     line.  asu.exe will be extracted to the hard disk.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installLog" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="languageEdition" TYPE="string">
+                     <VALUE>All</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="manufacturer" TYPE="string">
+                     <VALUE>Lenovo</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="rebootRequired" TYPE="uint8">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="regions" TYPE="string">
+                     <VALUE>Worldwide</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="releaseDate" TYPE="datetime">
+                     <VALUE>20170517000000.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistory" TYPE="string">
+                     <VALUE>see change file</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="severity" TYPE="uint8">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedInstallCommandLine" TYPE="string">
+                     <VALUE>All ASU operations are command line based and don&apos;t wait for user  input.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedUninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="uninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="type" TYPE="uint16">
+                     <VALUE>12</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="category" TYPE="string">
+                     <VALUE>Utility</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crc" TYPE="string">
+                     <VALUE>b3f717d</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="size" TYPE="uint32">
+                     <VALUE>4530</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="readme" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_windows_i386.txt</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="xmlFilename" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_windows_i386.xml</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unpack" TYPE="uint16">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="orderedMachineTypeList" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>7383</VALUE>
+                        <VALUE>7382</VALUE>
+                        <VALUE>7915</VALUE>
+                        <VALUE>7914</VALUE>
+                        <VALUE>7160</VALUE>
+                        <VALUE>1929</VALUE>
+                        <VALUE>7875</VALUE>
+                        <VALUE>8039</VALUE>
+                        <VALUE>2583</VALUE>
+                        <VALUE>2582</VALUE>
+                        <VALUE>8038</VALUE>
+                        <VALUE>8103</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                        <VALUE>109</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSArchitectureList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="payload" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_windows_i386.exe</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crcType" TYPE="uint32">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="timestamp" TYPE="datetime">
+                     <VALUE>20170517045718.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistoryFile" TYPE="string">
+                     <VALUE>lnvgy_utl_asu_asut94m-10.4_windows_i386.chg</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="updateSelection" TYPE="string">
+                     <VALUE>auto</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableDeviceId" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>PCI\VEN_9005&amp;DEV_0285&amp;SUBSYS_02f21014</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+               </INSTANCE>
+            </IPARAMVALUE>
+         </IMETHODCALL>
+      </SIMPLEREQ>
+   </MESSAGE>
+</CIM>

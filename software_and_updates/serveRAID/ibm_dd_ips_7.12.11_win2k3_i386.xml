@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ibmupdate.xsl"?><!DOCTYPE CIM
+  SYSTEM "cimv20.dtd">
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+   <MESSAGE ID="1" PROTOCOLVERSION="1.0">
+      <SIMPLEREQ>
+         <IMETHODCALL NAME="CreateInstance">
+            <LOCALNAMESPACEPATH>
+               <NAMESPACE NAME="root"/>
+               <NAMESPACE NAME="cimv2"/>
+            </LOCALNAMESPACEPATH>
+            <IPARAMVALUE NAME="NewInstance">
+               <INSTANCE CLASSNAME="IBMPSG_SystemUpdateElement">
+                  <PROPERTY NAME="Name" TYPE="string">
+                     <VALUE>IBM ServeRAID SCSI Controller Driver for Microsoft Windows Server 2003 32-bit</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementID" TYPE="string">
+                     <VALUE>0001</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="SoftwareElementState" TYPE="uint16">
+                     <VALUE>1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="TargetOperatingSystem" TYPE="uint16">
+                     <VALUE>58</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="Version" TYPE="string">
+                     <VALUE>Version 7.12.11 -[0001-7.12.11]-</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="applicableMachineTypes" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>IBM eServer 325-[8835]-</VALUE>
+                        <VALUE>IBM eserver 326-[8848]-</VALUE>
+                        <VALUE>IBM eserver 326m-[7969]-</VALUE>
+                        <VALUE>IBM eserver 326m-[7992]-</VALUE>
+                        <VALUE>IBM eServer MXE 460/IBM System x3950 E-[7364]-</VALUE>
+                        <VALUE>IBM eServer MXE 460/IBM System x3950 E-[8874]-</VALUE>
+                        <VALUE>IBM eServer x460/IBM System x3950-[7363]-</VALUE>
+                        <VALUE>IBM eServer x460/IBM System x3950-[8872]-</VALUE>
+                        <VALUE>IBM eServer xSeries 200-[8479]-</VALUE>
+                        <VALUE>IBM eServer xSeries 200 VL 8481-[8481]-</VALUE>
+                        <VALUE>IBM eServer xSeries 206-[8482]-</VALUE>
+                        <VALUE>IBM eServer xSeries 206-[8487]-</VALUE>
+                        <VALUE>IBM eServer xSeries 206m-[8485]-</VALUE>
+                        <VALUE>IBM eServer xSeries 206m-[8490]-</VALUE>
+                        <VALUE>IBM eServer xSeries 220-[8645]-</VALUE>
+                        <VALUE>IBM eServer xSeries 225-[8647]-</VALUE>
+                        <VALUE>IBM eServer xSeries 225-[8649]-</VALUE>
+                        <VALUE>IBM eServer xSeries 226-[8488]-</VALUE>
+                        <VALUE>IBM eServer xSeries 226-[8648]-</VALUE>
+                        <VALUE>IBM eServer xSeries 230 and IBM Netfinity 5100-[8658]-</VALUE>
+                        <VALUE>IBM eServer xSeries 232-[8668]-</VALUE>
+                        <VALUE>IBM eServer xSeries 235-[8671]-</VALUE>
+                        <VALUE>IBM eServer xSeries 236-[8841]-</VALUE>
+                        <VALUE>IBM eServer xSeries 255-[8685]-</VALUE>
+                        <VALUE>IBM eServer xSeries 300-[8672]-</VALUE>
+                        <VALUE>IBM eServer xSeries 305-[8673]-</VALUE>
+                        <VALUE>IBM eServer xSeries 306-[1878]-</VALUE>
+                        <VALUE>IBM eServer xSeries 306-[8489]-</VALUE>
+                        <VALUE>IBM eServer xSeries 306-[8836]-</VALUE>
+                        <VALUE>IBM eServer xSeries 306m-[1887]-</VALUE>
+                        <VALUE>IBM eServer xSeries 306m-[8491]-</VALUE>
+                        <VALUE>IBM eServer xSeries 306m-[8849]-</VALUE>
+                        <VALUE>IBM eServer xSeries 330-[8674]-</VALUE>
+                        <VALUE>IBM eServer xSeries 335-[8676]-</VALUE>
+                        <VALUE>IBM eServer xSeries 335-[8830]-</VALUE>
+                        <VALUE>IBM eServer xSeries 336-[1879]-</VALUE>
+                        <VALUE>IBM eServer xSeries 336-[8837]-</VALUE>
+                        <VALUE>IBM eServer xSeries 342-[8669]-</VALUE>
+                        <VALUE>IBM eServer xSeries 345-[4146]-</VALUE>
+                        <VALUE>IBM eServer xSeries 345-[8670]-</VALUE>
+                        <VALUE>IBM eServer xSeries 346-[1880]-</VALUE>
+                        <VALUE>IBM eServer xSeries 346-[8840]-</VALUE>
+                        <VALUE>IBM eServer xSeries 350 and IBM Netfinity 6000R-[8682]-</VALUE>
+                        <VALUE>IBM eServer xSeries 365-[8861]-</VALUE>
+                        <VALUE>IBM eServer xSeries 365-[8862]-</VALUE>
+                        <VALUE>IBM eServer xSeries 440-[8687]-</VALUE>
+                        <VALUE>IBM eServer xSeries 445-[8870]-</VALUE>
+                        <VALUE>IBM System x3800/x260-[8865]-</VALUE>
+                        <VALUE>IBM System x3800-[8866]-</VALUE>
+                        <VALUE>IBM System x3850/x366-[7362]-</VALUE>
+                        <VALUE>IBM System x3850/x366-[8863]-</VALUE>
+                        <VALUE>IBM System x3850-[7365]-</VALUE>
+                        <VALUE>IBM System x3850-[8864]-</VALUE>
+                        <VALUE>IBM System x3950-[7366]-</VALUE>
+                        <VALUE>IBM System x3950-[8878]-</VALUE>
+                        <VALUE>IBM System x3950 E-[7367]-</VALUE>
+                        <VALUE>IBM System x3950 E-[8879]-</VALUE>
+                        <VALUE>System x3650-[1914]-</VALUE>
+                        <VALUE>System x3650-[7979]-</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="applicableOperatingSystems" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>Windows 2003</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="buildNumber" TYPE="string">
+                     <VALUE>0001</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="description" TYPE="string">
+                     <VALUE>IBM ServeRAID SCSI Controller Driver for Microsoft Windows Server 2003 32-bit</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="ibmSchemaVersion" TYPE="string">
+                     <VALUE>3.0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="identificationCode" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installCommandLine" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386.exe</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installDirectory" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installationNotes" TYPE="string">
+                     <VALUE>This update is packaged as a binary executable. You must be logged in as an administrator.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="installLog" TYPE="string">
+                     <VALUE>.</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="languageEdition" TYPE="string">
+                     <VALUE>All</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="manufacturer" TYPE="string">
+                     <VALUE>IBM</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="rebootRequired" TYPE="uint8">
+                     <VALUE>3</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="regions" TYPE="string">
+                     <VALUE>Worldwide</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="releaseDate" TYPE="datetime">
+                     <VALUE>20061026000000.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistory" TYPE="string">
+                     <VALUE>See change history</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="severity" TYPE="uint8">
+                     <VALUE>1</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unattendedInstallCommandLine" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386.exe -s</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="uninstallCommandLine" TYPE="string">
+                     <VALUE>Not Supported</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="type" TYPE="uint16">
+                     <VALUE>3</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="category" TYPE="string">
+                     <VALUE>ServeRaid</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crc" TYPE="string">
+                     <VALUE>8f169109</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="size" TYPE="uint32">
+                     <VALUE>581</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="readme" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386.txt</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="driverFiles" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>nfrd960.sys-#7.12.11</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="driverFilesClassification" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>-1</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="xmlFilename" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386.xml</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="unpack" TYPE="uint16">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY.ARRAY NAME="orderedMachineTypeList" TYPE="string">
+                     <VALUE.ARRAY>
+                        <VALUE>8645</VALUE>
+                        <VALUE>8658</VALUE>
+                        <VALUE>8668</VALUE>
+                        <VALUE>8669</VALUE>
+                        <VALUE>8672</VALUE>
+                        <VALUE>8674</VALUE>
+                        <VALUE>8682</VALUE>
+                        <VALUE>8685</VALUE>
+                        <VALUE>8687</VALUE>
+                        <VALUE>8671</VALUE>
+                        <VALUE>8479</VALUE>
+                        <VALUE>8481</VALUE>
+                        <VALUE>8676</VALUE>
+                        <VALUE>8830</VALUE>
+                        <VALUE>8647</VALUE>
+                        <VALUE>8670</VALUE>
+                        <VALUE>4146</VALUE>
+                        <VALUE>8673</VALUE>
+                        <VALUE>8870</VALUE>
+                        <VALUE>8835</VALUE>
+                        <VALUE>8861</VALUE>
+                        <VALUE>8862</VALUE>
+                        <VALUE>8649</VALUE>
+                        <VALUE>8837</VALUE>
+                        <VALUE>1879</VALUE>
+                        <VALUE>8482</VALUE>
+                        <VALUE>8487</VALUE>
+                        <VALUE>8848</VALUE>
+                        <VALUE>8841</VALUE>
+                        <VALUE>7969</VALUE>
+                        <VALUE>7992</VALUE>
+                        <VALUE>7979</VALUE>
+                        <VALUE>1914</VALUE>
+                        <VALUE>8488</VALUE>
+                        <VALUE>8648</VALUE>
+                        <VALUE>8849</VALUE>
+                        <VALUE>1887</VALUE>
+                        <VALUE>8491</VALUE>
+                        <VALUE>8836</VALUE>
+                        <VALUE>1878</VALUE>
+                        <VALUE>8489</VALUE>
+                        <VALUE>8840</VALUE>
+                        <VALUE>1880</VALUE>
+                        <VALUE>8485</VALUE>
+                        <VALUE>8490</VALUE>
+                        <VALUE>8863</VALUE>
+                        <VALUE>7362</VALUE>
+                        <VALUE>8864</VALUE>
+                        <VALUE>7365</VALUE>
+                        <VALUE>8865</VALUE>
+                        <VALUE>8866</VALUE>
+                        <VALUE>8878</VALUE>
+                        <VALUE>7366</VALUE>
+                        <VALUE>8879</VALUE>
+                        <VALUE>7367</VALUE>
+                        <VALUE>8872</VALUE>
+                        <VALUE>7363</VALUE>
+                        <VALUE>8874</VALUE>
+                        <VALUE>7364</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                        <VALUE>103</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY.ARRAY NAME="orderedOSArchitectureList" TYPE="uint32">
+                     <VALUE.ARRAY>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                        <VALUE>1</VALUE>
+                     </VALUE.ARRAY>
+                  </PROPERTY.ARRAY>
+                  <PROPERTY NAME="payload" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386.exe</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="payloadCompressionType" TYPE="uint32">
+                     <VALUE>0</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="crcType" TYPE="uint32">
+                     <VALUE>2</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="timestamp" TYPE="datetime">
+                     <VALUE>20080718035916.000000-300</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="revisionHistoryFile" TYPE="string">
+                     <VALUE>ibm_dd_ips_7.12.11_win2k3_i386.chg</VALUE>
+                  </PROPERTY>
+                  <PROPERTY NAME="updateSelection" TYPE="string">
+                     <VALUE>auto</VALUE>
+                  </PROPERTY>
+               </INSTANCE>
+            </IPARAMVALUE>
+         </IMETHODCALL>
+      </SIMPLEREQ>
+   </MESSAGE>
+</CIM>

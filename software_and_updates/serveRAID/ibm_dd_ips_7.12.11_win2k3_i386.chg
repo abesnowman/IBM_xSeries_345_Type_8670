@@ -1,0 +1,200 @@
+Change History
+__________________
+
+  2.1  ServeRAID Family 7.10 to 7.12
+  __________________________________
+                                                     
+    o  Fixed error code:2807 on ServeRAID-7k during system reboot on IBM     
+       xSeries 346                                                           
+                                                                             
+    o  Increased timeout for commands on tape devices attached to a          
+       ServeRAID-7k                                                          
+                                                                             
+    o  Fixed erroneous defective battery message after one day of use on the 
+       ServeRAID-7k                                                          
+                                                                             
+    o  Fixed ServeRAID-7k error LED not lighting when battery cable is    
+       unplugged                                                             
+                                                                             
+    o  Fixed file corruption on Raid level-5 logical drive after a logical drive   
+       migration and several rebuilds
+
+    o  Fixed problem with sendmail operation in Linux environment with 
+       security enabled
+
+  2.2  ServeRAID Family 7.00 to 7.10
+  __________________________________
+  
+    o  Support for the IBM ServeRAID-7k Ultra320 SCSI controller
+
+    o  Fixed a problem with the ServeRAID-6M that affected performance
+       at high I/O loads. 
+                        
+
+  2.3  ServeRAID Family 6.11 to 7.00
+  __________________________________
+             
+    o  Support for the IBM ServeRAID-7t SATA controller
+    
+    o  Support for the Adaptec HostRAID controller
+    
+    o  Support for new operating systems:
+    
+       + Microsoft Windows Server 2003, Web Edition
+         
+    o  Fixed a problem with LSI PFA handling. To enable automatic PFA 
+       alerts, the MRIE field in the Information Exceptions Control mode   
+       page is monitored for any value other than 4 and changed accordingly.
+                
+    o  Fixed a problem that caused the device driver installation to fail 
+       under Microsoft Windows 2003 for AMD64.                    
+       
+    o  Fixed an intermittent POST hang problem when the ServeRAID-5i is  
+       forced to run at 33Mhz in x225 by a 33Mhz adapter in adjacent slot 5.
+                 
+ 
+  2.4  ServeRAID Family 6.10 to 6.11
+  __________________________________
+
+    o  Fixed a problem with importing spanned array configurations.
+       
+    o  Fixed a problem that prevented the ServeRAID-6i controller from
+       detecting drives under Red Hat Enterprise Linux AS2.1, Quarterly
+       Update 2 (QU2).
+       
+
+  2.5 ServeRAID Family 6.00 to 6.10
+  __________________________________
+         
+    o  Support for the IBM ServeRAID-6i Ultra320 SCSI controller.
+       
+    o  Support for 16 ServeRAID controllers on the Windows.
+       
+    o  Fixed a problem with the ServeRAID-3HB controller that caused
+       performance to degrade when the battery backup cache failed. 
+           
+    o  Fixed a problem with ServeRAID-4L and ServeRAID-4Lx 
+       controllers that resulted in a race condition when the BIOS
+       and firmware tried to access flash memory at the same time.
+       The system now polls the ROM BIOS before the firmware.
+       
+
+  2.6  ServeRAID Family 5.11 to 6.00
+  __________________________________
+
+    o  Support for the new IBM ServeRAID-6M Ultra320 SCSI controller.
+
+    o  Support for new operating systems:
+    
+       + Microsoft Windows Server 2003 Standard Edition and Enterprise Edition
+       + Microsoft Windows Server 2003 Enterprise Edition for 64-bit Servers
+
+    o  New 2 terabyte limit for logical drives.
+
+    o  Support for RAID Level-5EE logical drives on ServeRAID-6M, 
+       ServerRAID-4L, ServerRAID-4Lx, ServeRAID-4M, and ServeRAID-4Mx 
+       controllers.
+       
+
+  2.7  ServeRAID Family 5.10 to 5.11
+  __________________________________
+
+    o  Fixed a cache flushing problem in the ServeRAID-3H/3HB
+       controller.  This problem could occur when: (1) the array
+       includes a RAID level-5 logical drive running in WB mode;
+       (2) a drive goes defunct during an active flush to that drive
+       and then (3) an adapter is reset after another flush command
+       is sent to the same sector on that drive. This fix was
+       implemented in firmware to help increase data reliability.
+    
+    o  Fixed an intermittent system hang which can occur during a PCI
+       bus scan when a ServeRAID 4M, 4L, 4Mx, or 4Lx is installed in
+       slots 4, 5, and/or 6 of the x345 system.
+            
+
+  2.8 ServeRAID Family 4.84 to 5.10
+  __________________________________
+    
+    o  Support for the new IBM ServeRAID-5i Ultra320 SCSI controller.
+
+    o  Support for new operating systems:
+    
+       + OpenLinux 3.1.1
+       + Red Hat Linux 7.2 and 7.3
+       + SuSE Linux 7.3 and 8.0
+    
+    o  New event mechanism to alert user when version numbers do not
+       match in BIOS, firmware, and device drivers.
+    
+    o  New audible alarm in ServeRAID Manager agent when critical and
+       fatal events occur.    
+    
+    o  Fixed a problem with the ServeRAID Manager "Send test trap"
+       function.  Certain management programs such as Tivoli Netview
+       did not recognize the test trap.
+
+    o  Fixed a problem with the ServeRAID Manager configuration wizard
+       when creating large arrays near 1 Terabyte or greater in size.
+       The large arrays caused the ServeRAID Manager configuration
+       wizard to display the wrong logical drive size.
+
+    o  Fixed a problem in UnixWare/Open UNIX device driver of not
+       handling 64 bit DMA requests from the OS when greater than 4GB
+       memory addressing is activated.
+       
+    o  (For Windows NT and Windows 2000 only, ServeRAID-3 family only)
+       Fixed 'Event ID 11' condition in critical RAID-level 5 logical 
+       drives.           
+              
+    o  (For Windows NT and Windows 2000 only) Fixed resource 
+       constraints under heavy workloads (Event ID 11).
+       
+    o  Reduced excessive error logging in critical RAID-level 1 logical
+       drives.
+        
+  
+  2.9  ServeRAID Family 4.80 to 4.84
+  __________________________________
+
+    o  (For Windows NT and Windows 2000 only)  Fixed delay condition
+       known to cause the ServeRAID driver or other hardware to
+       timeout (Event ID 11).  
+    
+    o  (For Windows NT only)  Many causes of blue screens can lead to
+       data corruption.  In rare circumstances, if a blue screen occurs
+       while a RAID level-5 configuration has one defunct physical
+       drive, data corruption might occur. To reduce the risk of data
+       corruption in this scenario, the ServeRAID Windows NT device
+       driver now delays after a blue screen occurs before resetting
+       the ServeRAID controller.
+
+       Additionally, a fix was implemented for the rare occurrence of
+       data corruption when all of the following conditions are met:
+
+       - A ServeRAID-3HB controller is installed with the 4.70 or 4.80
+         firmware and device driver.
+      
+       - Four or more hard disk drives are in the array.
+    
+       - One or more of the hard disk drives in the array are 17 GB, 
+         or larger.
+    
+       - The array includes a RAID level-5 logical drive.
+    
+       - The server is turned off without shutting down the operating
+         system, or a blue screen occurs. 
+
+    o  Fixed system hangs or error messages that might occur during
+       tape backup operations or other single-threaded operations
+       because of ServeRAID command time-outs. This problem was
+       observed specifically on SCO OpenServer ("Unrecovered read
+       error" messages are displayed on the OpenServer console).
+
+    o  (For e-Server xSeries 360) When using the "IBM ServeRAID 4.80
+       BIOS and Firmware Update (1 of 2)" diskette on a ServeRAID-4H
+       controller, fixed occurrences when the firmware update did not
+       complete successfully and the server would restart.
+
+    o  The performance on some applications has been improved when
+       using write-back mode on a RAID level-5 logical drive that has
+       a defunct physical drive.

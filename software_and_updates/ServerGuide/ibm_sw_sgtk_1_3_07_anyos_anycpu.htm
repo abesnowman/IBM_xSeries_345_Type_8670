@@ -1,0 +1,418 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>README</title>
+<style type="text/css">
+h4 { color: #00AAFF; }
+</style>
+<style>
+</style>
+</head>
+<body bgcolor="#FFFFFF" link=blue vlink=blue class="Normal" lang=EN-US>
+<div class=Section1>
+  <h1>ServerGuide Scripting Toolkit Version 1.3.07 Readme</h1>
+    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0>
+    <tr>
+    <td>
+  <pre class="courier">                                                              </pre>
+  <pre class="courier">  IBM(R) ServerGuide(TM) Scripting Toolkit, Version 1.3.07      </pre>
+  <pre class="courier">                                                              </pre>
+  <pre class="courier">  (C) Copyright International Business Machines Corporation     </pre>
+  <pre class="courier">    2003-2008. All rights reserved.                           </pre>
+  <pre class="courier">                                                              </pre>
+  <pre class="courier">  US Government Users Restricted Rights  Use, duplication       </pre>
+  <pre class="courier">  or disclosure restricted by GSA ADP Schedule Contract with   </pre>
+  <pre class="courier">  IBM Corp.                                                     </pre>
+  <pre class="courier">                                                              </pre>
+  <pre class="courier">  Notes:                                                        </pre>
+  <pre class="courier">  o  Before using this information and the product it supports,    </pre>
+  <pre class="courier">     read the general information under <a href="#_Notices_And_Trademarks">Notices and trademarks</a></pre>
+  <pre class="courier">     for more information.                                          </pre>
+  <pre class="courier">                                                              </pre>
+  <pre class="courier">  o  Check the ServerGuide Scripting Toolkit Web site for the      </pre>
+  <pre class="courier">     latest version of this readme. See <a href="#_Support_Web_Sites">Support Web sites</a> for </pre>
+  <pre class="courier">     more information.                                          </pre>
+  <pre class="courier">                                                             </pre>
+  <pre class="courier">  Updated 23 January 2008                                      </pre>
+  <pre class="courier">                                                             </pre>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class=Section1>
+  <h1><a name="_Table_of_Contents"></a>Table of contents</h1>
+  <ul type=disc>
+    <li><a href="#_Overview">Overview</a></li>
+    <li><a href="#_New">What's new in 1.3.07</a></li>
+    <li><a
+     href="#_Installation">Installation</a></li>
+    <li><a href="#_Supported_Deployment_Scenarios">Supported deployment scenarios </a></li>
+  <ul>
+      <li>
+        DOS-startable CD or DOS-startable diskette and data CD</li>
+      <li>
+        DOS-startable diskette and network share</li>
+      <li>Remote Supervisor Adapter II or BladeCenter(R) Management Module&#8482; and network share</li>
+      <li>
+        Altiris<sup>&reg;</sup> Deployment Solution<sup>&#8482;</sup></li>
+      <li>
+        Microsoft<sup>&reg;</sup> Automated Deployment Services (ADS)</li>
+    </ul>
+    <li><a href="#_Solving_ServerGuide_Scripting">Solving ServerGuide Scripting Toolkit problems</a>
+    <ul>
+    <li><a href="#hs21_hang">IBM BladeCenter HS21 (machine types 8853, 1885) hangs at DHCP for Linux deployments</a></li>
+    <li><a href="#x3655_bios_hang">Multiple systems: Altiris hangs on "Transferring control to DOS"</a></li>
+    <li><a href="#hs20_uxsp">IBM Blade Center HS20(8843,1883) looses networking after installing with UpdateXpress System Pack 1.0 update on Windows 2000</a></li>
+    <li><a href="#uxsp_delay">Altiris UXSP Job taking an extended period on RHEL3U8</a></li>
+    <li><a href="#raid_cap_hang">RAID CAPTURE fails and hangs on "Improper syntax for the following parameter"</a></li>
+    <li><a href="#tk_boot">Network boot disks fail on the IBM BladeCenter Advanced Management Module</a></li>
+    <li><a href="#sles10_xen">SLES 10 install with Xen support hangs during the initial services startup post install</a></li>
+    <li><a href="#altiris_sles10">Altiris Clone/Deploy of Image Fails on SUSE Linux Enterprise Server 10</a></li>
+    <li><a href="#praid_3800">PRAID.EXE errors when configuring System x3800 with ServeRAID-8i</a></li>
+    <li><a href="#rhel5_3455">Network deployment of Red Hat Enterprise Linux 5 fails on System x3455 type 7984</a></li>
+    <li><a href="#sles9_fnf">"File not found" error when using the Toolkit Configurator to copy installation files for SLES9 SP3</a></li>
+    <li><a href="#biosupdte_x3400">Performing BIOS updates on x3400 and x3500 using Altiris or ADS</a></li>
+    <li><a href="#x3550_raid">PRAID.EXE errors when configuring System x3550 with no internal drives attached</a></li>
+    <li><a href="#mr10i_cable">RAID configuration fails when configuring with ServeRAID-MR10i</a></li>
+    <li><a href="#sles_kernel">SLES Installation fails on System 3850 M2</a></li>
+    <li><a href="#sles_ipaddr">Problems obtaining an IP address after a SLES installation on System 3850 M2</a></li>
+</ul>
+    </li>
+    <li><a href="#_Additional_Files_Utilities">Additional files, utilities, and information</a>
+      <ul>
+        <li>Electronic Service Agent</li>
+        <li>Limitations </li>
+      </ul>
+    </li>
+    <li><a href="#_Support_Web_Sites">Support Web sites</a> </li>
+    <li><a href="#_Notices_And_Trademarks">Notices and trademarks</a> </li>
+  </ul>
+<h1><a name="_New"></a>What's new in 1.3.07</h1>
+<p><a href="#_Table_of_Contents">Back to TOC</a></p>
+<p>Support for the following hardware:
+<ul>
+<li>System x3200 M2 (4367, 4368)</li>
+<li>System x3250 M2 (4190, 4191, 4194)</li>
+<li>System x3350 (4192, 4193)</li>
+<!-- <li>System x3455 (7940, 7941)</li> -->
+<li>System x3850 M2/x3950 M2 (7141, 7144)</li>
+</ul></p>
+<p>
+Support for the following RAID controllers:
+<ul>
+<li>ServeRAID 8s</li>
+<li>ServeRAID-MR10i</li>
+<li>ServeRAID-MR10k</li>
+<li>ServeRAID-MR10M</li>
+<li>LSI SAS 1078 IR</li>
+</ul></p>
+<h1><a name="_Supported_Servers"></a>Supported hardware and operating systems</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>This section lists changes in supported hardware and operating systems and network device driver
+  compatibility since the latest release of the <i>IBM ServerGuide Scripting Toolkit Users Guide</i>.
+  Please consult the Users Guide for a complete list of supported hardware, operating systems, and network device driver
+  compatibility.</p>
+</ul>
+<h1><a name="_Supported_Deployment_Scenarios">Supported Deployment Scenarios</a></h1>
+<p><a href="#_Table_of_Contents">Back to TOC</a></p>
+<p>The ServerGuide Scripting Toolkit supports the following deployment scenarios:</p>
+<ul>
+<li>DOS-startable CD or DOS-startable diskette and data CD</li>
+  <li>DOS-startable diskette and network share</li>
+    <li>Altiris Deployment Solution</li>
+    <li>Microsoft Automated Deployment Services (ADS) </li>
+  </ul>
+  <h2>DOS-startable CD or DOS-startable diskette and data CD</h2>
+  <p>You can use a DOS-startable diskette with a data CD to deploy Microsoft Windows to all supported servers
+  that have both a diskette drive and a CD drive. This includes all supported servers except the following:</p>
+  <ul>
+    <li>AMD Opteron LS20 for IBM BladeCenter, machine type 8850</li>
+    <li>AMD Opteron LS21 for IBM BladeCenter, machine type 7971</li>
+    <li>AMD Opteron LS41 for IBM BladeCenter, machine type 7972</li>
+  <li>IBM BladeCenter HS20, machine type 7981</li>
+  <li>IBM BladeCenter HS20, machine type 8832</li>
+    <li>IBM BladeCenter HS20, machine types 8843 and 1883</li>
+    <li>IBM BladeCenter HS21, machine types 8853 and 1885</li>
+    <li>IBM BladeCenter HS40, machine type 8839 </li>
+  </ul>
+  <p><b>Note:</b> You cannot use this method on any server with both a USB-connected diskette drive and a USB-connected
+  CD-ROM drive.</p>
+  <p>You can use a DOS-startable CD to deploy Microsoft Windows to all supported servers that have a CD drive. </p>
+  <h2>DOS-startable diskette and network share</h2>
+  <p>You can use a DOS-startable diskette with a network share to deploy Microsoft Windows or Red Hat Linux to all supported servers that have a diskette drive and access to a network share. </p>
+  <h2>Remote Supervisor Adapter II or BladeCenter Management Module and network share</h2>
+  <p>You can use a virtual diskette to deploy Microsoft Windows to all supported servers that contain a
+  Remote Supervisor Adapter II, or a BladeCenter Management Module. This includes all supported servers except the following:
+  <ul>
+  <li>xSeries 335, machine type 8676 and machine type 8830</li>
+  <li>eServer 325, machine type 8835</li>
+  </ul>
+<b>Note:</b> The xSeries 445, machine type 8870 is supported only when a Remote Supervisor Adapter II-EXA is installed.
+</p>
+  <h2>Altiris Deployment Solution</h2>
+  <p>You can use the ServerGuide Scripting Toolkit with the
+Altiris Deployment Solution to deploy Microsoft Windows,
+Red Hat Enterprise Linux,
+or SUSE Linux Enterprise Server to all supported servers.
+The following versions of Altiris Deployment Solution
+are supported with this version of the ServerGuide Scripting Toolkit:</p>
+  <ul>
+  <li>Altiris Deployment Solution for Windows, version 6.8 SP1</li>
+  <li>Altiris Deployment Solution for Windows, version 6.5 SP1</li>
+    <li>Altiris Deployment Solution for Windows, version 6.5 </li>
+    <li>Altiris Deployment Solution for Windows, version 6.1 SP2 </li>
+    <li>Altiris Deployment Solution for Windows, version 6.1 SP1 </li>
+    <li>Altiris Deployment Solution for Windows, version 6.1</li>
+  </ul>
+  <p><b>Notes: </b>
+  <ol><li>Altiris 6.5 requires SP1 when using Version 1.3.03 or higher
+  of the ServerGuide Scripting Toolkit with RemoteUX.
+  </li><li>
+The ServerGuide Scripting Toolkit does not support WinPE or FreeDOS boot environments with Altiris Deployment Solution
+for Windows, version 6.5.
+</li>
+<li>The AMD Opteron for IBM BladeCenter models LS21 and LS41, machine types 7971 and 7972 are not supported with Altiris when
+configured with the Blade Storage and the I/O Expansion Unit.</li>
+<li>The System x3755 machine type 8877 and System x3655 machine type 7985 are not supported with Altiris when configured with the
+ServeRAID 8k or ServeRAID 8k-l.</li>
+<li>The Altiris Agent for Windows application provided in Altiris Deployment Solution 6.5 service pack 1
+will not install properly on Windows Server 2003 Web Edition.</li>
+<li>The Altiris Deployment Solution jobs "Capture CMOS settings" and "Deploy CMOS settings" are not supported
+on the System x3105 machine type 4347.</li>
+<li>Altiris Deployment Solution does not support cloning for VMware ESX Server.</li>
+</ol>
+  </p>
+  <h2>Microsoft Automated Deployment Services (ADS)</h2>
+  <p>You can use the ServerGuide Scripting Toolkit to configure supported RAID adapters and controllers.</p>
+  <p><b>Notes:</b>
+  <ol>
+  <li>In some cases, performing a memory-intensive DOS-based task such as updating the server BIOS code or
+  IBM ServeRAID firmware code requires more conventional memory (RAM) than is available after loading the Microsoft ADS
+  virtual boot diskette and the IBM ServerGuide Scripted Toolkit with network connectivity.</li>
+  <li>Updating ServeRAID firmware using the ServerGuide Scripting Toolkit with
+ ADS was verified on an xSeries 225 (x225), machine type 8647 with a ServeRAID
+ 4H RAID controller.</li>
+ <li>The IBM System x3455, machine types 7984 and 7986 and IBM System x3755, machine type 8877 are unable to install the Director Agent through Microsoft
+ ADS.  All other ADS tasks are unaffected.</li>
+ </ol>
+ </p>
+ <h1><a name="_Solving_ServerGuide_Scripting">Solving ServerGuide Scripting Toolkit Problems</a></h1>
+ <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+ <p>This section contains updates to information on solving ServerGuide Scripting Toolkit Problems developed since the 
+ publication of the <i>IBM ServerGuide Scripting Toolkit Users Guide</i>.  Please consult the Users Guide for a full
+ list of known solutions to ServerGuide Scripting Toolkit problems.</p>
+ <h2><a name="hs21_hang">IBM BladeCenter HS21 (machine types 8853, 1885) hangs at DHCP for Linux deployments</a></h2>
+ <p>The IBM BladeCenter HS21 (machine types 8853, 1885) cannot receive an IP address via DHCP when starting a Linux deployment using eth0 as the
+ deployment NIC.  To solve this problem, change the value of the variable "DPY_NIC" to eth1 in USRVARS.BAT or in
+ the Altiris deployment job.</p>
+ <h2><a name="x3655_bios_hang">Multiple systems: Altiris hangs on "Transferring control to DOS"</a></h2>
+ <p>This problem affects the following systems:<ul compact>
+  <li>AMD Opteron LS21 and LS41 for BladeCenter using system BIOS BAE122CUS or earlier.</li>
+  <li>System x3655 type 7985</li>
+  <li>System x3755 type 8877</li>
+ </ul></p>
+ <p>
+ <p>This is currently a limitation for the System x3655 and System x3755.  This problem will be corrected by
+ future BIOS updates.</p>
+ <p>For the AMD Opteron LS21 and LS41 for BladeCenter, this problem can be corrected by updating the 
+ BIOS to BAE122DUS or higher.</p>
+ <h2><a name="hs20_uxsp">IBM Blade Center HS20(8843,1883)loses networking after UpdateXpress System Pack 1.0 update on Windows 2000</a></h2>
+ <p>The Intel(R) Chipset Software Installation Utility delivered with UXSP 1.0 causesthe networking subsystem to fail.
+ This affects the Altiris UXSP post job, causing the agent to fail to return to the Deployment Server the last message.</p>
+ <p>To avoid this problem, insert a restart command at the end of the post job script.</p>
+<h2><a name="uxsp_delay">Altiris UXSP Job taking an extended period on RHEL3U8 (32-bit)</a></h2>
+<p>The Altiris UpdateXpress System Pack Installer job can take up to 25 minutes when executing on RHEL3U8 (32-bit) when
+run from a samba share.
+</p>
+<p>There is currently no workaround for this problem.</p>
+<h2><a name="raid_cap_hang">RAID CAPTURE fails and hangs on "Improper syntax for the following parameter."</a></h2>
+<p>Using PRAID.exe in capture mode (praid /c ) to capture a configuration on an IBM xSeries 346 containing a ServeRAID 
+4H controller in the Altiris environment can result in a failure message "Improper syntax for the following parameter" 
+and hanging condition. </p>
+<p>To avoid this problem in the Altiris environment, set the RD_ERR2 variable to 'N' in
+the Altiris job CAPTURE RAID CONFIGURATION.</p>
+<h2><a name="tk_boot">Network boot disks fail on the IBM BladeCenter H Chassis with the IBM BladeCenter Advanced Management Module</a></h2>
+<p>
+ServerGuide Scripting Toolkit network boot disk scenarios fail on the IBM BladeCenter H chassis with the IBM BladeCenter Advanced Management Module due
+to inability to connect to the network.  To correct this problem, install firmware level build level BPET29F or higher to the Advanced Management Module.</p>
+<h2><a name="sles10_xen">SLES 10 install with xen support hangs during the initial services startup post install</a></h2>
+<p>After installation of SLES 10 with XEN support, you may experience what appears to be a hang condition. To work around this
+problem, log in to the machine using a different console (for example, using Alt+F2).</p>
+<!-- <h2><a name="acusas_8s">The ACUSAS command fails with error code 2 when using IBM ServeRAID-8s and EXP3000</li></h2>
+<p>Using PRAID.EXE to create a configuration on an IBM ServeRAID-8s that is connected externally to an EXP3000 can
+result in a failure message "Acusas command failed with error code 2".</p>
+<p>To avoid this problem, place the drives in the EXP3000 in sequential order from slot 1 to slot n</p> -->
+<h2><a name="altiris_sles10">Altiris Clone/Deploy of Image Fails on SUSE Linux Enterprise Server 10</a></h2>
+<p>Altiris RapiDeploy does not support the reiserfs filesystem for capturing and deploying images, causing the 
+job to fail.</p>
+<p>To avoid this problem, use -raw parameter for the Capture Linux image job and Deploy Linux image job or install
+SLES 10 with ext3 filesystem.  To get more information about this workaround please check the section 
+"Performing Image Installs" of the Users Guide.</p>
+<h2><a name="praid_3800">PRAID.EXE errors when configuring System x3800 with ServeRAID-8i</a></h2>
+<p>When using PRAID.exe to configure or capture a configuration on a System x3800 containing a ServeRAID-8i
+controller, you might receive error code 2.  This error is caused by an incompatibility between previous versions
+of the  ServeRAID-8i controller firmware and the current version of tools used by PRAID.</p>
+<p>To avoid this problem, update the firmware of ServeRAID-8i to 11844 or higher and ensure that the CPLD 
+is 1.06 or higher.</p>
+<h2><a name="rhel5_3455">Network deployment of Red Hat Enterprise Linux 5 fails on System x3455 type 7984</a></h2>
+<p>When performing network deployment of RHEL 5 to a System x3455 type7984, you might receive the following
+message:
+<xmp>An error occured during the file system check.
+Dropping you to a shell; the system will reboot when you leave the shell.
+Warning -- SELinux is active
+Disabling security enforcement for system recovery.
+Run 'sentenforce1' to reenable.
+Give root password for maintenance 
+(or type control-D to continue):
+</xmp></p>
+<p>To correct the problem, reboot the server and continue.</p>
+<h2><a name="sles9_fnf">"File not found" error when using the Toolkit Configurator to copy installation files for SLES9 SP3</a></h2>
+<p>When using the ServerGuide Scripting Toolkit Configurator to copy operating system installation files for SLES9 SP3, 
+users might encounter errors similiar to these from the Configurator:
+<xmp>
+Pre-Processing Error - File Not Found: E:\Program Files\Altiris\eXpress\Deployment Server\sgdeploy\os\sles9tim\core\cd1\boot\root
+Click Finish To Exit...
+</xmp>
+The most common cause of this error is that the files for the base installation of SLES9 were not found in the destination
+directory.  To correct the problem, copy the files for the base installation of SLES9 to the destination directory
+before copying the installation files for SLES9 SP3.
+</p>
+<h2><a name="biosupdte_x3400">Performing BIOS updates on x3400 and x3500 using Altiris or ADS</a></h2>
+<p>To perform a successful BIOS update to level SPE155A or SPE156A on an x3400 or x3500, you
+must add 'flashfil.exe' to first line of the 'lcreflsh.bat' file that you have copied into the
+'updates\%MachineType%\BIOS' folder.</p>
+<p>The correct 'lcreflsh.bat' file should read as follows:
+<xmp>flashfil.exe
+Phlash16 /x /p /s /exit flashfil.fls
+</xmp>
+</p>
+<h2><a name="x3550_raid">PRAID.EXE errors when configuring System x3550 with no internal drives attached</a></h2>
+<p>When using PRAID.exe to configure or capture a configuration on a System x3550 with no internal drives attached,
+you might receive error code 5.  This error is caused by the inability of the configuration tool to determine
+whether there is a configuration present on the internal drives.</p>
+<p>If you want to configure and install to a raid adapter other than the internal adapter,
+you must disable the internal adapter in the BIOS settings prior to using PRAID.exe. </p>
+<h2><a name="mr10i_cable">RAID configuration fails when configuring with ServeRAID-MR10i</a></h2>
+<p>When using the RAID configuration tools to configure a ServeRAID-MR10i, you might receive an
+error code of 1.  The most common cause of this error is an incorrect physical connection to the 
+MR10i.</p>
+<p>If you receive this error, verify that the SAS cable is connected to the port labeled "0-3" on 
+the MR10i adapter, and that the cable is seated securely.</p>
+<h2><a name="sles_kernel">SLES Installation fails on System 3850 M2</a></h2>
+<p>During the Suse Linux Enterprise Server installations on System 3850 M2, you might encounter
+the following issues:
+<ul>
+  <li>Kernel panic - not syncing; IO-APIC + timer doesn't work!</li>
+  <li>Cannot access Installation Media</li>
+</ul></p>
+<p>For the kernel panic issue, this problem has been seen when using a keyboard video mouse
+(KVM) switch during the SLES installation. To avoid this problem, discontinue use of the KVM until
+the installation is done.</p>
+<p>For the Access Installation Media issue, the kernel parameter <i>maxcpus=1</i> is needed for 
+installation.  Without this parameter, the system will be unable to obtain an IP address via DHCP.
+To add kernel parameters for the setup phase of the installation please edit USRVARS.BAT 
+and add the following line in the kernel parameter section:
+<xmp>
+echo maxcpus=1 > %RAMDSK%\usrvars.tmp
+</xmp>
+The kernel parameter <i>maxcpus=1</i> is not needed post installation.
+To remove the kernel parameter post installation, edit the file /boot/grub/menu.lst by
+removing <i>maxcpus=1</i>.</p>
+<h2><a name="sles_ipaddr">Problems obtaining an IP address after a SLES installation on System 3850 M2</a></h2>
+<p>After a Suse Linux Enterprise Server installation, the DHCP server might not assign an IP address.
+Please refer to ibm.com on instructions on resolving this issue.</p>
+
+<h1><a name="_Additional_Files_Utilities"></a>Additional Files, Utilities, And Information</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>This section contains information that is not documented in the <i>IBM ServerGuide Scripting Toolkit User's Reference.</i> </p>
+  <h2>Electronic Service Agent (ESA)</h2>
+  <p>The Electronic Service Agent is a no-charge software tool that resides on your IBM xSeries? systems
+to monitor hardware events and transmit system inventory information to IBM.  With these functions,
+this software can proactively monitor, track and capture system inventory and hardware errors. Follow
+this link to download the IBM xSeries Electronic Service Agent: <a href="http://www.ibm.com/support/electronic">http://www.ibm.com/support/electronic</a>
+  <h2>Limitations</h2>
+  <p>The following limitations are applicable to this version of the ServerGuide Scripting Toolkit:</p>
+  <ul>
+    <li>The emm386.exe expanded memory device driver is not supported by the ServerGuide Scripting Toolkit. The following utilities and functions are incompatible with this device driver:
+      <ul>
+        <li>
+hwdetect.exe</li>
+        <li>
+savestat.exe</li>
+        <li>
+BIOS code updates</li>
+        <li>
+Firmware code updates</li>
+        <li>
+PRAID.EXE</li>
+      </ul>
+    </li>
+    <li>Enabling and then either configuring or installing to the LSI IDEal RAID devices on the eServer BladeCenter HS40, machine type 8839 is not supported by the ServerGuide Scripting Toolkit.</li>
+    <!--li>The ServerGuide Scripting Toolkit supports the installation of only IBM Director Agent 5.1 or later. </li-->
+    <li>Remote installation of the IBM Director Agent through Microsoft ADS is not supported on the System x3550, type 7978
+    or the System x3400, types 7975 and 7976.</li>
+    <li>For System x3550, machine type 7978, the Altiris Deployment Server "Capture Linux image" job included with the
+    ServerGuide Scripting Toolkit might not be able to successfully capture SLES 9 64-bit RAID installations.
+    Initial deployments of SLES 9 x64 to RAID on System x3550 are supported through Altiris.</li>
+    <li>For the System x3550, type 7978, updating the system BIOS using Microsoft ADS
+ is not supported.</li>
+ <li>The Altiris Deployment Server Agent (adlagent) fails to install on System x3650, type 7989 under all versions of Windows Server 2003, and on the System x3550, type 7978 under Windows 2003 Web Edition.
+ A fix has been posted on the Altiris Knowledge based. An updated aclient for both DS 6.5 and DS 6.8
+is posted on www.altiris.com/kb article: 28830.</li>
+ <li>The IBM System x3105 machine type 4347 with the IBM SAS HBA adapter (Part number:25R8060) installed
+ is not currently supported via Altiris Deployment Solution.</li>
+ <li>Microsoft Windows Server 2003 imaging jobs are not supported via Altiris Deployment Solution on a System
+ x3850 machine type 8864.</li>
+ <li>No UpdateXpress System Pack support is available for the Red Hat Enterprise Linux 5 operating system.</li>
+ <li>No UpdateXpress System Pack support is available for the VMWare ESX 3 operating system.</li>
+</ul>
+  <h1><a name="_Support_Web_Sites"></a>Support Web Sites</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>The following Web pages provide resources for understanding, using, and troubleshooting IBM deployment and systems-management software:</p>
+  <ul>
+    <li>IBM Remote Deployment Manager page
+    <p><a href="http://www.ibm.com/servers/eserver/xseries/systems_management/ibm_director/extensions/rdm.html" target="_blank">http://www.ibm.com/servers/eserver/xseries/systems_management/ibm_director/extensions/rdm.html</a></p>
+    <p>This Web page provides an overview of IBM Remote Deployment Manager.</p></li>
+    <li>IBM ServerGuide page
+    <p><a href="http://www.ibm.com/servers/eserver/xseries/systems_management/serverguide.html" target="_blank">http://www.ibm.com/servers/eserver/xseries/systems_management/serverguide.html</a></p><p>This Web page provides an overview of ServerGuide.</p></li>
+    <li>IBM ServerGuide Scripting Toolkit page
+    <p><a href="http://www-304.ibm.com/jct01004c/systems/support/supportsite.wss/docdisplay?lndocid=MIGR-53564&brandind=5000008" target="_blank">http://www-304.ibm.com/jct01004c/systems/support/supportsite.wss/docdisplay?lndocid=MIGR-53564&brandind=5000008</a></p>
+    <p>This Web page provides an overview of the ServerGuide Scripting Toolkit. You can download the latest version of this file here.</p></li>
+    <li>IBM ServerProven<sup>&reg;</sup> page
+    <p><a href="http://www.ibm.com/servers/eserver/serverproven/compat/us/" target="_blank">http://www.ibm.com/servers/eserver/serverproven/compat/us/</a></p>
+    <p>This Web page provides compatibility information about hardware, software, and middleware.</p></li>
+    <li>IBM Support page
+    <p><a href="http://www.ibm.com/systems/support/" target="_blank">http://www.ibm.com/systems/support/</a></p>
+    <p>This is the IBM Support Web site for IBM hardware and systems-management software.</p></li>
+    <li>IBM Systems Management Software: Download/Electronic Support page
+    <p><a href="http://www.ibm.com/pc/us/eserver/xseries/systems_management/dwnl.html" target="_blank">http://www.ibm.com/pc/us/eserver/xseries/systems_management/ dwnl.html</a></p>
+    <p>Use this Web page to download IBM systems-management software, including the ServerGuide Scripting Toolkit.</p></li>
+    <li>IBM UpdateXpress page
+    <p><a href="http://www.ibm.com/servers/eserver/xseries/systems_management/ibm_director/extensions/xpress.html" target="_blank">http://www.ibm.com/servers/eserver/xseries/systems_management/ibm_director/extensions/xpress.html</a></p>
+    <p>This Web page provides an overview of UpdateXpress. It also contains links to pages from which you can download UpdateXpress, order an UpdateXpress CD, or purchase a subscription from a vendor other than IBM.</p></li>
+    <li>IBM xSeries Systems Management page
+    <p><a href="http://www.ibm.com/servers/eserver/xseries/systems_management/" target="_blank">http://www.ibm.com/servers/eserver/xseries/systems_management/</a></p>
+    <p>This Web page provides an overview of IBM systems-management software.</p></li>
+  </ul>
+  <h1><a name="_Notices_And_Trademarks"></a>Notices And Trademarks</h1>
+  <p><a href="#_Table_of_Contents">Back to TOC</a></p>
+  <p>INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. </p>
+  <p>Some jurisdictions do not allow disclaimer of express or implied warranties in certain transactions, therefore, this statement may not apply to you. This information could include technical inaccuracies or typographical errors. Changes are periodically made to the information herein; these changes will be incorporated in new editions of the publication. IBM may make improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without notice. </p>
+<p>The following terms are trademarks of the IBM Corporation in the United States, other countries, or both: </p>
+<p>BladeCenter </p>
+<p>eServer </p>
+<p>ServeRAID </p>
+<p>ServerGuide </p>
+<p>ServerProven </p>
+<p>System x</p>
+<p>TotalStorage</p>
+<p>xSeries </p>
+<p> </p>
+<p>IBM is a trademark of International Business Machines Corporation in the United States, other countries, or both.</p>
+  <p>Intel is a trademark or registered trademark of Intel Corporation or its subsidiaries in the United States and other countries.</p>
+  <p>Linux is a trademark of Linus Torvalds in the united states, other countries, or both. </p>
+  <p>Microsoft, Windows, and the Windows logo are trademarks of Microsoft Corporation in the United States, other countries, or both.</p>
+  <p>Other company, product, or service names may be trademarks or service marks of others. </p>
+</div>
+</body>
+</html>

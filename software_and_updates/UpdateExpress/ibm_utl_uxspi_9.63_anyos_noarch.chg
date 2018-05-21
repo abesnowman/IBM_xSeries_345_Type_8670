@@ -1,0 +1,241 @@
+UpdateXpress System Pack Installer
+
+Version 9.63.08E: March 28, 2018
+    - Fixed: UXSPi could not download any update package from IBM site
+
+Version 9.63.08D: March 12, 2018
+    - Fixed: Only one node was successfully flashed in IMM multinode complex
+
+Version 9.63.08C: January 5, 2018
+    - Fixed: Several raid sups installed version is undetected when compare with uxspi9.63 08b
+
+Version 9.63.08B: July 31, 2017
+    - Security: Disabled SSLv2, 3DES, RC4, and Blowfish
+    - Security: Fixed security vulnerability CVE-2016-2183
+
+Version 9.63.08: December 2016
+    - Fixed: Unable to update M5110E on MT 8722 with BOMC
+
+Version 9.63: March 2016
+    - Added Windows 2012 R2 support for Machine Type 7915
+
+Version 9.63: September 2014
+    - Fix field issue of failing to detect hard drive firmware version
+    - Remove all the unencrypted password in the UXSPI log file
+    
+Version 9.61: June 2014
+    - Update OpenSSL
+    - Fix some defects	
+
+Version 9.60: May 2014
+    - Support for the following operating systems:
+            - Red Hat Enterprise Linux, version 7	
+    - Support for the following hardware:
+            - IBM System x3750 M4, type 8752/8718 
+            - IBM System x3850 X6/x3950 X6 3837/3839
+            - IBM Flex System x280 X6/x480 X6/x880 X6 Compute Node 4259/7903
+            - IBM Flex System x240 Compute Node  8737/7863/8956
+            - IBM System x3650 M4 BD/5466
+            - IBM System x3100 M5/5457
+    - New function:  
+            - Ability to Support System Maintenance Mode Phase I
+    - Fix some defects
+	
+Version 9.51: February 2014
+    - New function:
+            - Support Installed MegaRAID Storage Manager
+    - Support for the following hardware:
+            - IBM System x3850 X6, type 3837,3839 
+            - IBM System x3650 M4 BD, type 5466 		
+    - Fix some defects
+
+Version 9.50: December 2013
+    - Support for the following operating system:
+            - VMware vSphere 5.5 Customized Image
+            - VMware vSphere 5.0 U3 Customized Image
+            - Red Hat Enterprise Linux, versions 5.10 and 6.5
+            - Windows Server 2012 R2 
+            
+Version 9.41: August 2013
+    - Support for the following operating system:
+            - VMware vSphere 5.1 U1 Customized Image
+    - Support for the following hardware:
+            - Flex System x222 Compute Node, type 7916
+            - IBM System x3650 M4 HD, type 5460
+            
+Version 9.40: June 2013
+    - Support for the following operating system:
+            - Red Hat Enterprise Linux, versions 5.9 and 6.4
+            - SUSE Linux Enterprise Server, version 11.3
+            - VMware vSphere 5.0 U2 Customized Image
+    - New function:
+            - Out of band firmware update for IMM2 systems
+            - Update 3rd party vendor tools Phase I
+            - Provide warning Message when user selects 
+              to do back-leveling update         
+    - Fix some defects
+            
+Version 9.30: December 2012
+    - Fix some defects
+            
+Version 9.28: November 2012
+    - Support for the following operating system:
+            - Red Hat Enterprise Linux, versions 6.3
+            - Windows Server 2012
+            - VMware vSphere 5.1 Customized Image
+            - VMware ESXi 4.1 U3 Customized Image
+            
+Version 9.21: June 2012
+    - Fix some defects
+    
+Version 9.20: May 2012
+    - Support for the following operating system:
+            - VMware vSphere 5.0 U1 Customized Image 
+    - Support for the following hardware:
+            - IBM System x 3530 M4, type 7160
+            - IBM System x 3630 M4, type 7158
+            - IBM System x 3750 M4, type 8722, 8733
+            - IBM BladeCenterHS23E, type 8038, 8039
+            - IBM Flex System x220 Compute Node, type 7906, 2585
+            - IBM Flex System x240 Compute Node, type 8737, 8738, 7863
+
+Version 9.00: February 2012
+    - Support for the following operating systems:
+            - Red Hat Enterprise Linux, versions 5.8 and 6.2
+            - SUSE Linux Enterprise Server, version 11.2
+    - Support for the following hardware:
+            - IBM System x 3500 M4, type 7383
+            - IBM System x 3550 M4, type 7914
+            - IBM System x 3650 M4, type 7915
+            - IBM BladeCenter HS23, type 7875
+            - iDataPlex dx360 M4, type 7912, 7913
+    - New function:
+            - Update support list in GUI
+
+Version 5.00: November 2011
+    - Support for the following operating systems:
+            - Red Hat Enterprise Linux, versions 5.7 and 6.1
+            - Windows Small Business Server 2011 Essential
+            - VMware ESXi 4.1 U2 (IBM-customized version only)
+            - VMware ESXi 5.0 (IBM-customized version only)
+    - Support for the following hardware:
+            - IBM System x3100 M4, type 2582
+            - IBM System x3250 M4, type 2583
+            - iDataplex Direct Water Cooled dx360 M4, type 7918, 7919
+    - New function:
+            - UXSPI is able to detect what hardware is present on the target system, and by default will not display update 
+              packages for hardware that are not present, based on the PCI ID information in the package. Packages that
+              do not include PCI ID information will continue to be listed as undetected, and be deselected by default.
+            - UXSPI dynamically reports the severity of a package based on the severity of both the current version 
+              and of historical versions.   
+            - FFDC files will be created and stored when update of ESW packages on IMM2 systems fails. If update of uEFI, 
+              DSA, or IMM fail, an FFDC file will be created in the directory IBM_support.  
+
+Version 4.40: March 2011
+    - Support for the following operating systems:
+             - Red Had Enterprise Linux, v4.9 and v5.6
+             - Suse Linux Enterprise Server 10, SP4
+             - VMware ESXi 4.1 U1 (IBM-customized version only)
+             - Windows HPC 2008 R2 x64
+             - Windows 2008 R2 SP1
+             - Windows Small Business Server 2011
+    - Support for the following hardware:
+             - System x3620 M2
+             - System x3650 M3, type 5454
+             - System x3690 X5, types 7147, 7192
+             - System x3850 X5, types 7143, 7191
+             - IBM BladeCenter HX5, type 7873
+             - IBM BladeCenter HS22V, type 7871
+             - IBM BladeCenter HS22, type 7870
+    - New function:
+             - Online support of IBM advanced customized VMware ESXi 4.1 U1 
+                (for ESW/Brocade/Qlogic only)
+             - Cumulative severity reporting: new severity "Not required" if 
+                the installed version is higher than the package version
+
+Version 4.30: December 2010
+    - Support for RHEL 6 (32bit and 64bit)
+
+Version 4.20: September 2010
+    - Support for VMware ESX 4.1
+    - Support for x3630 M3, x3755 M3
+    - Support for the following adapters:
+              - Brocade 2-port 10Gb Converged Network Adapter for IBM BladeCenter
+              - Brocade FCoE Switch Module
+              - Cisco Nexus 4001I Switch Module for IBM BladeCenter
+              - ServeRAID M5025 SAS/SATA controller
+    - Support for IPv6
+    
+Version 4.10: June 2010
+    - Support new systems (x3620 M3, x3550 M3,  x3850 X5,  x3950 X5, iDataPlex dx360 M3, BladeCenter X5, HS22V, x3750 X5, x3750 X5, x3400 M3, x3500 M3) and options
+    
+Version 4.01: April 2010
+    - Fix some defects   
+
+Version 4.00: December 2009
+    - Support for Windows 7 (32bit and 64bit)
+    - Support for x3200 M3, x3250 M3
+    - Progress indicator on package downloads
+    - BoMC removed, now separate tool
+    - CLI support for secure passwords
+    - Unattended mode for bootable-media PXE
+    - View log from bootable-media TUI/GUI
+    - Save log to USB key from bootable-media TUI/GUI
+
+Version 3.02: September 2009
+    - Windows 2008 R2 support
+    - Corrected VMware ESX 4 detection problem
+    
+Version 3.01: July 2009
+    - Add support for SLES11 
+    - Add support for VMware ESX 4.0 
+    - Added x336, x3400 M2, x3500 M2
+
+Version 3.00: March 2009
+    - Added support for:
+	  - BladeCenter AMM
+          - I/O Modules (bladecenter function)
+    - New GUI, including GUI for Linux
+    - Support for uEFI/IMM systems (non BIOS systems)
+    - Bootable Media creator is now a separate tool that has been embedded in UXSPI.
+    - Added PXE support to Bootable Media Creator
+
+Version 2.01: May 2008
+    - Added support for additional operating system:
+          - VMware ESX Server 3.5
+    - Fixed application hanging when logging in on Windows under a domain name account
+
+Version 2.00: March 2008
+    - Added support for:
+          - Acquire
+          - Create bootable-media
+    - Added support for new systems
+    - Added support for individual updates
+    - Added additional command-line arguments for greater control
+    - Added support for additional operating systems:
+          - Windows Server 2008
+          - Windows XP
+          - Windows Vista
+          - Red Hat Enterprise Linux 5.0
+          - VMware ESX Server 3.0.x
+
+Version 1.30: July 2007
+    - Remove some unneeded components
+    - Allow spaces in Linux path arguments
+    - Include Package Name
+
+Version 1.21: June 2007
+    - Remove 10 minute timeout for each Windows update
+    - Correctly report the New Versions of LSI Logic SAS Controller (1064e/1064x) updates
+
+Version 1.20: March 2007
+    - Added detection of 
+          - ServeRAID 7t, 8e, 8k & 8k-l
+          - Tapedrive
+          - Broadcom NetXtreme II adapters
+          - LSI Logic SAS Controller (1064e/1064x)
+          - LSI Logic SAS Megaraid adapters
+
+Version 1.10:
+    - Initial Release
+

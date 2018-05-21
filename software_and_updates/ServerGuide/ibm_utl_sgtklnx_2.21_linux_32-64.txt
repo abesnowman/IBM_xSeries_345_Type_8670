@@ -1,0 +1,532 @@
+                              IBM Systems
+                 IBM ServerGuide Scripting Toolkit, Linux Edition
+                             Readme
+
+Version 2.21
+
+(C) Copyright IBM Corp. 2010.  All Rights Reserved.
+This Program is licensed under the terms of the agreement
+located in the docs directory from the Program's
+installation root (default is /opt/ibm/sgtk/docs/licenses/).
+Additional licenses for the use of System Enablement Packs are
+licensed under the terms of the agreement located in the packages
+(default is /sgdeploy/updates/uxsp/ ).
+  By installing, copying, accessing, or using the Program, you agree to
+the terms of this agreement.  If you do not agree to the terms, please
+uninstall the software and return it to IBM or the reseller from whom
+you acquired the software for a refund, if any.
+
++---- Note ------------------------------------------------------------+
+
+Before using this information and the product it supports, read the
+information in 6.0, "Notices".
+
++----------------------------------------------------------------------+
+
+
+
+This edition applies to version 2.21 of IBM ServerGuide Scripting
+Toolkit, Linux Edition and to all subsequent releases and modifications until
+otherwise indicated in new editions.
+
+Copyright International Business Machines Corporation 2010.
+US Government Users Restricted Rights -- Use, duplication or disclosure
+restricted by GSA ADP Schedule Contract with IBM Corp.
+
+
+Contents
+
+1.0 About ServerGuide Scripting Toolkit, Linux Edition
+  1.1 Supported Deployment Scenarios
+2.0 Installation and upgrade information
+3.0 News
+4.0 Known problems and limitations
+5.0 Information resources
+  5.1 Documentation
+  5.2 Web resources
+6.0 Notices
+  6.1 Third-party license terms and conditions, notices, and information
+  6.2 Trademarks
+
+1.0 About ServerGuide Scripting Toolkit, Linux Edition
+
+The IBM ServerGuide Scripting Toolkit is a collection of system-configuration tools
+   and installation scripts that you can use to deploy software to your IBM servers
+   in a repeatable, predictable manner.
+
+1.1 Supported Deployment Scenarios
+
+The ServerGuide Scripting Toolkit, Linux Edition
+supports the following deployment scenarios:
+
+    * Bootable media via CD, USB Key, PXE
+    * Bootable media via CD, USB Key, PXE with network share
+    * Remote deployment via Remote Supervisor Adapter II
+    * Remote deployment via BladeCenter Management Module
+    * Remote deployment via BladeCenter Advanced Management Module
+    * Remote deployment via Integrated Management Module
+
+2.0 News
+
+The following changes were made in this version of the IBM ServerGuide Scripting Toolkit,Linux Edition:
+
+	* Linux Scripting Toolkit added support for Red Hat Enterprise Linux (RHEL) 6.
+
+	* Linux Scripting Toolkit added support for network based installations of the following Unified Extensible Firmware Interface (UEFI) operating systems:
+   		- SuSe Linux Enterprise Server 11 SP1 x64
+   		- Red Hat Enterprise Server 6 x64
+   
+  
+3.0 Installation and upgrade information
+
+Complete installation instructions, including other system requirements,
+are provided in the IBM ServerGuide Scripting Toolkit, Linux Edition 
+User's Guide.
+
+4.0 Known problems and limitations
+
+The following known problems and limitations exist in the
+IBM ServerGuide Scripting Toolkit, Linux Edition.  For additional information
+about known problems and limitations in the IBM ServerGuide Scripting Toolkit,
+Linux Edition, please consult the IBM ServerGuide Scripting Toolkit, Linux
+Edition User's Guide.
+
+* Best Practice for performing UEFI-aware operating system deployments
+
+  When preparing to use Linux Scripting Toolkit to perform native uefi operating system deployments, the following actions should be taken on the target system.
+   1. If the system contains an existing UEFI-aware operating system, the boot option in the Boot Manager should be removed as this entry 
+      will become invalid during the deployment.  The boot entry can be found in Boot Manager by pressing F1 to enter setup during system boot.
+   2. If possible, update the system firmware to the current levels. 
+   3. If RAID adapters are present in the system, ensure the adapters are uEFI compliant.
+   4. Check the Boot Order for the system to ensure that Hard Disk 0 is listed before PXE.
+
+  Please consult IBM Serverproven for compatibility of installing and running an operating system in native UEFI mode.
+
+* Linux Scripting Toolkit UI fails to load on RHEL6 64-bit
+
+  In order to run Linux Toolkit on a system running RHEL6 64-bit, compatibility 2.96-RH standard C++ libraries  
+  (compat-libstdc++-296-2.96-144.el6.i686) must be installed.
+
+* Director agent installations might fail on RHEL6
+
+  Director agent installations might fail if the operating system is not supported by the agent.  Please consult the operating system support for your version of IBM director agent.
+
+* Native uEFI installations fails to start the os installation process
+
+  When performing a native uEFI operating system installation, the system might fail to boot the hard disk after Linux Scripting Toolkit processes are complete.  This can occur
+  when the system fails to boot the partition with bootx64.efi automatically. The workaround is dependent upon the particular UEFI system.  Refer the system manual for instructions
+  on booting a file on the disk.
+  
+  For example, for most IBM systems, to work around this problem, create a new boot entry for bootx64.efi and continue the installation using that option.  
+  Follow the steps below to continue the installation:
+	1.	Power on the system, and, when prompted, press F1 to enter setup.
+	2.	Select Boot Manager.
+        3.      Select Boot from File.
+	4.	Select the GUID Partition Tables (GPT) System Partition where the name is OS_Install.
+	5.	Select EFI.
+	6.	Select Boot.
+	7.	Select bootx64.efi.
+  
+  NOTE: If the os installation completes and the system does not boot into the operating system, go to the Start Options of the F1 setup and select the 
+        boot entry for the operating system.
+
+* uEFI operating system installations not booting from hard drive
+
+  During native uEFI operating system installations, the target system might fail to boot from the hard drive after Linux Scripting Toolkit processes are complete. 
+  This can occur if the target system does not automatically boot the bootx64.efi file from the drive.  These systems are not supported by Linux Scripting Toolkit.
+
+  This limitation affects the following systems:
+
+    * System x3620 M3, type 7376
+    * System x3630 M3, type 7377
+    * System x3755 M3, type 7164
+
+
+* Network installations on IPv6 networks might fail
+  
+  Linux Scripting Toolkit only supports SLES11 SP 1 for IPv6 network installations. When performing 
+  a network based installation, please use "ipv6=1" (accept v4 and v6) or "ipv6only=1" (only v6) as boot parameters.  For 
+  more information on deployment, consult the SLES11 SP1 release notes.
+  
+
+* Unable to perform operating system installations using link-local addresses
+
+  Link-local addresses are not supported for network deployments.
+
+
+* Network is unreachable after reboot of SLES installation
+ 
+  When using static addresses for deployment for SLES, you might encounter an error message stating the the network is
+  unreachable after the system reboots during the 'Perform Installation' phase.
+
+  To work around this problem, navigate to a different console to set the static ip address using the ifconfig command. 
+  After setting the address, click 'Retry' to continue the installation.
+  
+* Firmware update(s) might fail for Emulex adapters
+
+  In the preboot environment, firmware updates for Emulex might fail.  The affected adapters are:
+
+	-Emulex Virtual Fabric Adapter (CFFh) for IBM BladeCenter(49Y4235)
+	-Emulex 10GbE Custom Adapter for IBM System x(49Y4200)
+	-Emulex 10GbE Server Adapter for IBM System x(49Y4250)
+
+  To work around this problem, use IBM ToolsCenter Bootable Media Creator from IBM.com to create a new bootable
+  image with the firmware packages to perform the update.
+
+* VMware ESX Server 4.1 installation hangs at "Starting vmkernel initialization"
+
+  When performing a VMware ESX 4.1 installation on a system with a MAX5 memory expansion module, the installation
+  might hang at the initial screen.
+
+  To avoid this problem, you can add the kernel parameter "allowInterleavedNUMAnodes=TRUE" parameter during the Workflow 
+  Creation and OS installation task phases.
+
+    In the OS Installation tasks, a new kickstart file is needed for this deployment.
+     1. Create a new os installation task based on the esx4.ks.
+     2. Modify the new os installation task to add the kernel parameter.
+       a. Find the following line in the task:
+        	bootloader --location=mbr 
+      b. Edit the line by adding the kernel parameter:
+        	bootloader --location=mbr --append="allowInterleavedNUMAnodes=TRUE"
+    
+   In the OS install section of the workflow, a field is provided for optional kernel parameters.
+     1. Insert "allowInterleavedNUMAnodes=TRUE" in the box for kernel parameters.
+ 
+* Acquiring System Enablement Packs fails to download from IBM website
+
+  When acquiring System Enablement Packs(SEPs), you might encounter a message stating that the process was unable to acquire the SEP.
+
+  To work around this problem, download the System Enablement Pack manually from IBM.com. You will find the SEPs at the following link:
+   http://www-947.ibm.com/support/entry/portal/docdisplay?brand=5000016&lndocid=TOOL-SEP
+
+   1. From the link, download the following packages where xxx is the version number:
+
+      ibm_utl_tsep_xxx_anyos_x86-64.zip
+      ibm_utl_tsep_xxx_anyos_x86-64.xml
+
+   2. Copy the packages to a local folder on the Linux source server.
+   3. From the main menu, click Supported Systems.
+   4. Click Acquire new SEPs to begin.
+   5. Enter a machine type for which to acquire SEPs. 
+   6. From the Source media section, select 'Acquire from local folder'.
+   7. Insert the local folder which contains the SEP that was downloaded from the IBM website.
+
+
+* UEFI operating system deployment does not boot after deployment
+
+  After an native uefi operating system deployment, the system might be unable to detect the boot manager.
+  To correct this issue, following these steps:
+  For example, for Red Hat Enterprise(RHEL) 6, the steps are as follows:
+
+   1. Power on the system, and, when prompted, press F1 to enter setup.
+   2. Select Boot Manager.
+   3. Select Boot from File.
+   4. Select the GUID Partition Tables (GPT) System Partition where you installed RHEL 6.
+   5. Select EFI.
+   6. Select EFI.
+   7. Select redhat
+   8. Select grub.efi
+
+* VMware installation might fail on BladeCenter HS21 Type 7995
+
+  VMware installations might fail on blades with the error message "sh: can't open /postinstall/runtk.sh".
+  To work around this problem, you can remove the modular flash drive from the system or update the answer file (esx4.ks) to not use
+  the firstdisk for installation.
+
+
+5.0 Information resources
+
+You can find additional information about IBM ServerGuide Scripting Toolkit, Linux Edition
+Installer in the product documentation and on the World Wide Web.
+
+5.1 Documentation
+
+The following documentation resource provides additional information
+about ServerGuide Scripting Toolkit, Linux Edition.
+
+In addition to these release notes, you can find information about how
+to use Scripting Toolkit, v2.21 in the
+IBM ServerGuide Scripting Toolkit, Linux Edition User's Guide.
+
+This publication is available in the IBM System x(TM) and BladeCenter®
+Tools Center on the Web at
+http://publib.boulder.ibm.com/infocenter/toolsctr/v1r0/index.jsp?topic=/com.ibm.xseries.tools.doc/overview.html
+
+
+5.2 Web resources
+
+The following Web pages provide resources for understanding, using, and
+troubleshooting IBM System x and systems-management tools.
+
+IBM Electronic Service Agent (ESA)
+   http://www.ibm.com/support/electronicwww.ibm.com/support/electronic
+   The Electronic Service Agent is a no-charge software tool that resides on your
+   IBM System x systems to monitor hardware events and transmit system inventory
+   information to IBM. With these functions, this software can proactively monitor,
+   track and capture system inventory and hardware errors.
+
+IBM ServerGuide Scripting Toolkit page
+   http://www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-TOOLKIT&brandind=5000008
+   The ServerGuide Scripting Toolkit is a collection of system-configuration tools
+   and installation scripts that you can use to deploy software to your IBM servers
+   in a repeatable, predictable manner.
+
+IBM System x and BladeCenter Tools Center
+   http://publib.boulder.ibm.com/infocenter/toolsctr/v1r0
+   The System x and BladeCenter Tools Center provides information on best practices
+   for updating BIOS, firmware, and device drivers on your IBM System x and BladeCenter hardware,
+   and links to IBM tools for deploying, updating, monitoring, and diagnosing your hardware.
+
+IBM Remote Deployment Manager page
+   http://www.ibm.com/systems/management/director/about/director52/extensions/rdm.html
+   Remote Deployment Manager (RDM) helps automate deployment tasks such as initial operating
+   system installation, BIOS updates, and disposal of retired systems for both IBM and non-IBM systems.
+
+IBM ServerGuide page
+   http://www.ibm.com/systems/management/serverguide/
+   This Web page provides an overview of the ServerGuide.
+
+IBM ServerProven® page
+   http://www.ibm.com/servers/eserver/serverproven/compat/us/
+   This Web page provides compatibility information about hardware, software, and middleware.
+
+IBM UpdateXpress Server Matrix
+   http://www.ibm.com/systems/support/supportsite.wss/docdisplay?lndocid=SERV-XPRESS&brandind=5000008
+   This Web page provides information on available UpdateXpress System Packs, archived system packs, 
+   and UpdateXpress System Pack Installers
+
+IBM Support page
+   http://www.ibm.com/systems/support/
+   This is the IBM Support Web site for IBM hardware and systems-management software.
+
+IBM Systems Management Software: Download/Electronic Support page
+   http://www.ibm.com/pc/us/eserver/xseries/systems_management/dwnl.html
+   Use this Web page to download IBM systems-management software, including the ServerGuide Scripting Toolkit.
+
+IBM UpdateXpress page
+   http://www.ibm.com/systems/management/xpress/
+   This Web page provides an overview of UpdateXpress. It also contains links to pages from which
+   you can download UpdateXpress, order an UpdateXpress CD, or purchase a subscription from a vendor other than IBM.
+
+IBM xSeries Systems Management page
+   http://www.ibm.com/systems/management/
+   This Web page provides an overview of IBM systems-management software.
+
+6.0 Notices
+
+INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION "AS IS" 
+WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+
+This information was developed for products and services offered in the
+U.S.A.
+
+IBM may not offer the products, services, or features discussed in this
+document in other countries. Consult your local IBM representative for
+information on the products and services currently available in your
+area. Any reference to an IBM product, program, or service is not
+intended to state or imply that only that IBM product, program, or
+service may be used. Any functionally equivalent product, program, or
+service that does not infringe any IBM intellectual property right may
+be used instead. However, it is the user's responsibility to evaluate
+and verify the operation of any non-IBM product, program, or service.
+
+IBM may have patents or pending patent applications covering subject
+matter described in this document. The furnishing of this document does
+not grant you any license to these patents. You can send license
+inquiries, in writing, to: 
+
+IBM Director of Licensing
+IBM Corporation
+North Castle Drive
+Armonk, NY 10504-1785
+U.S.A. 
+
+For license inquiries regarding double-byte (DBCS) information, contact
+the IBM Intellectual Property Department in your country or send
+inquiries, in writing, to: 
+
+IBM World Trade Asia Corporation
+Licensing
+2-31 Roppongi 3-chome, Minato-ku
+Tokyo 106-0032, Japan 
+
+The following paragraph does not apply to the United Kingdom or any
+other country where such provisions are inconsistent with local law:
+INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION
+"AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+Some states do not allow disclaimer of express or implied warranties in
+certain transactions, therefore, this statement may not apply to you.
+
+This information could include technical inaccuracies or typographical
+errors. Changes are periodically made to the information herein; these
+changes will be incorporated in new editions of the publication. IBM may
+make improvements and/or changes in the product(s) and/or the program(s)
+described in this publication at any time without notice.
+
+Any references in this information to non-IBM Web sites are provided for
+convenience only and do not in any manner serve as an endorsement of
+those Web sites. The materials at those Web sites are not part of the
+materials for this IBM product and use of those Web sites is at your own
+risk.
+
+IBM may use or distribute any of the information you supply in any way
+it believes appropriate without incurring any obligation to you.
+
+Licensees of this program who wish to have information about it for the
+purpose of enabling: (i) the exchange of information between
+independently created programs and other programs (including this one)
+and (ii) the mutual use of the information which has been exchanged,
+should contact: 
+
+IBM Director of Licensing
+IBM Corporation
+North Castle Drive
+Armonk, NY 10504-1785
+U.S.A. 
+
+Such information may be available, subject to appropriate terms and
+conditions, including in some cases, payment of a fee.
+
+The licensed program described in this document and all licensed
+material available for it are provided by IBM under terms of the IBM
+Customer Agreement, IBM International Program License Agreement or any
+equivalent agreement between us.
+
+Any performance data contained herein was determined in a controlled
+environment. Therefore, the results obtained in other operating
+environments may vary significantly. Some measurements may have been
+made on development-level systems and there is no guarantee that these
+measurements will be the same on generally available systems.
+Furthermore, some measurements may have been estimated through
+extrapolation. Actual results may vary. Users of this document should
+verify the applicable data for their specific environment.
+
+Information concerning non-IBM products was obtained from the suppliers
+of those products, their published announcements or other publicly
+available sources. IBM has not tested those products and cannot confirm
+the accuracy of performance, compatibility or any other claims related
+to non-IBM products. Questions on the capabilities of non-IBM products
+should be addressed to the suppliers of those products.
+
+All statements regarding IBM's future direction or intent are subject to
+change or withdrawal without notice, and represent goals and objectives
+only.
+
+All IBM prices shown are IBM's suggested retail prices, are current and
+are subject to change without notice. Dealer prices may vary.
+
+This information is for planning purposes only. The information herein
+is subject to change before the products described become available.
+
+This information contains examples of data and reports used in daily
+business operations. To illustrate them as completely as possible, the
+examples include the names of individuals, companies, brands, and
+products. All of these names are fictitious and any similarity to the
+names and addresses used by an actual business enterprise is entirely
+coincidental.
+
+COPYRIGHT LICENSE:
+
+This information contains sample application programs in source
+language, which illustrate programming techniques on various operating
+platforms. You may copy, modify, and distribute these sample programs in
+any form without payment to IBM, for the purposes of developing, using,
+marketing or distributing application programs conforming to the
+application programming interface for the operating platform for which
+the sample programs are written. These examples have not been thoroughly
+tested under all conditions. IBM, therefore, cannot guarantee or imply
+reliability, serviceability, or function of these programs.
+
+Each copy or any portion of these sample programs or any derivative
+work, must include a copyright notice as follows:
+
+© your company name) (year). Portions of this code are derived from IBM
+Corp. Sample Programs.
+
+© Copyright IBM Corp. _enter the year or years_. All rights reserved.
+
+If you are viewing this information softcopy, the photographs and color
+illustrations may not appear.
+
+6.1 Third-party license terms and conditions, notices, and information
+
+The license agreement for this product refers you to this file for
+details concerning terms and conditions applicable to third party
+software code included in this product, and for certain notices and
+other information IBM must provide to you under its license to certain
+software code. The relevant terms and conditions, notices and other
+information are provided or referenced below. Please note that any
+non-English version of the licenses below is unofficial and is provided
+to you for your convenience only. The English version of the licenses
+below, provided as part of the English version of this file, is the
+official version.
+
+Notwithstanding the terms and conditions of any other agreement you may
+have with IBM or any of its related or affiliated entities (collectively
+"IBM"), the third party software code identified below are "Excluded
+Components" and are subject to the following terms and conditions: 
+*  The Excluded Components are provided on an "AS IS" basis
+*  IBM DISCLAIMS ANY AND ALL EXPRESS AND IMPLIED WARRANTIES AND
+   CONDITIONS WITH RESPECT TO THE EXCLUDED COMPONENTS INCLUDING, BUT NOT
+   LIMITED TO, THE WARRANTY OF NON-INFRINGEMENT OR INTERFERENCE AND THE
+   IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY AND FITNESS FOR
+   A PARTICULAR PURPOSE.
+*  IBM will not be liable to you or indemnify you for any claims related
+   to the Excluded Components.
+*  IBM will not be liable for any direct, indirect, incidental, special,
+   exemplary, punitive or consequential damages with respect to the
+   Excluded Components.
+
+6.2 Trademarks
+
+IBM, the IBM logo, and ibm.com® are trademarks or registered trademarks
+of International Business Machines Corporation in the United States,
+other countries, or both. If these and other IBM trademarked terms are
+marked on their first occurrence in this information with a trademark
+symbol (® or (TM)), these symbols indicate U.S. registered or common law
+trademarks owned by IBM at the time this information was published. Such
+trademarks may also be registered or common law trademarks in other
+countries. A current list of IBM trademarks is available on the Web at
+Copyright and trademark information (www.ibm.com/legal/copytrade.shtml).
+
+
+Some jurisdictions do not allow disclaimer of express or implied warranties in certain
+ transactions, therefore, this statement may not apply to you. This information could 
+include technical inaccuracies or typographical errors. Changes are periodically made 
+to the information herein; these changes will be incorporated in new editions of the publication.
+ IBM may make improvements and/or changes in the product(s) and/or the program(s) described 
+in this publication at any time without notice.
+
+The following terms are trademarks of the IBM Corporation in the United States, other countries, or both:
+
+BladeCenter
+
+eServer
+
+ServeRAID
+
+ServerGuide
+
+ServerProven
+
+System x
+
+TotalStorage
+
+xSeries
+
+IBM is a trademark of International Business Machines Corporation in the United States, other countries, or both.
+
+Intel is a trademark or registered trademark of Intel Corporation or its subsidiaries in the United States and other countries.
+
+Linux is a trademark of Linus Torvalds in the united states, other countries, or both.
+
+Microsoft, Windows, and the Windows logo are trademarks of Microsoft Corporation in the United States, other countries, or both.
+
+Other company, product, or service names may be trademarks or service
+marks of others.
+
