@@ -1,0 +1,296 @@
+IBM Advanced System Management Drivers for Linux version 1.02
+
+
+CONTENTS
+--------
+1.0  Overview
+2.0  Change History
+3.0  System Management Device Driver Installation Instructions
+4.0  Kernel Configuration Notes
+5.0  Web Sites and Support Phone Number
+6.0  Trademarks and Notices
+7.0  Disclaimer
+
+
+1.0  Overview
+-------------
+     This README.TXT file is associated with the following 2 RPM files:
+     
+     - ibmasm-src-suse72-WRPxxxA.rpm  
+     - ibmasm-src-redhat71-WRPxxxA.rpm
+	
+	where xxx is the version of the source rpm that you are installing.
+     
+     These RPM files will build and install Linux device drivers 
+     for the following IBM hardware:
+     
+     - Advanced System Management PCI Adapter card and its associated
+       Shared Serial Port.	
+     - Advanced System Management Processor, which is part of the 
+       planar board on specific models of Netfinity and IBM eServer 
+       xSeries servers
+     - Automatic Server Restart (ASR) which is built onto the 
+       planar board of specific models of xSeries servers
+     - Remote Supervisor Adapter, which is an option on specific models
+       of xSeries servers
+     
+     Supported Linux distribution(s):
+     
+     1) Red Hat, version 7.1
+        - Specific kernel versions tested
+          2.4.2-2
+	  2.4.2-2smp
+         
+     2) SuSE, version 7.2
+        - Specific kernel versions tested
+          2.4.2-4GB
+	  2.4.2-64GB-SMP
+
+     3) Red Hat, version 6.2
+        - Specific kernel version tested
+          2.2.14-5
+         
+
+2.0  Change History
+-------------------
+
+     2.1  Added kernel configuration section.
+
+     2.2  RPMs now support Red Hat 7.1 and SuSE 7.2 in source form only.
+
+     2.3  Modified ibmasm-src to simply create a binary RPM, and not install
+          any drivers. Also releasing an offical binary RPM that supports RedHat 7.0
+          only.
+
+     2.4  Modified normal command timeout to 45 seconds, instead of 240 seconds.
+          Renamed package to ibmasm-src, in anticipation of releasing binary RPM
+          packages as ibmasm.
+          
+     2.5  First release of shared serial driver included. Now detects SPWEB-PWS.
+          Added ASR test functionality.
+     
+3.0  System Management Device Driver Installation Instructions
+--------------------------------------------------------------
+     
+     NOTE:  The system that the source rpm file is to be run on must have 
+            Linux development/build capability with the Linux kernel source
+            installed and properly configured for your hardware.  See section
+             4.0 for specifics.
+ 
+     The source rpm file (ibmasm-src-[redhat/suse]) contains the open source 
+     code for the IBM Advanced System Management device drivers for Linux. 
+     The file is designed for installation using the Red Hat RPM "build" 
+     system.  Executing the RPM utility against ibmasm-src-[redhat/suse] the 
+     first time will build Linux drivers that are customized for the Linux 
+     kernel version of the machine running the RPM utility.  This does not 
+     install any drivers on the build machine, it merely generates a second 
+     rpm file that can be installed on any machine running the same Linux 
+     kernel and having the same hardware configuration.  Therefore, the 
+     following steps must be executed in order to install the Linux Advanced 
+     System Management drivers.
+     
+     
+               NOTE: If this is an upgrade to an existing Advanced System 
+                     Management driver, then the previously installed driver
+                     packages must first be removed.  Depending upon your
+		     system's configuration, you may see messages about
+		     missing files when running the "rpm -e" commands. You
+		     may safely ignore those messages.  Type the following two
+                     commands at a shell prompt to remove the old driver source
+                     and binaries:
+
+               rpm -e ibmasm
+     
+               rpm -e ibmasm-src-[redhat71/suse72]
+          
+          
+     To install the source rpm for SuSE version 7.2,
+     execute the following command:
+          
+	rpm -ivh ibmasm-src-suse72-WRPxxxA.rpm
+
+     where xxx is the version of the source RPM that you are installing.
+
+     To install the source rpm for Redhat version 7.1,
+     execute the following command: 
+          
+	rpm -ivh ibmasm-src-redhat71-WRPxxxA.rpm
+
+     where xxx is the version of the source RPM that you are installing.
+        
+     To install the source rpm for Redhat version 6.2,
+     execute the following commands: 
+          
+	ln -s /usr/src/linux /lib/modules/`uname -r`/build
+	rpm -ivh ibmasm-src-redhat71-WRPxxxA.rpm
+
+     where xxx is the version of the source RPM that you are installing.
+        
+     The above RPMs will create a binary rpm in the /usr/local/ibmasm
+     directory that must be used to install the device driver.  
+
+     To install the binaries, execute the following commands:
+          
+	cd /usr/src/ibmasm
+	ls -l ibmasm*.rpm (to see the version number)
+	rpm -ivh ibmasm-1.0-y.y.i386.rpm
+
+        where y.y is the version of the binary RPM that you are installing.
+
+     This RPM will create /usr/local/ibmasm/ibmasm.tgz, uncompress and
+     untar the archive in the same location, copy the drivers, shared
+     library, and all configuration files to their appropriate locations,
+     clean up (remove files that are no longer required) and load the
+     device drivers.
+
+     The drivers will be configured to start at boot-time, and to stop at
+     reboot or shutdown.
+
+     There are two useful utility programs installed by the RPM.
+
+	ibmspup is a small script that loads ibmasm.o (the service
+	processor device driver) and ibmser.o (the shared serial port
+	driver).  The ibmspup script creates /dev/ibmasm which is the 
+        device file for the Advanced System Management hardware and
+        /dev/ibmser which allows the Shared Serial Port featured on the
+        ASM PCI card to be used by communication programs such as minicom.
+
+        Note that these modules will not load if you do not have the 
+        supported hardware installed.
+
+	ibmspdown unloads the modules.
+
+     You must have root priveledges to run these utilities.	    
+
+As noted above,to uninstall, execute the following commands:
+
+          rpm -e ibmasm
+
+          rpm -e ibmasm-src-[redhat71/suse72]
+
+          RPM will unload the drivers, and remove all ibmasm-related files
+          from your system.
+
+          It is recommended that you uninstall the drivers with -e before
+          installing a new version, rather than upgrading with RPM's
+          upgrade (-U) switch.
+
+     
+4.0 Kernel Configuration Notes
+------------------------------
+
+    Note:  You will not normally need to configure the kernel sources if
+    you installed them during your initial Linux installation.
+
+    To ensure that you have the correct kernel sources installed, you may
+    need to execute the following commands, according to the distribution 
+    that you're running.
+
+     For Red Hat 7.1:
+
+       rpm -qa | grep kernel
+
+       Sample result (NOTE: Results will vary with different kernel versions):
+       kernel-headers-2.4.2-2
+       kernel-source-2.4.2-2
+       kernel-smp-2.4.2-2
+       kernel-2.4.2-2
+
+       Make sure that kernel-headers and kernel-source rpm packages are present
+       and that they match your kernel version number.
+
+       Once you have the appropriate kernel sources installed you will need
+       to configure them.  Execute the following commands:
+
+       cd /lib/modules/`uname -r`/build
+
+       make mrproper
+
+       Execute one of the following commands based on your hardware
+       configuration (again, the exact file names may vary):
+	
+	       cp -f configs/kernel-2.4.2-i586.config arch/i386/defconfig
+	       cp -f configs/kernel-2.4.2-i586-smp.config arch/i386/defconfig
+	       cp -f configs/kernel-2.4.2-i686-enterprise.config arch/i386/defconfig
+      
+       make oldconfig
+
+       make dep
+
+	
+     For SuSE 7.2: 
+
+       rpm -qa | grep kernel
+
+       Sample result (NOTE: Results will vary with different kernel versions):
+       kernel-source-2.4.4-SuSE17
+
+       SuSE is configured with the Yast tool.  Use it install the appropriate
+       kernel source files.  After installation configure the kernel sources
+       by executing the following commands:
+
+       cd /lib/modules/`uname -r`/build
+
+       make mrproper
+
+       cp -f /boot/vmlinuz.version.h /lib/modules/`uname -r`/build/include/linux/version.h	
+       cp -f /boot/vmlinuz.config /lib/modules/`uname -r`/build/.config	
+
+       make cloneconfig
+
+       make dep
+
+5.0  WEB Sites and Support Phone Number
+---------------------------------------
+
+     5.1  IBM Support Web Site:
+          http://www.pc.ibm.com/support
+
+     5.2  IBM Marketing eServer xSeries Web Site:
+          http://www.pc.ibm.com/us/eserver/xseries
+
+     5.3  If you have any questions about this update, or problems
+          applying the update go to the following Help Center World
+          Telephone Numbers URL:
+          http://www.pc.ibm.com/qtechinfo/YAST-3P2QYL.html
+
+
+
+6.0  Trademarks and Notices
+---------------------------
+
+     The following terms are trademarks of the Red Hat Corporation in the
+     United States or other countries or both:
+
+          Red Hat
+
+     The following terms are trademarks of SuSE, Inc. in the United States 
+     and SuSE AG in Germany or other countries:
+
+          SuSE
+
+
+     The following terms are trademarks of Linus Torvalds in the United 
+     States or other countries or both:
+
+          Linux
+
+
+7.0  Disclaimer
+---------------
+     7.1  THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+          KIND.   IBM DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR
+          IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED
+          WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE AND
+          MERCHANTABILITY WITH RESPECT TO THE INFORMATION IN THIS
+          DOCUMENT.   BY FURNISHING THIS DOCUMENT, IBM GRANTS NO
+          LICENSES TO ANY PATENTS OR COPYRIGHTS.
+
+     7.2  Note to Government Users
+
+          Documentation related to restricted rights -- Use, duplication
+          or disclosure is subject to restrictions set forth in GSA ADP
+          Schedule Contract with IBM Corporation.
+
+
+

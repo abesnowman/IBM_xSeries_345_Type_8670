@@ -1,0 +1,6 @@
+https://www.spinics.net/lists/lm-sensors/msg04469.html
+https://github.com/autotest/autotest-client-tests/tree/master/linux-tools/ibmusbasm
+http://ps-2.kev009.com/pccbbs/pc_servers/ibmusbasm-1.09-2.i386.txt
+http://ps-2.kev009.com/pccbbs/pc_servers/
+ftp://ftp.infania.net/Pccbbs/pc_servers/indexa950.html?C=M&O=A
+

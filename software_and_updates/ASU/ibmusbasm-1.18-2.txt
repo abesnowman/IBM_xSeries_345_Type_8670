@@ -1,0 +1,251 @@
+IBM Remote Supervisor Adapter II USB Interface Daemon for Linux version 1.18
+
+
+CONTENTS
+--------
+1.0  Overview
+2.0  Change History
+3.0  RSAII daemon Installation Instructions
+4.0  Installing libusb and libusb-devel
+5.0  Web Sites and Support Phone Number
+6.0  Trademarks and Notices
+7.0  Disclaimer
+
+
+1.0  Overview
+-------------
+     This README.TXT file is associated with the following RPM file:
+
+     - ibmusbasm-1.18-2.src.rpm
+
+
+     This RPM file will build and install the RSAII daemon and/or support
+     software for the following IBM hardware:
+
+     - IBM Remote Supervisor Adapter II
+
+     
+     Note 1: The ibmusbasm rpm requires the libusb and libusb-devel packages to be installed.  
+     If your distribution does not include/install the 2 packages please reference Section
+     4 for installation instructions.
+     
+     Note 2: If you have GCC compiler version 2.96, you should update it to version 3.xx.
+    
+
+2.0  Change History
+-------------------
+      - version 1.18
+	  Added function to correctly identify the primary RSA II node in a 
+          multi-node system.
+
+      - version 1.17
+          Issues fixed: Driver VPD did not report a 64-bit version when installed
+          on x86_64/amd64 platforms;  On SLES 9, installation of this package broke
+          the remote keyboard/mouse function of the RSAII adapter.
+          Added auto-detection of the presence of RSAII adapter - installation exits if no RSAII
+          
+      - version 1.16
+          Issue fixed: On some servers RSAII detection would not work properly at OS boot 
+          time.  If that problem is detected, ibmasm will now restart itself.
+          If libusb needs to be installed, we recommend installing the libusb source rpm
+          instead of the binary rpm.  See section 4.2.        
+
+      - version 1.15
+          Issue fixed: when the reset happened, the daemon was still doing retries 
+          that caused system error occurred
+
+      - version 1.14
+          Issue fixed: can't install the daemon when RPM version <= 4.04
+
+      - version 1.13
+      	  Issue fixed: no warning message when gcc library not being installed
+      
+
+      - version 1.12
+          Issues fixed: the missing Buildlog file; warning message during installation on SLES9;
+          no warning message when libusb-devel rpm not being installed.
+     
+      - version 1.11
+          Fixed a return code value, CloseSPDriver now returns RC_INVALID_HANDLE
+	  rather than RC_CLOSE_FAILED when invalid handle passed to it.
+
+      - version 1.10
+          Added Multi-node support to ibmasm.
+          Added reset event support to ibmasm (5.2.16 event).
+          Modified signal registration, now uses signal() instead
+          of sigaction().
+	  Modified ibmasm so that it links to libusb symbols dynamically.
+	  Updated section 4 of this readme to correct a documentation
+	  error for installiing libusb.
+
+      - version 1.09
+          Added Installation instructions to this readme for libusb
+          and ibmusbasm on a Redhat system (see section 4.0).
+
+      - version 1.08
+          Added a delay when initializing the daemon after a
+          Service Processor reset which allows the adapter to complete
+          initalizing before the daemon loads.
+
+      - version 1.07
+	  Fixed a timing problem in RegisterForReverseHeartBeat.
+
+
+3.0  RSAII daemon Installation Instructions
+---------------------------------------------------------------
+     3.1  Supported versions:
+
+          3.1.1) Red Hat, version 7.3
+
+          3.1.2) SuSE8.0, SLES8 with service pack 3 or above
+	
+          3.1.3) SLES9
+	
+          3.1.4) Red Hat, Advanced Server version 2.1/3.0
+	
+     3.2  RSAII RPM installation:
+
+          NOTE: Before installing the RSA II software, make sure the 
+                mini USB cable is connected between the RSA II and a 
+                USB port on the xSeries server.  Also make sure the 
+                RSA II is configured for "Linux OS".  If either of 
+                these steps is not performed then the RSA II software
+                installation may fail.  Refer to the RSA II 
+                Installation Guide and RSA II User's Guide for 
+                additional information. 
+
+	  To install the RPM execute the following commands:
+
+            1:   rpmbuild --rebuild ibmusbasm-1.XX.src.rpm
+            2:   cd /usr/src/packages/RPMS/i386 
+                 ( For Redhat: cd /usr/src/redhat/RPMS/i386 )
+            3:   rpm -ivh ibmusbasm-1.XX.i386.rpm
+
+
+          NOTE: If this is an upgrade to an existing RSAII
+                daemon, then the previously installed
+                packages must first be removed.  Depending upon your
+                system's configuration, you may see messages about missing
+                files when running the "rpm -e" commands.  You may safely
+                ignore those messages.  Type the following two commands at
+                a shell prompt to remove the old source and
+                binaries:
+
+                     rpm -e ibmusbasm
+
+		  or for a Red Hat system possibly
+
+                     rpm -e ibmasm
+                     rpm -e ibmasm-src-redhat
+
+		  or for a SuSE system possibly
+
+                     rpm -e ibmasm
+                     rpm -e ibmasm-src-suse
+
+     3.3  Un-installing the ibmusbasm RPMS.
+
+          To uninstall the binary rpm, execute the following command:
+
+          rpm -e ibmusbasm
+
+          RPM will unload the daemons, and remove all ibmasm-related files
+          from your system.
+
+          It is recommended that you uninstall the daemons with -e before
+          installing a new version, rather than upgrading with RPM's
+          upgrade (-U) switch.
+
+     3.4  Utility Programs.
+
+          There are two useful utility programs installed by the RPM.
+
+          ibmspup is a small script that loads ibmasm (the service
+          processor daemon).
+          Note that these modules will not load if you do not have the
+          supported hardware installed.
+
+          ibmspdown unloads the modules.
+
+          You must have root priveledges to run these utilities.
+
+
+4.0  Installing libusb and libusb-devel
+-----------------------------------------------------------------------
+    
+     4.1  Get/download version 0.1.6 (or later) of the libusb /libusb-devel 
+     	  rpms (e.g. you might get them from RedHat Enterprise Linux
+     	  Advanced Server 3.0 cds). 
+
+          Note: On SLES9 the libusb-devel package has been combined with the
+          the libusb package, so only the libusb package is required.
+          
+     4.2  We recommend installing the source rpm because this eliminates any
+          incompatibilities that might be encountered between the binary libusb
+          and older Linux kernels, like that on Red Hat Advanced Server 2.1.
+          After downloading the source rpm (e.g. libusb-0.1.6-1.src.rpm), issue
+          the following commands from the directory that the libusb rpm resides:
+
+          4.2.1)  rpm --rebuild --nodeps libusb-0.1.6-1.src.rpm
+          4.2.2)  cd /usr/src/redhat/RPMS/i386 (For Suse: cd /usr/src/packages/RPMS/i386)
+          4.2.3)  rpm -ivh libusb-0.1.6-1.i386.rpm
+          4.2.4)  rpm -ivh libusb-devel-0.1.6-1.i386.rpm
+          4.2.5)  cd /usr/lib
+          4.2.6)  ln -s libusb-0.1.so.4 libusb.so
+          4.2.7)  ldconfig
+    
+
+5.0  WEB Sites and Support Phone Number
+---------------------------------------
+
+     5.1  IBM Support Web Site:
+          http://www.pc.ibm.com/support
+
+     5.2  IBM Marketing eServer xSeries Web Site:
+          http://www.pc.ibm.com/us/eserver/xseries
+
+     5.3  If you have any questions about this update, or problems
+          applying the update go to the following Help Center World
+          Telephone Numbers URL:
+          http://www.pc.ibm.com/qtechinfo/YAST-3P2QYL.html
+
+
+
+6.0  Trademarks and Notices
+---------------------------
+
+     The following terms are trademarks of the Red Hat Corporation in the
+     United States or other countries or both:
+
+          Red Hat
+
+     The following terms are trademarks of SuSE, Inc. in the United States
+     and SuSE AG in Germany or other countries:
+
+          SuSE
+
+
+     The following terms are trademarks of Linus Torvalds in the United
+     States or other countries or both:
+
+          Linux
+
+
+7.0  Disclaimer
+---------------
+     7.1  THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+          KIND.   IBM DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR
+          IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED
+          WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE AND
+          MERCHANTABILITY WITH RESPECT TO THE INFORMATION IN THIS
+          DOCUMENT.   BY FURNISHING THIS DOCUMENT, IBM GRANTS NO
+          LICENSES TO ANY PATENTS OR COPYRIGHTS.
+
+     7.2  Note to Government Users
+
+          Documentation related to restricted rights -- Use, duplication
+          or disclosure is subject to restrictions set forth in GSA ADP
+          Schedule Contract with IBM Corporation.
+
+
+

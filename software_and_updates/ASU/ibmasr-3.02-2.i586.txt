@@ -1,0 +1,202 @@
+IBM Automatic Server Restart (ASR) Driver for Linux 2.6 kernel 
+   Version 1.00
+
+
+
+CONTENTS
+--------
+1.0  Overview
+2.0  Change History
+3.0  ASR Device Driver Installation Instructions for SLES 9
+4.0  ASR User Space Monitor (/sbin/asrtask)
+5.0  Web Sites and Support Phone Number
+6.0  Trademarks and Notices
+7.0  Disclaimer
+
+
+1.0  Overview
+-------------
+     This README.TXT file is associated with the following 2 RPM files:
+
+     - ibmasr-x.xx-y.i586.rpm
+     - ibmasr-x.xx-y.src.rpm
+
+        where x.xx is the version and y is the build of the rpm that you
+        are installing.
+
+     These RPM files will build and install Linux device drivers and/or support
+     software for the following IBM hardware:
+
+     - Automatic Server Restart (ASR) which is built onto the
+       planar board some models of xSeries servers.  See the 
+       IBM Support Web Site listed in Section 5 to determine 
+       which models are supported.
+
+     Only the "boxed set" versions of Linux are supported.  See Section
+     3 for details.
+
+2.0  Change History
+-------------------
+     2.1  Driver version 1.00
+          Initial Release.
+
+
+3.0  System Management Device Driver Installation Instructions for SUSE
+-----------------------------------------------------------------------
+      3.1 Supported operating system versions:
+
+           1) SUSE Linux Enterprize Server, version 9.0
+              - Specific kernel versions tested
+                2.6.5-7.5-SMP
+
+
+      3.2 Installing on distributions without precompiled ASM kernel modules 
+          or when uprading to a newer RPM:
+
+          The kernel source needs to be configured. If you see errors such
+          as "Kernel version mismatch" or "unresolved symbol errors"
+          then configure the kernel sources.
+
+          The system that the source rpm file is to be run on must have Linux
+          development/build capability with the Linux kernel source installed
+          and be properly configured for your hardware.  Specifically, the 
+          kernel-source and gcc packages must be installed.
+
+          After installing the kernel-source RPM, configure the kernel sources
+          by executing the following commands:
+
+          cd /usr/src/linux
+          
+          make clean
+
+          make mrproper
+
+          make cloneconfig
+
+          make prepare-all
+
+          The binary rpm file (ibmasr-x.xx-y.i586.rpm) contains open source
+          code for the IBM Automatic Server Restart device driver for Linux.
+          The file is designed for installation using the Red Hat RPM "build"
+          system.  Executing the RPM utility against ibmasr-x.xx-y.i586.rpm
+          will build and install a Linux driver that is customized for the
+          Linux kernel version of the machine running the RPM utility.  This
+          process also generates a binary rpm file that can be installed on
+          any machine running the same Linux kernel and having the same
+          hardware configuration.  The following steps must be executed in
+          order to build and install the Linux ASR driver.
+          
+          NOTE: If this is an upgrade from an existing IBM Automatic Server
+                Restart driver, then the previously installed ASR driver
+                packages must first be removed.  Depending upon your system's
+                configuration, you may see messages about missing files when
+                running the "rpm -e" commands.  You may safely ignore those
+                messages.  Type the following command at a shell prompt
+                to remove the old driver source and binaries:
+
+                rpm -e ibmasr
+
+
+          To install the source rpm for SUSE, execute the following command:
+
+                rpm -ivh ibmasr-x.xx-y.i586.rpm
+
+                where x.xx is the version of the RPM that you are installing.
+
+
+      3.3  Un-installing the ibmasr RPM.
+
+           To uninstall the binary rpm, execute the following command:
+
+                rpm -e ibmasr
+
+           RPM will unload the driver, and remove all ibmasr-related files from
+           your system.
+
+           It is recommended that you uninstall the driver with -e before 
+           installing a new version, rather than upgrading with RPM's 
+           upgrade (-U) switch.
+
+      3.4  Utility Programs.
+
+           There are two useful utility programs installed by the RPM.
+
+           ibmspup is a small script that loads ibmasr.o (the ASR device 
+           driver).  The ibmspup script creates /dev/ibmasr which is the device
+           file for the Automatic Server Restart hardware.
+
+           NOTE: This module will not load if your system does not have the
+                 supported hardware.
+
+           ibmspdown unloads the modules.
+
+           You must have root privileges to run these utilities.
+
+
+4.0  ASR User Space Monitor (/sbin/asrtask)
+---------------------------------------
+
+      4.1  When the ibmasr rpm is installed, a user space application is also 
+           installed in the /sbin directory and executed (asrtask). This task 
+           is a keep alive task between the kernel driver (ibmasr) and user 
+           space. We have found that on some combination/configurations of 
+           distributions, server models and kernel versions that some panics 
+           generated from user space will not cause the ASR device driver 
+           to reboot the system even though user space is hung. Therfore we 
+           added this user space application to watch for this particular 
+           scenario. This application can be terminated via normal Linux 
+           termination methods however user space will no longer be monitored. 
+           Also if the asrtask is terminated in an unconventional manner such 
+           that asrtask cannot clean up on exit the system may be rebooted. If
+           this is the case the device driver will log a message in 
+           /var/log/messages leaving a history of the cause of the reboot.
+
+
+5.0  WEB Sites and Support Phone Number
+---------------------------------------
+
+      5.1  IBM Support Web Site:
+           http://www.pc.ibm.com/support
+
+      5.2  IBM Marketing eServer xSeries Web Site:
+           http://www.pc.ibm.com/us/eserver/xseries
+
+      5.3  If you have any questions about this update, or problems
+           applying the update go to the following Help Center World
+           Telephone Numbers URL:
+           http://www.pc.ibm.com/qtechinfo/YAST-3P2QYL.html
+
+
+
+6.0  Trademarks and Notices
+---------------------------
+
+      The following terms are trademarks of SUSE, Inc. in the United States
+      and SUSE AG in Germany or other countries:
+
+          SUSE
+
+
+      The following terms are trademarks of Linus Torvalds in the United
+      States or other countries or both:
+
+          Linux
+
+
+7.0  Disclaimer
+---------------
+      7.1  THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+           KIND.   IBM DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR
+           IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED
+           WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE AND
+           MERCHANTABILITY WITH RESPECT TO THE INFORMATION IN THIS
+           DOCUMENT.   BY FURNISHING THIS DOCUMENT, IBM GRANTS NO
+           LICENSES TO ANY PATENTS OR COPYRIGHTS.
+
+      7.2  Note to Government Users
+
+           Documentation related to restricted rights -- Use, duplication
+           or disclosure is subject to restrictions set forth in GSA ADP
+           Schedule Contract with IBM Corporation.
+
+

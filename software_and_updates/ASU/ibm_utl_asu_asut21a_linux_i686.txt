@@ -1,0 +1,106 @@
+         IBM Advanced Settings Utility for Linux
+           Version 1.6.4 (Build ID ASUT21A)
+               Installation README File
+
+
+CONTENTS
+________
+
+       1.0   Overview
+       2.0   Installation and Setup Instructions
+       3.0   Configuration Information
+       4.0   Unattended Mode
+       5.0   Web Sites and Support Phone Number
+       6.0   Trademarks and Notices
+       7.0   Disclaimer
+
+       1.0   Overview
+
+             1.1  This README file contains the latest information about
+                  installing the Advanced Settings Utility for DOS.
+
+             1.2  Limitations: N/A
+
+             1.3  Enhancements: N/A
+
+             1.4  Recommendations and Prerequisites for the Update: N/A
+
+             1.5  Dependencies
+             
+               -  Definition files must be at version 1.6.2 or below.
+
+       2.0   Installation and Setup Instructions
+       
+             The procedure to install the Advanced Settings Utility for
+             Linux is as follows:
+      
+             2.1  Copy the .tgz to a directory on the hard drive.
+       
+             2.2  Run "tar zxf <ASU distribution>.tgz" where 
+                  <ASU distribution>.tgz is the downloaded .tgz.
+
+       3.0   Configuration Information
+
+             To enable support for viewing/changing settings on a BIOS level
+             or for RSA/RSAII firmware, apply a definition file to asu.exe
+             
+             3.1  Copy one or more definition file .exes to the same directory
+                  on the hard drive to which asu.exe was extracted.  Definition
+                  files can be downloaded for BIOS or RSA/RSAII firmware from
+                  the support download site.
+
+             3.2  For each definition file:
+             
+                  3.2.1  Extract the definition file by running it from the
+                         command line.
+
+                  3.2.2  Run "./asu patchadd <definition file>.def" where
+                         <definition file>.def is the .def extracted from the
+                         downloaded .exe.
+
+       4.0   Unattended Mode
+       
+             All ASU operations are command line based and don't wait for user
+             input.  As such, ASU can be scripted by using "batch" mode (see the
+             Advanced Settings Utility User's Guide for more details) or any 
+             scripting facility of your operating system.
+
+       5.0   Web Sites and Support Phone Number
+
+             5.1  IBM Support Web Site:
+                  http://www.pc.ibm.com/support
+
+             5.2  IBM Marketing Web Site:
+                  http://www.pc.ibm.com/ww/eserver/xseries/
+
+             5.3  If you have any questions about this update, or problems
+                  applying the update go to the following Help Center World
+                  Telephone Numbers URL:
+                  http://www.pc.ibm.com/qtechinfo/YAST-3P2QYL.html.
+
+
+       6.0   Trademarks and Notices
+
+             6.1  IBM and the e(logo) are registered trademarks of 
+                  International Business Machines Corporation.
+                  
+             6.2  U.S. Government Users Restricted Rights - Use, duplication
+                  or disclosure restricted by GSA ADP Contract with IBM
+                  Corporation.  IBM web site pages may contain other 
+                  proprietary notices and copyright information which should
+                  be observed.
+
+       7.0   Disclaimer
+       
+                  THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+                  KIND.  IBM DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR 
+                  IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES
+                  OF FITNESS FOR A PARTICULAR PURPOSE AND MERCHANTABILITY WITH
+                  RESPECT TO THE INFORMATION IN THIS DOCUMENT.  BY FURNISHING
+                  THIS DOCUMENT, IBM GRANTS NO LICENSES TO ANY PANTENTS OR
+                  COPYRIGHTS.
+                  
+CUMENT, IBM GRANTS NO LICENSES TO ANY PANTENTS OR
+                  COPYRIGHTS.
+                  
+ 
